@@ -1,0 +1,13 @@
+*, ::after, ::before {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+a{
+	display: inline-block;
+	width: 100px;	
+}
+
+a img{
+	width: 100%;	
+}
