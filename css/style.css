@@ -14,6 +14,11 @@
 	--font-light: #02be90;
 	/*--цвета фона--*/
 	--bg-dark: black;
+	--bg-light: #02be90;
+	/*--цвета тени--*/
+	--shadow-dark: #1f261f;
+	--shadow-middle: #477652;
+	--shadow-light: #02be90;
 }
 /*------------------сброс-----------------*/
 *,
@@ -33,6 +38,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-size: 14px;
 	font-weight: normal;
+	min-width: 320px;
 	color: var(--font-dark);
 }
 
@@ -76,6 +82,7 @@ h3 {
 	max-width: 1440px;
 	margin: 0 auto;
 	height: 100%;
+	position: relative;
 }
 .header__top {
 	height: 100px;
@@ -86,32 +93,41 @@ h3 {
 	padding: 10px 0;
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 }
+
+/*------------------logo----------------------*/
 .logo {
 	height: 100%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
-.logo__img {
+.logo__img,
+.logomin__img {
 	display: inline-block;
 	height: 80%;
 }
-.logo__name {
+.logo__name,
+.logomin__name {
 	display: block;
 	font-family: "Mr De Haviland", cursive;
-	font-size: 36px;
+	font-size: 34px;
 	color: var(--font-light);
 	line-height: 0.9;
 }
-.logo__studio {
+.logo__studio,
+.logomin__studio {
 	display: block;
 	font-family: "Great Vibes", cursive;
 	font-size: 36px;
 	color: white;
 	line-height: 0.9;
 }
+.logomin {
+	display: none;
+}
+/*------------------info----------------------*/
 .info {
 	display: flex;
 	justify-content: center;
@@ -132,29 +148,246 @@ h3 {
 
 .info__soclink {
 	display: inline-block;
-	width: 40px;
-	height: 40px;
-	margin: 5px;
+	width: 30px;
+	height: 30px;
+	margin: 10px 5px;
 	background-image: url(../img/soc_icons.png);
-	background-size: 200px;
+	background-size: 150px;
 }
 .info__soclink:nth-of-type(1) {
 	background-position: 0px 0px;
 	margin-left: 0;
 }
 .info__soclink:nth-of-type(2) {
-	background-position: -40px 0;
+	background-position: -30px 0;
 }
 .info__soclink:nth-of-type(3) {
-	background-position: -80px 0;
+	background-position: -60px 0;
 }
-/*
-.contacts__soc-link:nth-of-type(1):hover {
-	background-position: 0px -40px;
+
+.info__soclink:nth-of-type(1):hover {
+	background-position: 0px -30px;
 }
-.contacts__soc-link:nth-of-type(2):hover {
-	background-position: -40px -40px;
+.info__soclink:nth-of-type(2):hover {
+	background-position: -30px -30px;
 }
-.contacts__soc-link:nth-of-type(3):hover {
-	background-position: -80px -40px;
-}*/
+.info__soclink:nth-of-type(3):hover {
+	background-position: -60px -30px;
+}
+
+/*------------------menu----------------------*/
+.header__bottom {
+	height: 50px;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 39%, rgba(62, 62, 62, 0.7) 98%);
+}
+
+.menu {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.fixedmenu {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	transition: top 0.5s;
+}
+
+.menu__item {
+	height: 100%;
+	position: relative;
+}
+.menu__link {
+	display: block;
+	height: 100%;
+	padding: 15px 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: white;
+	transition: color 0.5s;
+}
+.menu__link:hover {
+	color: var(--font-light);
+}
+
+.menu__active {
+	color: var(--bg-light);
+}
+
+.menu__active::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	bottom: 15px;
+	background-color: var(--bg-light);
+}
+
+/*------------------burger----------------------*/
+.burger {
+	display: none;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+}
+.burger span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background-color: var(--bg-light);
+	transition: all 0.3s;
+}
+.burger span:nth-child(1) {
+	top: 7px;
+}
+.burger span:nth-child(2) {
+	top: 18px;
+}
+.burger span:nth-child(3) {
+	top: 29px;
+}
+#check-burger {
+	display: none;
+}
+#check-burger:checked + .burger span:nth-child(1) {
+	top: 18px;
+	transform: rotate(45deg);
+}
+#check-burger:checked + .burger span:nth-child(2) {
+	display: none;
+}
+#check-burger:checked + .burger span:nth-child(3) {
+	top: 18px;
+	transform: rotate(-45deg);
+}
+
+/*---------------section---------------*/
+.first-screen {
+	min-height: 300px;
+	background-color: green;
+}
+
+/*MEDIA*/
+/*-------------------1024---------------*/
+@media screen and (max-width: 1024px) {
+	.logo__name,
+	.logo__studio {
+		font-size: 24px;
+	}
+
+	.info__item,
+	.info__title {
+		font-size: 10px;
+	}
+
+	.info__soclink {
+		width: 20px;
+		height: 20px;
+		background-size: 100px;
+	}
+	.info__soclink:nth-of-type(2) {
+		background-position: -20px 0;
+	}
+	.info__soclink:nth-of-type(3) {
+		background-position: -40px 0;
+	}
+
+	.info__soclink:nth-of-type(1):hover {
+		background-position: 0px -20px;
+	}
+	.info__soclink:nth-of-type(2):hover {
+		background-position: -20px -20px;
+	}
+	.info__soclink:nth-of-type(3):hover {
+		background-position: -40px -20px;
+	}
+}
+
+/*------------------768----------------*/
+@media screen and (max-width: 768px) {
+	.wrapper {
+		width: 100%;
+		padding: 5px;
+	}
+	.info__item:nth-child(1),
+	.info__item:nth-child(2) {
+		display: none;
+	}
+	.logo__name,
+	.logo__studio {
+		font-size: 20px;
+	}
+
+	.info__item,
+	.info__title {
+		font-size: 10px;
+	}
+	.menu__link {
+		font-size: 10px;
+		padding: 10px 0;
+	}
+	.menu__active::after {
+		bottom: 5px;
+	}
+}
+
+/*------------------425------------------*/
+
+@media screen and (max-width: 425px) {
+	.header__top {
+		display: none;
+	}
+	.logomin {
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.logomin__name {
+		font-size: 20px;
+	}
+	.logomin__studio {
+		font-size: 20px;
+	}
+	.info__item,
+	.info__title {
+		font-size: 9px;
+	}
+	.header__bottom {
+		background-color: black;
+	}
+	.burger {
+		display: block;
+	}
+	.menu {
+		display: block;
+		position: absolute;
+		top: 50px;
+		left: -5px;
+		width: calc(100% + 5px);
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+	#check-burger:checked ~ .menu {
+		opacity: 1;
+	}
+
+	.menu__item {
+		background-color: black;
+	}
+	.menu__link {
+		text-align: center;
+		padding: 20px 0;
+	}
+	.menu__active::after {
+		width: 0;
+	}
+}
