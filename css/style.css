@@ -291,7 +291,7 @@ h3 {
 	background: none;
 }
 
-.slide {
+.slide__inner {
 	background: url("../img/bg-first.jpg") center/cover no-repeat;
 	min-height: 450px;
 	color: var(--font-lightest);
