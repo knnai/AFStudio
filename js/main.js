@@ -1,4 +1,17 @@
 
+$(function () {
+    $('.slider').bxSlider({
+        auto: true,
+        //mode: 'fade',
+        speed: 1000,
+        easing: 'ease-in-out',
+        controls: false,
+        pager: false,
+    });
+});
+
+
+
 
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
