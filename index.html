@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 
 	<!-------------------- CSS ----------------------->
+	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!-------------------- jQuery ----------------------->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -90,164 +91,304 @@
 	</header>
 
 	<main>
-		<section class="first">
+		<!--first-->
+		<section class="section first-section">
 			<div class="wrapper">
+				<div class="section__content">
 
-				<h1 hidden>Студия маникюра и педикюра</h1>
-				<h2 hidden>Анастасии Фроловой</h2>
+					<h1 hidden>Студия маникюра и педикюра</h1>
+					<h2 hidden>Анастасии Фроловой</h2>
 
-				<div class="slider">
-					<div class="slide">
-						<div class="slide__inner">
-							<div class="slide__left">
-								<p class="slide__text">Студия маникюра и педикюра</p>
-								<img class="slide__decor" src="img/decor.png" alt="">
-								<p class="slide__text">Анастасии Фроловой</p>
-								<div class="signup">
-									<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
-									<div class="button signup__button">Записаться онлайн</div>
+					<div class="slider">
+						<div class="slide">
+							<div class="slide__inner">
+								<div class="slide__left">
+									<p class="slide__text">Студия маникюра и педикюра</p>
+									<img class="slide__decor" src="img/decor.png" alt="">
+									<p class="slide__text">Анастасии Фроловой</p>
+									<div class="signup">
+										<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
+										<div class="button signup__button">Записаться онлайн</div>
+									</div>
+								</div>
+								<div class="slide__right">
+									<div class="slide__frame"></div>
+									<div class="slide__img">
+										<img src="img/slide01.jpg" alt="">
+									</div>
 								</div>
 							</div>
-							<div class="slide__right">
-								<div class="slide__frame"></div>
-								<div class="slide__img">
-									<img src="img/slide01.jpg" alt="">
+						</div>
+
+						<div class="slide">
+							<div class="slide__inner">
+								<div class="slide__left">
+									<p class="slide__text">Что такое маникюр?</p>
+									<img class="slide__decor" src="img/decor.png" alt="">
+									<p class="slide__text">Несомненно, искусство!</p>
+									<div class="signup">
+										<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
+										<div class="button signup__button">Записаться онлайн</div>
+									</div>
+								</div>
+								<div class="slide__right">
+									<div class="slide__frame"></div>
+									<div class="slide__img">
+										<img src="img/slide02.jpg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="slide">
+							<div class="slide__inner">
+								<div class="slide__left">
+									<p class="slide__text">Хотите измениться ?</p>
+									<img class="slide__decor" src="img/decor.png" alt="">
+									<p class="slide__text">Сделайте это сейчас!</p>
+									<div class="signup">
+										<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
+										<div class="button signup__button">Записаться онлайн</div>
+									</div>
+								</div>
+								<div class="slide__right">
+									<div class="slide__frame"></div>
+									<div class="slide__img">
+										<img src="img/slide03.jpg" alt="">
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="slide">
-						<div class="slide__inner">
-							<div class="slide__left">
-								<p class="slide__text">Что такое маникюр?</p>
-								<img class="slide__decor" src="img/decor.png" alt="">
-								<p class="slide__text">Несомненно, искусство!</p>
-								<div class="signup">
-									<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
-									<div class="button signup__button">Записаться онлайн</div>
-								</div>
-							</div>
-							<div class="slide__right">
-								<div class="slide__frame"></div>
-								<div class="slide__img">
-									<img src="img/slide02.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slide">
-						<div class="slide__inner">
-							<div class="slide__left">
-								<p class="slide__text">Хотите измениться ?</p>
-								<img class="slide__decor" src="img/decor.png" alt="">
-								<p class="slide__text">Сделайте это сейчас!</p>
-								<div class="signup">
-									<p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p>
-									<div class="button signup__button">Записаться онлайн</div>
-								</div>
-							</div>
-							<div class="slide__right">
-								<div class="slide__frame"></div>
-								<div class="slide__img">
-									<img src="img/slide03.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
 
-
-		<section class="">
+		<!--about-->
+		<section class="section">
 			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
+				<p class="section__title">О нас</p>
 				<p class="section__subtitle">
+					<span></span>
 					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
 				</p>
+				<div class="section__content">
+					<div class="about__first">
+						<div class="about__left">
+							<div class="about__video">
+								<video controls="controls" poster="" autoplay loop>
+									<source src="video/promo.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+									<source src="video/promo.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+									<source src="video/pomo.webm" type="video/webm; codecs=&quot;vp8.42E01E, vorbis&quot;">
+									Тег video не поддерживается вашим браузером.
+									<a href="video/promo.mp4">Скачайте видео</a>
+								</video>
+							</div>
+						</div>
+						<div class="about__right">
+							<p class="about__text">Доверьте ваши ноготочки профессионалам!</p>
+							<p class="about__text">Стильной и привлекательной женщину делает ухоженный вид и современный образ,
+								который состоит из правильно подобранного гардероба, красивой прически и макияжа, а также, конечно же
+								хорошего маникюра.</p>
+							<p class="about__text">Сегодня это неотъемлемый атрибут любой успешной девушки, который подчеркивает
+								изящность рук и безупречный вкус их хозяйки.</p>
+							<p class="about__text">В нашем салоне Вас всегда ждут отличный сервис и профессиональные мастера с
+								художественным воображением.</p>
+							<p class="about__text">Кроме этого, мы всегда рады побаловать наших клиентов скидками, акциями и подарками
+								при посещении салона.</p>
+						</div>
+					</div>
+					<div class="_clear"></div>
+				</div>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Мы в цифрах</span>
+				</p>
+				<div class="section__content">
+					<div class="about__second">
+						<div class="box">
+							<p class="box__title">Работаем<br>более</p>
+							<p class="box__value">7</p>
+							<p class="box__text">лет</p>
+						</div>
+						<div class="box">
+							<p class="box__title">Нам доверяют<br>более</p>
+							<p class="box__value">300</p>
+							<p class="box__text">клиентов</p>
+						</div>
+						<div class="box">
+							<p class="box__title">Мы выполнили<br>более</p>
+							<p class="box__value">10000</p>
+							<p class="box__text">заказов</p>
+						</div>
+						<div class="box">
+							<p class="box__title">Воплотили в жизнь<br>более</p>
+							<p class="box__value">700</p>
+							<p class="box__text">дизайнов</p>
+						</div>
+					</div>
+				</div>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Наша студия это:</span>
+				</p>
+				<div class="section__content">
+					<div class="about__third">
+						<div class="box">
+							<p class="box__title">Мастерство персонала</p>
+							<p class="box__text">Мы владеем всеми техниками маникюра и моделирования ногтей, а также выполняем
+								качественный аппаратный педикюр.</p>
+						</div>
+						<div class="box">
+							<p class="box__title">Качественная стерилизация</p>
+							<p class="box__text">Процедура обработки инструментов происходит в 3 этапа: дезинфекция,
+								предстерилизационная очистка и стерилизация. Крафтовый пакет с инструментами вскрываем при Вас.</p>
+						</div>
+						<div class="box">
+							<p class="box__title">Разнообразие дизайнов</p>
+							<p class="box__text">Мастера выполняют дизайн любой сложности: будь то геометрия, градиент, художественная
+								роспись, или объемная икрустация.</p>
+						</div>
+					</div>
+				</div>
 
+			</div>
+		</section>
+
+		<!--services-->
+		<section class="section">
+			<div class="wrapper">
+				<p class="section__title">Наши услуги</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Широкий спектр услуг</span>
+				</p>
+				<div class="section__content">
+					<div class="services">
+						<div class="services__item">
+							<div class="services__img">
+								<img src="img/manicure.jpg" alt="">
+							</div>
+							<div class="services__inner">
+								<p class="services__title">Маникюр</p>
+								<p class="services__price">от 150грн.</p>
+							</div>
+						</div>
+
+						<div class="services__item">
+							<div class="services__img">
+								<img src="img/pedicure.jpg" alt="">
+							</div>
+							<div class="services__inner">
+								<p class="services__title">Педикюр</p>
+								<p class="services__price">от 150грн.</p>
+							</div>
+						</div>
+
+						<div class="services__item">
+							<div class="services__img">
+								<img src="img/design.jpg" alt="">
+							</div>
+							<div class="services__inner">
+								<p class="services__title">Дизайн</p>
+								<p class="services__price">от 150грн.</p>
+							</div>
+						</div>
+					</div>
+
+					<a href="#" class="button-link services__link">Смотреть прайс</a>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrapper">
+				<p class="section__title">Гарантия</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Мы грантируем качество</span>
+				</p>
+				<div class="section__content">
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrapper">
+				<p class="section__title">Наши работы</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Лучшие из лучших!</span>
+				</p>
+				<div class="section__content">
+
+					<div class="gallery">
+						<a class="gallery__item" href="img/gallery/001.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/001.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/002.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/002.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/003.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/003.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/004.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/004.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/005.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/005.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/006.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/005.jpg" alt="">
+						</a>
+						<!-- <a class="gallery__item" href="img/gallery/007.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/007.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/008.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/008.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/009.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/009.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/010.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/010.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/011.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/011.jpg" alt="">
+						</a>
+						<a class="gallery__item" href="img/gallery/012.jpg" data-lightbox="gallery" data-title>
+							<img class="gallery__img" src="img/gallery/012.jpg" alt="">
+						</a> -->
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="wrapper">
+				<p class="section__title">Отзывы</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Наших клиентов</span>
+				</p>
+				<div class="section__content">
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="section">
+			<div class="wrapper">
+				<p class="section__title">Заголовок секции</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Подзаголовок секции</span>
+				</p>
 				<div class="section__content"></div>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-				<div class="section__content"></div>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-				<div class="section__content"></div>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-				<div class="section__content"></div>
 			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">Наши услуги </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
-		<section class="">
-			<div class="wrapper">
-				<h3 class="section__title">О нас </h3>
-				<p class="section__subtitle">
-					<span>Мы работаем для Вас</span>
-					<hr class="subtitle__divider">
-				</p>
-			</div>
-		</section>
-
+		</section> -->
 
 
 
@@ -256,8 +397,9 @@
 
 	</footer>
 
-	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
 
 	<script src="js/main.js"></script>
 
