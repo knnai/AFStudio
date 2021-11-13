@@ -1,64 +1,96 @@
-
-
+	/*-------------------lightbox---------------------------*/
 	lightbox.option({
 		'resizeDuration': 200,
 		'wrapAround': true,
 		'alwaysShowNavOnTouchDevices': false,
 		'showImageNumberLabel': true,
 
-		//alwaysShowNavOnTouchDevices
-		//По умолчанию: false
-		//Если true, то левая и правая стрелки навигации, которые появляются при наведении мыши при просмотре набора изображений, будут всегода видимы на устройствах с поддержкой сенсорного ввода
-
-		//fadeDuration
-		//По умолчанию: 500
-		//Время, необходимое для исчезновения контейнера, в миллисекундах.
-
-		//fitImagesInViewport
-		//По умолчанию: true
-		//Если true, то пропорционально уменьшаем размер изображения чтобы картинка поместилось в области просмотра. Это избавляет пользователя от необходимости скроллить, чтобы увидеть все изображение.
-
-		//maxWidth
-		//Если задано, высота изображения будет ограничена этим значением (в пикселях). Соотношение сторон не будет соблюдаться.
-
-		//maxHeight
-		//Если задано, ширина изображения будет ограничена этим значением (в пикселях). Соотношение сторон не будет соблюдаться.
-
-		//positionFromTop
-		//По умолчанию: 50
-		//Расстояние от верхней части окна просмотра до Lightbox-контейнера (в пикселях).
-
-		//resizeDuration
-		//По умолчанию: 700
-		//Время, в течение которого Lightbox-контейнер будет изменять свою ширину и высоту при смене изображений разного размера (в миллисекундах).
-
-		//showImageNumberLabel
-		//По умолчанию: true
-		// Если false, в текст будет указываться текущий номер изображения и общее количество изображений в наборе, например: "Изображение 2 из 4".
-
-		//wrapAround
-		// По умолчанию: false
-		// Если true, то при показе последнего изображения кнопка для показа следующего изображения не исчезает. Нажатие на нее приведет к показу первого изображения.
 	});
+	/*-------------------lightbox---------------------------*/	
 
 
-$(function () {
-    $('.slider').bxSlider({
-        auto: true,
-        mode: 'fade',
-        speed: 2000,
-        pause: 10000,
-        //autoHover: true,
-        //easing: 'ease-in-out',
-        controls: false,
-        pager: false,
-    });
-});
+	let animItems = document.querySelectorAll('._anim-items');
+
+	if (animItems.length > 0) {
+		window.addEventListener('scroll', animOnScroll);
+
+		function animOnScroll() {
+			for (let i = 0; i < animItems.length; i++) {
+				const animItem = animItems[i];
+				const animItemHeight = animItem.offsetHeight;
+				const animItemOffset = offset(animItem).top;
+				const animStart = 4;
+
+				let animItemPoint = window.innerHeight - animItemHeight / animStart;
+				if (animItemHeight > window.innerHeight) {
+					animItemPoint = window.innerHeight - window.innerHeight / animStart;
+				}
+
+				if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+					animItem.classList.add('_active');
+				} else {
+					if (!animItem.classList.contains('anim-no-active')) {
+						animItem.classList.remove('_active');
+					}
+
+				}
+			}
+		}
+
+		function offset(el) {
+			const rect = el.getBoundingClientRect(),
+				scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+				scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			return {
+				top: rect.top + scrollTop,
+				left: rect.left + scrollLeft
+			}
+		}
+		setTimeout(() => {
+			animOnScroll();
+		}, 1500);
+
+	}
+
+
+
+$(function () {		
+	/*-------------------preloader---------------------------*/
+	setTimeout(function () {		
+		$('#preloader').fadeOut();
+	}, 30);
+	/*-------------------preloader---------------------------*/
+
+	/*-------------------слайдер - первый экран -------------*/
+	$('.slider').bxSlider({
+		auto: true,
+		mode: 'fade',
+		speed: 2000,
+		pause: 5000,
+		//useCSS: true,
+		//autoHover: true,
+		//easing: 'ease-in-out',
+		controls: false,
+		pager: false,
+	});
+	/*-------------------слайдер - первый экран -------------*/
+
+	/*-------------------слайдер - отзывы -------------------*/
+	$('.reviews').bxSlider({
+		auto: true,
+		mode: 'fade',
+		speed: 1000,
+		pause: 7500,
+		autoHover: true,
+		//easing: 'ease-in-out',
+		controls: false,
+		pager: false,
+	});
+	/*-------------------слайдер - отзывы -------------------*/
 	
-
-
-	$(window).scroll(function () {			
-		if ($(this).innerWidth() > 425 && $(this).scrollTop() > 100){						
+	/*-------------фиксация главного меню при прокрутке------*/
+	$(window).scroll(function () {
+		if ($(this).innerWidth() > 425 && $(this).scrollTop() > 100) {
 			if (!$('.header__bottom').hasClass('_fixedmenu')) {
 				$('.header__bottom').addClass('_fixedmenu');
 			}
@@ -74,6 +106,10 @@ $(function () {
 			$('.menu').removeClass('_noborder');
 		}
 	});
+	/*-------------фиксация главного меню при прокрутке------*/
+
+});
+
 
 
 

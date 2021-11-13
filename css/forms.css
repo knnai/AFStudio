@@ -1,0 +1,70 @@
+input,
+textarea,
+button {
+	outline-style: none;
+	border: none;
+	font-family: var(--basic-font);
+}
+
+/*----form------*/
+.form {
+	width: 100%;
+	margin: 0 auto;
+	color: var(--font-dark);
+}
+.form__title {
+	text-align: center;
+	color: var(--font-light);
+	font-size: 14px;
+	text-align: left;
+}
+.form__item {
+	margin-top: 10px;
+}
+.form__label {
+	display: block;
+	font-size: 14px;
+}
+.form__input,
+.form__question {
+	display: block;
+	height: 40px;
+	margin-top: 5px;
+	padding: 5px;
+	width: 100%;
+	font-size: 14px;
+	border: none;
+	border: 1px solid #dfdfdf;
+	border-bottom: 1px solid grey;
+}
+.form__input:focus,
+.form__question:focus {
+	border-bottom: 1px solid var(--border-light);
+	background-color: var(--bg-lightest);
+	box-shadow: 0 0 5px 5px var(--bg-light);
+	color: var(--font-dark);
+	position: relative;
+}
+.form__question {
+	resize: vertical;
+	min-height: 100px;
+}
+.form__button {
+	margin: 20px auto 0 auto;
+}
+::placeholder {
+	font-size: 14px;
+	color: gray;
+}
+/*----------*/
+.form__error {
+	margin-top: 20px;
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+._error {
+	color: red;
+	box-shadow: 0 0 5px 3px red;
+}

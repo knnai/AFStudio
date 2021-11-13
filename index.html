@@ -14,7 +14,9 @@
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
+	<link rel="stylesheet" href="css/variables_dark.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/forms.css">
 	<!-------------------- jQuery ----------------------->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!-------------------- Title ----------------------->
@@ -22,6 +24,24 @@
 </head>
 
 <body>
+
+	<div id="preloader">
+		<div class="preloader__container">
+			<div class="preloader__round">
+				<div class="preloader__inner">
+				</div>
+			</div>
+			<div class="preloader__round">
+				<div class="preloader__inner">
+				</div>
+			</div>
+			<div class="preloader__round">
+				<div class="preloader__inner">
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<header>
 		<div class="header__top">
 			<div class="wrapper">
@@ -81,8 +101,7 @@
 					<li class="menu__item"><a class="menu__link menu__active" href="index.html">Главная</a></li>
 					<li class="menu__item"><a class="menu__link" href="index.html#about">О нас</a></li>
 					<li class="menu__item"><a class="menu__link" href="services.html">Услуги</a></li>
-					<li class="menu__item"><a class="menu__link" href="index.html#waranty">Гарантия</a></li>
-					<li class="menu__item"><a class="menu__link" href="gallery.tml">Портфолио</a></li>
+					<li class="menu__item"><a class="menu__link" href="gallery.html">Портфолио</a></li>
 					<li class="menu__item"><a class="menu__link" href="index.html#reviews">Отзывы</a></li>
 					<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
 				</ul>
@@ -96,11 +115,9 @@
 			<div class="wrapper">
 				<div class="section__content">
 
-					<h1 hidden>Студия маникюра и педикюра</h1>
-					<h2 hidden>Анастасии Фроловой</h2>
-
 					<div class="signup">
-						<p class="signup__text">Запишитесь онлайн и получите<br><span>скидку 10%</span> на <span>первое</span> посещение</p>
+						<p class="signup__text">Запишитесь онлайн и получите<br><span>скидку 10%</span> на <span>первое</span>
+							посещение</p>
 						<div class="button signup__button">Записаться онлайн</div>
 					</div>
 
@@ -108,13 +125,9 @@
 						<div class="slide">
 							<div class="slide__inner">
 								<div class="slide__left">
-									<p class="slide__text">Студия маникюра и педикюра</p>
+									<h1 class="slide__text">Студия маникюра и педикюра</h1>
 									<img class="slide__decor" src="img/decor.png" alt="">
-									<p class="slide__text">Анастасии Фроловой</p>
-									<!-- <div class="signup"> -->
-										<!-- <p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p> -->
-										<!-- <div class="button signup__button">Записаться онлайн</div> -->
-									<!-- </div> -->
+									<h2 class="slide__text">Анастасии Фроловой</h2>
 								</div>
 								<div class="slide__right">
 									<div class="slide__frame"></div>
@@ -131,10 +144,6 @@
 									<p class="slide__text">Что такое маникюр?</p>
 									<img class="slide__decor" src="img/decor.png" alt="">
 									<p class="slide__text">Несомненно, искусство!</p>
-									<!-- <div class="signup"> -->
-										<!-- <p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p> -->
-										<!-- <div class="button signup__button">Записаться онлайн</div> -->
-									<!-- </div> -->
 								</div>
 								<div class="slide__right">
 									<div class="slide__frame"></div>
@@ -151,10 +160,6 @@
 									<p class="slide__text">Хотите измениться ?</p>
 									<img class="slide__decor" src="img/decor.png" alt="">
 									<p class="slide__text">Сделайте это сейчас!</p>
-									<!-- <div class="signup"> -->
-										<!-- <p class="signup__text">Запишитесь онлайн и получите скидку 10% на первое посещение</p> -->
-										<!-- <div class="button signup__button">Записаться онлайн</div> -->
-									<!-- </div> -->
 								</div>
 								<div class="slide__right">
 									<div class="slide__frame"></div>
@@ -165,7 +170,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</section>
@@ -181,7 +186,7 @@
 				<div class="section__content">
 					<div class="about__first">
 						<div class="about__left">
-							<div class="about__video">
+							<div class="about__video ">
 								<video controls="controls" poster="" autoplay loop>
 									<source src="video/promo.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
 									<source src="video/promo.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
@@ -192,15 +197,15 @@
 							</div>
 						</div>
 						<div class="about__right">
-							<p class="about__text">Доверьте ваши ноготочки профессионалам!</p>
-							<p class="about__text">Стильной и привлекательной женщину делает ухоженный вид и современный образ,
+							<p class="about__text ">Доверьте ваши ноготочки профессионалам!</p>
+							<p class="about__text ">Стильной и привлекательной женщину делает ухоженный вид и современный образ,
 								который состоит из правильно подобранного гардероба, красивой прически и макияжа, а также, конечно же
 								хорошего маникюра.</p>
-							<p class="about__text">Сегодня это неотъемлемый атрибут любой успешной девушки, который подчеркивает
+							<p class="about__text ">Сегодня это неотъемлемый атрибут любой успешной девушки, который подчеркивает
 								изящность рук и безупречный вкус их хозяйки.</p>
-							<p class="about__text">В нашем салоне Вас всегда ждут отличный сервис и профессиональные мастера с
+							<p class="about__text ">В нашем салоне Вас всегда ждут отличный сервис и профессиональные мастера с
 								художественным воображением.</p>
-							<p class="about__text">Кроме этого, мы всегда рады побаловать наших клиентов скидками, акциями и подарками
+							<p class="about__text ">Кроме этого, мы всегда рады побаловать наших клиентов скидками, акциями и подарками
 								при посещении салона.</p>
 						</div>
 					</div>
@@ -212,22 +217,22 @@
 				</p>
 				<div class="section__content">
 					<div class="about__second">
-						<div class="box">
+						<div class="box ">
 							<p class="box__title">Работаем<br>более</p>
 							<p class="box__value">7</p>
 							<p class="box__text">лет</p>
 						</div>
-						<div class="box">
+						<div class="box ">
 							<p class="box__title">Нам доверяют<br>более</p>
 							<p class="box__value">300</p>
 							<p class="box__text">клиентов</p>
 						</div>
-						<div class="box">
+						<div class="box ">
 							<p class="box__title">Мы выполнили<br>более</p>
 							<p class="box__value">10000</p>
 							<p class="box__text">заказов</p>
 						</div>
-						<div class="box">
+						<div class="box ">
 							<p class="box__title">Воплотили в жизнь<br>более</p>
 							<p class="box__value">700</p>
 							<p class="box__text">дизайнов</p>
@@ -319,7 +324,7 @@
 				</div>
 			</div>
 		</section>
-
+		<!-- gallery -->
 		<section class="section">
 			<div class="wrapper">
 				<p class="section__title">Наши работы</p>
@@ -367,13 +372,14 @@
 							<img class="gallery__img" src="img/gallery/012.jpg" alt="">
 						</a> -->
 					</div>
-					
-					<a href="#" class="button-link services__link">Смотреть больше</a>
-					
+
+					<a href="gallery.html" class="button-link services__link">Смотреть больше</a>
+
 				</div>
 			</div>
 		</section>
 
+		<!-- reviews -->
 		<section class="section">
 			<div class="wrapper">
 				<p class="section__title">Отзывы</p>
@@ -382,6 +388,64 @@
 					<span>Наших клиентов</span>
 				</p>
 				<div class="section__content">
+
+					<div class="reviews">
+
+						<div class="review">
+							<div class="review__client">
+								<img class="review__photo" src="img/review1.jpg" alt="">
+								<div class="review__description">
+									<p class="review__autor">Марина</p>
+									<span class="review__date">10.11.2021</span>
+								</div>
+							</div>
+							<p class="review__text">
+								Делаю маникюр и педикюр в этой студии уже не первый раз. Девченки молодцы,очень серьезный подход к
+								клиенту,все инструменты обработаны, мастера - профессионалы оооооочень довольна своими ручками и
+								ножками!!!!
+							</p>
+						</div>
+
+						<div class="review">
+							<div class="review__client">
+								<img class="review__photo" src="img/review2.jpg" alt="">
+								<div class="review__description">
+									<p class="review__autor">Татьяна</p>
+									<span class="review__date">10.11.2021</span>
+								</div>
+							</div>
+							<p class="review__text">
+								Посещаю эту студиу уже не первый раз! Очень довольна работой, умнички, работают аккуратно и очень
+								красиво! И вообще это очень дружный, теплый какой то "домашний " и уютный коллектив! Всем рекомендую!
+							</p>
+						</div>
+
+						<div class="review">
+							<div class="review__client">
+								<img class="review__photo" src="img/review3.jpg" alt="">
+								<div class="review__description">
+									<p class="review__autor">Ирина</p>
+									<span class="review__date">10.11.2021</span>
+								</div>
+							</div>
+							<p class="review__text">
+								Супер! Очень нравится студия! Прекрасные мастера. Приятные в обслуживание, хорошо консультируют,
+								подбирают дизайн, также очень довольна работой. Очень нравится качество их работы: ходила и на маникюр,
+								и на педикюр - осталась довольна качеством всех услуг. Спасибо!!!
+							</p>
+						</div>
+					</div>
+
+					<!-- <span class="stars">
+									<span class="stars__item">
+										<svg>
+											<polygon points="0,15 12,12 21,0 30,12 41,15 32,27 33,42 21,36 7,42 9,28 0,15" stroke="#dddedf"
+												stroke-width="2"></polygon>
+										</svg>
+									</span>
+								</span> -->
+					<!-- <div class="button">Оставить отзыв</div> -->
+
 				</div>
 			</div>
 		</section>
@@ -397,13 +461,88 @@
 			</div>
 		</section> -->
 
-
+		<!-- Звездочка -->
+		<!-- <svg>
+				<polygon points="0,15 12,12 21,0 30,12 41,15 32,27 33,42 21,36 7,42 9,28 0,15" stroke="#dddedf" fill="orange"
+					stroke-width="2" class="empty"></polygon>
+			</svg> -->
 
 	</main>
-	<footer>
 
+
+
+
+	<section></section>
+	<footer class="section" id="contacts">
+		<div class="wrapper">
+			<p class="section__title">Наши контакты</p>
+			<p class="section__subtitle">
+				<span></span>
+				<span>Мы всегда Вам рады</span>
+			</p>
+			<div class="section__content">
+				<div class="contacts">
+					<div class="contacts__map">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.2410584278737!2d37.58986611566948!3d48.719985379274235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40df975426d08437%3A0xd27a5ccc547e01d2!2z0KHRgtGD0LTQuNGPINCQ0L3QsNGB0YLQsNGB0LjQuCDQpNGA0L7Qu9C-0LLQvtC5!5e0!3m2!1sru!2sua!4v1636661266312!5m2!1sru!2sua"
+							style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+
+					<div class="contacts__description">
+
+						<div class="info">
+							<div class="info__item">
+								<p class="info__title">Наш адрес:</p>
+								<p class="info__text">г.Краматорск</p>
+								<p class="info__text">ул.Остапа Вишни, 1</p>
+							</div>
+							<div class="info__item">
+								<p class="info__title">Мы работаем:</p>
+								<p class="info__text">ПН-СБ 9:00-19:00</p>
+								<p class="info__text">ВС выходной</p>
+							</div>
+							<div class="info__item">
+								<p class="info__title">Телефоны:</p>
+								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
+								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
+							</div>
+							<div class="social">
+								<p class="info__title">Мы в соцсетях:</p>
+								<a class="info__soclink" href="#"></a>
+								<a class="info__soclink" href="#"></a>
+								<a class="info__soclink" href="#"></a>
+							</div>
+
+						</div>
+
+						<!-- <form action="telegram.php" class="form" id="footerForm" method="POST"> -->
+						<!-- <form action="mail.php" class="form" id="form" method="POST"> -->
+						<form action="" class="form" id="footerForm" method="POST">
+							<div class="form__item">
+								<h1 class="form__title">Остались вопросы?</h1>
+							</div>
+							<div class="form__item">
+								<input type="text" id="formName" class="form__input _req" name="name" placeholder="Ваше имя*">
+							</div>
+							<div class="form__item">
+								<input type="tel" id="formTel" class="form__input _req " name="tel" placeholder="Ваш телефон*">
+							</div>
+							<div class="form__item">
+								<textarea name="question" id="formQuestion" class="form__question _req"
+									placeholder="Ваш вопрос*"></textarea>
+							</div>
+							<p class="form__error" hidden>Выделенные красным цветом поля заполнены некорректно</p>
+							<button type="submit" class="button form__button">Отправить</button>
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+			<p class="cvbl;kn;'">Спасибо, что были с нами!</p>
+			<p class="copy">©2021</p>
+		</div>
 	</footer>
-
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 

@@ -1,0 +1,44 @@
+/*--шрифты--*/
+/*--лого--*/
+@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mr+De+Haviland&display=swap");
+/*--сайт--*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Mr+De+Haviland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Great+Vibes&family=Montserrat:wght@100&family=Mr+De+Haviland&family=Zen+Antique+Soft&display=swap");
+/*--декор--*/
+@import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
+
+/*--переменные--*/
+/*--цвета--*/
+:root {
+	/*шрифт*/
+	--basic-font: "Montserrat", sans-serif;
+	--decor-font: "Cormorant Garamond", serif;
+	/*--decor-font: "Zen Antique Soft", serif;*/
+	--digit-font: "Mrs Sheppards", cursive;
+
+	/*--цвета текста--*/
+	--font-dark: #1f261f;
+	--font-middle: #477652;
+	--font-light: #02be90;
+	--font-lightest: #ffffff;
+
+	/*--цвета фона--*/
+	--bg-dark: black;
+	--bg-middle: #477652;
+	--bg-light: #02be90;
+	--bg-lightest: #ffffff;
+
+	/*--цвета тени--*/
+	--shadow-dark: #1f261f;
+	--shadow-middle: #477652;
+	--shadow-light: #02be90;
+	--shadow-lightest: #ffffff;
+
+	/*--цвета бордюра--*/
+	--border-dark: #1f261f;
+	--border-middle: #477652;
+	--border-light: #02be90;
+	--border-lightest: #ffffff;
+}
