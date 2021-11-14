@@ -232,12 +232,12 @@ header {
 	height: 100%;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-start;
 }
 .logo__img,
 .logomin__img {
 	display: inline-block;
-	height: 80%;
+	height: 65%;
 }
 .logo__name,
 .logomin__name {
@@ -790,6 +790,19 @@ header {
 	box-shadow: 0 0 7px 1px var(--border-light);
 }
 
+.thanks,
+.copy {
+	text-align: center;
+	margin-top: 10px;
+	color: var(--font-lightest);
+}
+.thanks {
+	margin-top: 20px;
+}
+.copy {
+	margin-top: 0px;
+}
+
 /*MEDIA*/
 /*-------------------1440---------------*/
 @media screen and (max-width: 1440px) {
@@ -895,6 +908,9 @@ header {
 
 /*------------------768----------------*/
 @media screen and (max-width: 768px) {
+	.header__top {
+		height: 70px;
+	}
 	.wrapper {
 		width: 100%;
 		padding: 0 10px;
@@ -904,6 +920,11 @@ header {
 	.header__info.info__item:nth-child(2) {
 		display: none;
 	}
+
+	.header__top .info .info__item:nth-child(2) {
+		display: none;
+	}
+
 	.logo__name,
 	.logo__studio {
 		font-size: 20px;
@@ -911,7 +932,7 @@ header {
 
 	.header__info .info__item,
 	.header__info .info__title {
-		font-size: 10px;
+		font-size: 6px;
 	}
 	.header__bottom {
 		height: 35px;
@@ -1005,6 +1026,7 @@ header {
 	.header__top {
 		display: none;
 	}
+
 	.logomin {
 		height: 100%;
 		display: flex;
@@ -1018,6 +1040,7 @@ header {
 	.logomin__studio {
 		font-size: 20px;
 	}
+
 	.header__info .info__item,
 	.header__info .info__title {
 		font-size: 9px;
@@ -1031,6 +1054,7 @@ header {
 		box-shadow: 0 0 7px 1px var(--border-light);
 		z-index: 3;
 	}
+
 	.burger {
 		display: block;
 	}
@@ -1084,6 +1108,10 @@ header {
 	.signup__text {
 		text-align: center;
 		font-size: 16px;
+	}
+	.button,
+	.button-link {
+		width: 100%;
 	}
 	.signup__button {
 		margin: 0 auto;
