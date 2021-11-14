@@ -68,35 +68,35 @@ header {
 	min-height: 100px;
 }
 
-.section:nth-child(odd) {
+.section:nth-of-type(odd) {
 	background-color: var(--bg-dark);
 }
-.section:nth-child(odd) .section__title {
+.section:nth-of-type(odd) .section__title {
 	color: var(--font-lightest);
 }
-.section:nth-child(odd) .section__subtitle {
+.section:nth-of-type(odd) .section__subtitle {
 	color: var(--font-light);
 }
-.section:nth-child(odd) .section__subtitle span:first-child {
+.section:nth-of-type(odd) .section__subtitle span:first-child {
 	background-color: var(--bg-light);
 }
-.section:nth-child(odd) .section__subtitle span:last-child {
+.section:nth-of-type(odd) .section__subtitle span:last-child {
 	background-color: var(--bg-dark);
 }
 
-.section:nth-child(even) {
+.section:nth-of-type(even) {
 	background-color: var(--bg-lightest);
 }
-.section:nth-child(even) .section__title {
+.section:nth-of-type(even) .section__title {
 	color: var(--font-dark);
 }
-.section:nth-child(even) .section__subtitle {
+.section:nth-of-type(even) .section__subtitle {
 	color: var(--font-light);
 }
-.section:nth-child(even) .section__subtitle span:first-child {
+.section:nth-of-type(even) .section__subtitle span:first-child {
 	background-color: var(--bg-light);
 }
-.section:nth-child(even) .section__subtitle span:last-child {
+.section:nth-of-type(even) .section__subtitle span:last-child {
 	background-color: var(--bg-lightest);
 }
 
@@ -634,6 +634,13 @@ header {
 }
 .services__link {
 	margin: 20px auto 0 auto;
+}
+
+/*-------------materials------------------*/
+.materials__item div {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
 }
 
 /*-------------gallery------------------*/

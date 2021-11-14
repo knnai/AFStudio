@@ -1,62 +1,62 @@
-	/*-------------------lightbox---------------------------*/
-	lightbox.option({
-		'resizeDuration': 200,
-		'wrapAround': true,
-		'alwaysShowNavOnTouchDevices': false,
-		'showImageNumberLabel': true,
+/*-------------------lightbox---------------------------*/
+lightbox.option({
+	'resizeDuration': 200,
+	'wrapAround': true,
+	'alwaysShowNavOnTouchDevices': false,
+	'showImageNumberLabel': true,
 
-	});
-	/*-------------------lightbox---------------------------*/	
+});
+/*-------------------lightbox---------------------------*/
 
 
-	let animItems = document.querySelectorAll('._anim-items');
+let animItems = document.querySelectorAll('._anim-items');
 
-	if (animItems.length > 0) {
-		window.addEventListener('scroll', animOnScroll);
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
 
-		function animOnScroll() {
-			for (let i = 0; i < animItems.length; i++) {
-				const animItem = animItems[i];
-				const animItemHeight = animItem.offsetHeight;
-				const animItemOffset = offset(animItem).top;
-				const animStart = 4;
+	function animOnScroll() {
+		for (let i = 0; i < animItems.length; i++) {
+			const animItem = animItems[i];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
 
-				let animItemPoint = window.innerHeight - animItemHeight / animStart;
-				if (animItemHeight > window.innerHeight) {
-					animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('anim-no-active')) {
+					animItem.classList.remove('_active');
 				}
 
-				if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-					animItem.classList.add('_active');
-				} else {
-					if (!animItem.classList.contains('anim-no-active')) {
-						animItem.classList.remove('_active');
-					}
-
-				}
 			}
 		}
-
-		function offset(el) {
-			const rect = el.getBoundingClientRect(),
-				scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-				scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			return {
-				top: rect.top + scrollTop,
-				left: rect.left + scrollLeft
-			}
-		}
-		setTimeout(() => {
-			animOnScroll();
-		}, 1500);
-
 	}
 
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return {
+			top: rect.top + scrollTop,
+			left: rect.left + scrollLeft
+		}
+	}
+	setTimeout(() => {
+		animOnScroll();
+	}, 1500);
+
+}
 
 
-$(function () {		
+
+$(function () {
 	/*-------------------preloader---------------------------*/
-	setTimeout(function () {		
+	setTimeout(function () {
 		$('#preloader').fadeOut();
 	}, 30);
 	/*-------------------preloader---------------------------*/
@@ -75,6 +75,20 @@ $(function () {
 	});
 	/*-------------------слайдер - первый экран -------------*/
 
+	/*-------------------слайдер - материалы -------------------*/
+	$('.materials').bxSlider({
+		auto: true,
+		mode: 'vertical',
+		//ticker: true,
+		speed: 1000,
+		pause: 5000,
+		autoHover: true,
+		//easing: 'ease-in-out',
+		controls: false,
+		pager: false,
+	});
+	/*-------------------слайдер - материалы -------------------*/
+
 	/*-------------------слайдер - отзывы -------------------*/
 	$('.reviews').bxSlider({
 		auto: true,
@@ -87,7 +101,7 @@ $(function () {
 		pager: false,
 	});
 	/*-------------------слайдер - отзывы -------------------*/
-	
+
 	/*-------------фиксация главного меню при прокрутке------*/
 	$(window).scroll(function () {
 		if ($(this).innerWidth() > 425 && $(this).scrollTop() > 100) {
