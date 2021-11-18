@@ -19,7 +19,7 @@
 	--digit-font: "Mrs Sheppards", cursive;
 
 	/*--цвета текста--*/
-	--font-dark: #1f261f;
+	--font-dark: black;
 	--font-middle: #477652;
 	--font-light: #02be90;
 	--font-lightest: #ffffff;
@@ -34,13 +34,13 @@
 	--bg-img-slide: url(../img/bg-first.jpg);
 
 	/*--цвета тени--*/
-	--shadow-dark: #1f261f;
+	--shadow-dark: black;
 	--shadow-middle: #477652;
 	--shadow-light: #02be90;
 	--shadow-lightest: #ffffff;
 
 	/*--цвета бордюра--*/
-	--border-dark: #1f261f;
+	--border-dark: black;
 	--border-middle: #477652;
 	--border-light: #02be90;
 	--border-lightest: #ffffff;

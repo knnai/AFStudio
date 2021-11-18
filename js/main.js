@@ -4,7 +4,6 @@ lightbox.option({
 	'wrapAround': true,
 	'alwaysShowNavOnTouchDevices': false,
 	'showImageNumberLabel': true,
-
 });
 /*-------------------lightbox---------------------------*/
 
@@ -26,7 +25,7 @@ if (animItems.length > 0) {
 				animItemPoint = window.innerHeight - window.innerHeight / animStart;
 			}
 
-			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+			if ((pageOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
 				animItem.classList.add('_active');
 			} else {
 				if (!animItem.classList.contains('anim-no-active')) {
@@ -81,7 +80,7 @@ $(function () {
 		mode: 'vertical',
 		//ticker: true,
 		speed: 1000,
-		pause: 5000,
+		pause: 3000,
 		autoHover: true,
 		//easing: 'ease-in-out',
 		controls: false,

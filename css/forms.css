@@ -68,3 +68,87 @@ button {
 	color: red;
 	box-shadow: 0 0 5px 3px red;
 }
+
+/*------------#frmService---------*/
+#frmService .form__label {
+	font-weight: bold;
+	color: var(--font-light);
+}
+
+#frmService .form__item {
+	margin-top: 10px;
+}
+
+#frmService .form__content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+}
+
+#frmService .form__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+#frmService .form__subblock {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+}
+
+#frmServiceServices {
+	min-height: 200px;
+}
+
+#frmService .form__block:nth-of-type(2) > .form__item {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.preview {
+	margin-top: 5px;
+	flex-basis: 100%;
+	min-height: 200px;
+	justify-self: stretch;
+	border: 1px solid var(--bg-lightest);
+}
+
+#frmService .form__block:nth-of-type(3) > .form__item:nth-child(3) {
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#frmServiceComment {
+	flex-basis: 100%;
+}
+
+#frmServiceServices,
+#frmServiceComment {
+	resize: none;
+}
+#frmServiceDate,
+#frmServiceTime,
+#frmServiceServices {
+	font-size: 16px;
+	font-weight: bold;
+	background: none;
+}
+
+#frmService .preview img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*------------#frmService---------*/
+
+@media screen and (max-width: 768px) {
+	#frmService .form__content {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@media screen and (max-width: 425px) {
+}
