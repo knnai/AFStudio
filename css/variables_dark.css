@@ -44,4 +44,7 @@
 	--border-middle: #477652;
 	--border-light: #02be90;
 	--border-lightest: #ffffff;
+
+	/*--tab-active-bg-color: #113e33;*/
+	--tab-active-bg-color: #022a20;
 }

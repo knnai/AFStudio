@@ -158,6 +158,7 @@
 								<span></span>
 							</p>
 							<div class="tabs__content">
+
 							</div>
 							<div class="tabs__buttons">
 								<div class="button btn-prev _nav" data-id='selectService'>Назад</div>
@@ -218,19 +219,25 @@
 											<div class="form__subblock">
 												<div class="form__item">
 													<label class="form__label" for="frmServiceDate">Дата:</label>
-													<input type="text" id="frmServiceDate" class="form__input _req" name="date"
+													<p class="input-error">Укажите дату (шаг 3)</p>
+													<input type="text" id="frmServiceDate" class="form__input _req _error " name="date"
 														placeholder="Дата записи" disabled="disabled">
+
 												</div>
 												<div class="form__item">
 													<label class="form__label" for="frmServiceTime">Время:</label>
-													<input type="text" id="frmServiceTime" class="form__input _req" name="time"
+													<p class="input-error">Укажите время (шаг 3)</p>
+													<input type="text" id="frmServiceTime" class="form__input _req _error" name="time"
 														placeholder="Время записи" disabled="disabled">
+
 												</div>
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceServices">Услуги:</label>
-												<textarea name="services" id="frmServiceServices" class="form__input _req" placeholder="Услуги"
-													disabled></textarea>
+												<p class="input-error">Выберите услуги (Шаг 1)</p>
+												<textarea name="services" id="frmServiceServices" class="form__input _req  "
+													placeholder="Услуги" disabled></textarea>
+
 											</div>
 
 										</div>
@@ -238,8 +245,10 @@
 
 											<div class="form__item">
 												<label class="form__label" for="frmServiceDesign">Выбранный дизайн:</label>
+												<input type="text" id="frmServiceDesign" class="form__input" name="design_id" placeholder=""
+													disabled="disabled">
 												<div class="preview">
-													<img src="" alt="">
+													<img src="img/design-default.jpg" alt="">
 												</div>
 											</div>
 
@@ -249,18 +258,20 @@
 
 											<div class="form__item">
 												<label class="form__label" for="frmServiceName">Ваше имя:</label>
-												<input type="text" id="frmServiceName" class="form__input _req" name="name"
+												<p class="input-error">Это поле обязательное</p>
+												<input type="text" id="frmServiceName" class="form__input _req _error" name="name"
 													placeholder="Ваше имя">
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceTel">Ваш телефон:</label>
-												<input type="tel" id="frmServiceTel" class="form__input _req " name="tel"
+												<p class="input-error">Это поле обязательное</p>
+												<input type="tel" id="frmServiceTel" class="form__input _req _error" name="tel"
 													placeholder="Ваш телефон">
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceComment">Ваш комментарий:</label>
-												<textarea name="comment" id="frmServiceComment" class="form__input _req"
-													placeholder="Ваш вопрос*"></textarea>
+												<textarea name="comment" id="frmServiceComment" class="form__input"
+													placeholder="Ваш комментарий"></textarea>
 											</div>
 
 										</div>
@@ -314,6 +325,7 @@
 								</form>
 
 							</div>
+							<p class='total-sum'>Ориентировочная сумма заказа <span>300грн.</span></p>
 							<div class="tabs__buttons">
 								<div class="button btn-prev" data-id='selectDateTime'>Назад</div>
 								<div class="button btn-center " data-id='selectDateTime'>Записаться</div>

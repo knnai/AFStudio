@@ -1,5 +1,3 @@
-
-
 let prices = [
 	{
 		title: 'Маникюр',
@@ -83,44 +81,57 @@ let prices = [
 	},
 ];
 
+let order = {
+	date: '',
+	time: '',
+	services: {},
+	design: {
+		id: '',
+		value: '',
+	},
+	totalSum: 0,
+};
+
 document.addEventListener("DOMContentLoaded", function (e) {
-	
-	document.querySelector('.tabs').addEventListener('click', selectTab);		
+
+	document.querySelector('.tabs').addEventListener('click', selectTab);
 	document.querySelector('#btnShowMore').addEventListener('click', addImgDesign);
 	document.querySelector('.hours').addEventListener('click', selectHours);
-	
-	/*
-	document.querySelector('#tabServices').addEventListener('click', clickService);
-	
-	
-	*/
-	
+
+
+	document.querySelector('#selectService').addEventListener('click', changeOrder);
+	document.querySelector('#selectDesign').addEventListener('click', changeOrder);
+
 	/*--------------create content----------------*/
 	createBlockPrices(prices);
 	addImgDesign();
-	generateBookedHours(true);	
-	/*--------------create content----------------*/	
+	generateBookedHours(true);
+	/*--------------create content----------------*/
 });
 
 /*----------------------------navigation tabs----------------------------------*/
 function selectTab(e) {
 	let elem = e.target;
-	console.dir(elem);
-	if (!elem.classList.contains('tabs__title') &&		
+	//console.dir(elem.parentElement);
+	if (!elem.classList.contains('tabs__title') &&
+		!elem.classList.contains('tabs__text') &&
 		!elem.classList.contains('btn-prev') &&
 		!elem.classList.contains('btn-next')) return;
-	if (elem.classList.contains('title-active')) return;	
+	if (elem.classList.contains('title-active') ||
+		elem.parentElement.classList.contains('title-active')) return;
+	if (elem.classList.contains('tabs__text')) elem = elem.parentElement;
+	//console.dir(elem);
 	/*current*/
 	document.querySelector('.title-active').classList.remove('title-active');
 	document.querySelector('.tabs-active').classList.remove('tabs-active');
 	/*new tab*/
-	if (elem.classList.contains('tabs__title')){
+	if (elem.classList.contains('tabs__title')) {
 		elem.classList.add('title-active');
-	}else{
-		document.querySelector('.tabs__title[data-id="'+elem.dataset.id+'"').classList.add('title-active');			
-	};	
-	console.dir(elem.dataset);	
-	document.querySelector('#'+elem.dataset.id).classList.add('tabs-active');
+	} else {
+		document.querySelector('.tabs__title[data-id="' + elem.dataset.id + '"').classList.add('title-active');
+	};
+	//console.dir(elem.dataset);	
+	document.querySelector('#' + elem.dataset.id).classList.add('tabs-active');
 	window.scrollTo({
 		top: 0,
 		behavior: "smooth",
@@ -142,19 +153,19 @@ function createListPrices(arr, startIndex, length) {
 	result.classList.add('prices');
 	result.innerHTML = '';
 	for (let i = startIndex; i <= (startIndex + length); i++) {
-		result.innerHTML += ""+
-			"<li class='price'>"+
-			"<input class='price__input' type='checkbox' "+
+		result.innerHTML += "" +
+			"<li class='price'>" +
+			"<input class='price__input' type='checkbox' " +
 			"data-id='" + i +
-			"' id='price"+ i +
-			"' data-count='"+ arr[i]['count'] +
-			"'></input>"+
-			"<label for='price"+ i +"' class='price__label'>"+
-			"<span class='price__title'>"+arr[i]['title']+"</span>"+
-			"<span class='price__value'>от " + arr[i]['price'] + " грн.</span>"+
-			"<span class='price__checkbox'></span>"+
-			"</label>"+
-			"</li>";			
+			"' id='price" + i +
+			"' data-count='" + arr[i]['count'] +
+			"'></input>" +
+			"<label for='price" + i + "' class='price__label'>" +
+			"<span class='price__title'>" + arr[i]['title'] + "</span>" +
+			"<span class='price__value'>от " + arr[i]['price'] + " грн.</span>" +
+			"<span class='price__checkbox'></span>" +
+			"</label>" +
+			"</li>";
 	}
 	return result;
 };
@@ -169,12 +180,14 @@ function addImgDesign() {
 	let next = designesList.length + 1;
 	for (let i = next; i < (next + 6); i++) {
 		let curIndex = ("00" + i).slice(-3);
-		let newElem = document.createElement('span');
+		let newElem = document.createElement('div');
 		newElem.classList.add('design');
-		newElem.innerHTML = "<input id='design" + curIndex + "' class='design__radio' type='radio' name='design' value='img/gallery/" + curIndex + ".jpg'></input>" +
+		newElem.innerHTML = "<input id='design" + curIndex + "' class='design__input' type='checkbox' value='img/gallery/" + curIndex + ".jpg'></input>" +
 			"<label class='design__label' for='design" + curIndex + "' title='Выбрать'></label>" +
-			"<a class='design__item' href='img/gallery/" + curIndex + ".jpg' data-lightbox='design' data-title>" +
-			"<img class='gallery__img' src='img/gallery/" + curIndex + ".jpg' alt=''></a>";
+			"<div class='design__selected'><span>&#10004;</span></div>" +
+			"<a class='design__zoom' href='img/gallery/" + curIndex + ".jpg' data-lightbox='" + curIndex + "' data-title=''>" +
+			"<img src='img/fullscreen.svg' alt='' title='Увеличить'></a>" +
+			"<img class='design__img' src='img/gallery/" + curIndex + ".jpg' alt=''>";
 		parent.append(newElem);
 	}
 };
@@ -200,65 +213,72 @@ function generateBookedHours(all = false) {
 /*-------------------------.hours.onClick-------------------------------------*/
 function selectHours(e) {
 	if (e.target.tagName != 'LI') return;
-	if (e.target.classList.contains('hours__booked')) return;
+	let elem = e.target;
+	if (elem.classList.contains('hours__booked')) return;
 	let prev = document.querySelector('.hours__selected');
 	if (prev) prev.classList.remove('hours__selected');
-	e.target.classList.add('hours__selected');
+	elem.classList.add('hours__selected');
+	order.time = elem.innerText;
+	changeOrderForm();
+
 };
 /*-------------------------.hours.onClick-------------------------------------*/
 
 
 
+function changeOrder(e) {
+	if (e.target.tagName == 'INPUT' && e.target.classList.contains('price__input')) {
+		let elem = e.target;
+		let servId = elem.dataset.id;
+		if (elem.checked) {
+			order.services[servId] = prices[servId].title + '\n(от ' + prices[servId].count + 'шт. x ' + prices[servId].price + 'грн. = ' + prices[servId].count * prices[servId].price + ' грн.)\n';
+			order.totalSum += prices[servId].count * prices[servId].price;
+		} else {
+			delete order.services[servId];
+			order.totalSum -= prices[servId].count * prices[servId].price;
+		}
+	};
+	if (e.target.tagName == 'INPUT' && e.target.classList.contains('design__input')) {
 
+		let elem = e.target;
+		let prevElem = document.querySelector('.design__input:not(#' + e.target.id + '):checked');
+		if (prevElem) prevElem.checked = false;
+		order.design.id = elem.id;
+		order.design.value = elem.value;
+		console.dir(elem.value);
+	}
+	changeOrderForm();
+	console.dir(order);
 
+};
+function changeOrderForm() {
 
+	let date = document.querySelector('#frmServiceDate');
+	let time = document.querySelector('#frmServiceTime');
+	let services = document.querySelector('#frmServiceServices');
+	let design = document.querySelector('#frmServiceDesign');
+	let prviewImg = document.querySelector('.preview img');
+	let totalSum = document.querySelector('.total-sum');
+	let totalSumSpan = document.querySelector('.total-sum span');
 
-function clickService(e) {
+	date.value = order.date;
+	time.value = order.time;
 
-	if (e.target.tagName == 'INPUT'){
-		console.log(e.target.dataset.id);	
-	};	
+	services.value = '';
+	for (let key in order.services) {
+		services.value += order.services[key] + '\n';
+	};
+
+	design.value = order.design.id;
+	prviewImg.src = order.design.value;
+
+	totalSumSpan.innerText = order.totalSum + 'грн.';
+	totalSum.style = (order.totalSum == 0) ? 'display: none' : 'display: block';
 };
 
 
 
 
-/*-------------------три шага-------------*/
-function startProcess() {
-	let titles = document.querySelectorAll('.step__title');
-	let indicators = document.querySelectorAll('.step__fill');
-	let countIndicators = indicators.length;
-	let currentIndicator = 0;
-
-	/*console.dir(indicators[0]);*/
-
-	function changeIndicator(num) {
-		/*console.log(indicators[currentIndicator].parentElement.clientWidth);*/
-		if (currentIndicator == 0) {
-			indicators[currentIndicator].classList.add('_fill');
-			titles[currentIndicator].classList.add('_fill-text');
-		}
-
-		if ((indicators[currentIndicator].clientWidth >= indicators[currentIndicator].parentElement.clientWidth)) {
-			if (currentIndicator == countIndicators - 1) {
-				for (let el of indicators) {
-					el.classList.remove('_fill');
-				}
-				for (let el of titles) {
-					el.classList.remove('_fill-text');
-				}
-				currentIndicator = 0;
-			} else {
-				currentIndicator++;
-				indicators[currentIndicator].classList.add('_fill');
-				titles[currentIndicator].classList.add('_fill-text');
-			};
-		};
-	};
-
-	setInterval(changeIndicator, 100);
-}
-/*-------------------три шага-------------*/
 
 
 $(function () {
@@ -298,17 +318,23 @@ $(function () {
 		dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
 		dateFormat: 'dd.mm.yy',
 		onSelect: function (date, inst) {
+			order.date = '';
+			order.time = '';
+			changeOrderForm();
 			let today = new Date();
 			today = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
 			if (date == today) {
-				generateBookedHours(true);	
+				generateBookedHours(true);
+				changeOrderForm();
 				$("#todayBooked").dialog("open");
 			} else {
 				generateBookedHours();
+				order.date = date;
+				changeOrderForm();
 			}
 		},
 		beforeShowDay: function (date) {
-			return (date.getDay() == 0) ? [false] : [true]
+			return (date.getDay() == 0) ? [false] : [true];
 		}
 	});
 });
