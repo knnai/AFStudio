@@ -11,12 +11,15 @@
 	<!-------------------- Custom CSS ----------------------->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/variables_dark.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/forms.css">
 	<link rel="stylesheet" href="css/services.css">
+	<link rel="stylesheet" href="css/main-anim.css">
 
 	<!-------------------- Title ----------------------->
 	<title>Студия Анастасии Фроловой - Услуги</title>
@@ -212,39 +215,36 @@
 							</p>
 							<div class="tabs__content">
 
-								<form action="" class="form" id="frmService" method="GET">
+								<form action="php/telegram.php" class="form" id="frmService" method="POST">
 									<div class="form__content">
 										<div class="form__block">
 
 											<div class="form__subblock">
 												<div class="form__item">
 													<label class="form__label" for="frmServiceDate">Дата:</label>
+													<input type="text" id="frmServiceDate" class="form__input" name="date"
+														placeholder="Дата записи" readonly="readonly">
 													<p class="input-error">Укажите дату (шаг 3)</p>
-													<input type="text" id="frmServiceDate" class="form__input _req _error " name="date"
-														placeholder="Дата записи" disabled="disabled">
-
 												</div>
 												<div class="form__item">
 													<label class="form__label" for="frmServiceTime">Время:</label>
+													<input type="text" id="frmServiceTime" class="form__input" name="time"
+														placeholder="Время записи" readonly="readonly">
 													<p class="input-error">Укажите время (шаг 3)</p>
-													<input type="text" id="frmServiceTime" class="form__input _req _error" name="time"
-														placeholder="Время записи" disabled="disabled">
-
 												</div>
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceServices">Услуги:</label>
+												<textarea name="services" id="frmServiceServices" class="form__input" placeholder="Услуги"
+													readonly="readonly"></textarea>
 												<p class="input-error">Выберите услуги (Шаг 1)</p>
-												<textarea name="services" id="frmServiceServices" class="form__input _req  "
-													placeholder="Услуги" disabled></textarea>
-
 											</div>
 
 										</div>
 										<div class="form__block">
 
 											<div class="form__item">
-												<label class="form__label" for="frmServiceDesign">Выбранный дизайн:</label>
+												<label class="form__label" for="frmServiceDesign">Дизайн:</label>
 												<input type="text" id="frmServiceDesign" class="form__input" name="design_id" placeholder=""
 													disabled="disabled">
 												<div class="preview">
@@ -258,15 +258,14 @@
 
 											<div class="form__item">
 												<label class="form__label" for="frmServiceName">Ваше имя:</label>
-												<p class="input-error">Это поле обязательное</p>
-												<input type="text" id="frmServiceName" class="form__input _req _error" name="name"
-													placeholder="Ваше имя">
+												<input type="text" id="frmServiceName" class="form__input" name="name" placeholder="Ваше имя">
+												<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceTel">Ваш телефон:</label>
+												<input type="tel" id="frmServiceTel" class="form__input" name="tel" placeholder="(___) ___-____"
+													value-unmasked>
 												<p class="input-error">Это поле обязательное</p>
-												<input type="tel" id="frmServiceTel" class="form__input _req _error" name="tel"
-													placeholder="Ваш телефон">
 											</div>
 											<div class="form__item">
 												<label class="form__label" for="frmServiceComment">Ваш комментарий:</label>
@@ -275,60 +274,16 @@
 											</div>
 
 										</div>
-										<!-- <div class="form__block">
-											<div class="form__subblock">
-												<div class="form__item">
-													<label class="form__label" for="frmServiceDate">Дата:</label>
-													<input type="text" id="frmServiceDate" class="form__input _req" name="date"
-														placeholder="Дата записи" readonly="readonly">
-												</div>
-												<div class="form__item">
-													<label class="form__label" for="frmServiceTime">Время:</label>
-													<input type="text" id="frmServiceTime" class="form__input _req" name="time"
-														placeholder="Время записи" disabled="disabled">
-												</div>
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceServices">Услуги:</label>
-												<textarea name="services" id="frmServiceServices" class="form__input _req" placeholder="Услуги"
-													disabled></textarea>
-											</div>
-										</div>
-										<div class="form__block">
-											<div class="form__item">
-												<label class="form__label" for="frmServiceDesign">Выбранный дизайн:</label>
-												<div class="preview">
-													<img src="" alt="">
-												</div>
-											</div>
-										</div>
-										<div class="form__block">
-											<div class="form__item">
-												<label class="form__label" for="frmServiceName">Ваше имя:</label>
-												<input type="text" id="frmServiceName" class="form__input _req" name="name"
-													placeholder="Ваше имя">
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceTel">Ваш телефон:</label>
-												<input type="tel" id="frmServiceTel" class="form__input _req " name="tel"
-													placeholder="Ваш телефон">
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceComment">Ваш комментарий:</label>
-												<textarea name="comment" id="frmServiceComment" class="form__input _req"
-													placeholder="Ваш вопрос*"></textarea>
-											</div>
-											<p class="form__error" hidden>Выделенные красным цветом поля заполнены некорректно</p>
-										</div> -->
 
 									</div>
+									<input id="frmServiceSubmit" class="form__input" type="submit" value="">
 								</form>
 
 							</div>
-							<p class='total-sum'>Ориентировочная сумма заказа <span>300грн.</span></p>
+							<p class='total-sum'>Ориентировочная сумма заказа <span></span></p>
 							<div class="tabs__buttons">
 								<div class="button btn-prev" data-id='selectDateTime'>Назад</div>
-								<div class="button btn-center " data-id='selectDateTime'>Записаться</div>
+								<label for="frmServiceSubmit" class="button btn-center " data-id='selectDateTime'>Записаться</label>
 								<div></div>
 							</div>
 						</div>
@@ -336,9 +291,10 @@
 		</section>
 
 
-		<div id="todayBooked" title="Нам очень жаль...">
+		<!-- <div id="todayBooked" title="Нам очень жаль...">
 			<p>Но, на сегодня записи нет</p>
-		</div>
+		</div> -->
+
 
 
 		<!-- <section class="section">
@@ -450,7 +406,8 @@
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/phone-mask.js"></script>
 
 	<script src="js/main.js"></script>
 	<script src="js/services.js"></script>

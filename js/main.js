@@ -53,6 +53,27 @@ if (animItems.length > 0) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(function () {
 	/*-------------------preloader---------------------------*/
 	setTimeout(function () {

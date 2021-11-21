@@ -102,7 +102,7 @@ button {
 	margin-top: 5px;
 	flex-basis: 100%;
 	min-height: 200px;
-	max-height: 300px;
+	/* max-height: 300px; */
 	justify-self: stretch;
 	border: 1px solid var(--bg-lightest);
 }
@@ -143,23 +143,31 @@ button {
 	height: 100%;
 	object-fit: cover;
 }
+#frmServiceSubmit {
+	display: none;
+}
 /*------------#frmService---------*/
 
-.input-error {
-	color: red;
-	font-size: 10px;
-}
-
+/*------------errors---------*/
 ._error {
-	color: red;
 	border: 1px solid red;
 	box-shadow: 0 0 5px 3px red;
 }
+.input-error {
+	margin-top: 5px;
+	color: red;
+	font-size: 10px;
+	display: none;
+}
+._error + .input-error {
+	display: block;
+}
+/*------------errors---------*/
 
 #frmServiceDate._error,
 #frmServiceTime._error,
 #frmServiceServices._error {
-	color: red;
+	/* color: red; */
 	border: 1px solid red;
 	box-shadow: 0 0 5px 3px red;
 }
