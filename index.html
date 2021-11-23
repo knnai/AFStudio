@@ -14,6 +14,7 @@
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<link rel="stylesheet" href="css/variables_dark.css">
+	<link rel="stylesheet" href="css/main-anim.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/forms.css">
 	<!-------------------- jQuery ----------------------->
@@ -135,7 +136,8 @@
 					<div class="signup">
 						<p class="signup__text">Запишитесь онлайн и получите<br><span>скидку 10%</span> на <span>первое</span>
 							посещение</p>
-						<div class="button signup__button">Записаться онлайн</div>
+						<a class="button-link signup__button" href="services.html">Записаться онлайн</a>
+
 					</div>
 
 					<div class="slider">
@@ -204,7 +206,7 @@
 				<div class="section__content">
 					<div class="about__first">
 						<div class="about__left">
-							<div class="about__video ">
+							<div class="about__video _anim-items _anim-no-repeat">
 								<video controls="controls" poster="" autoplay="true" loop="true" preload="auto" muted="true">
 									<source src="video/promo.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
 									<source src="video/promo.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
@@ -214,7 +216,7 @@
 								</video>
 							</div>
 						</div>
-						<div class="about__right">
+						<div class="about__right _anim-items _anim-no-repeat">
 							<p class="about__text ">Доверьте ваши ноготочки профессионалам!</p>
 							<p class="about__text ">Стильной и привлекательной женщину делает ухоженный вид и современный образ,
 								который состоит из правильно подобранного гардероба, красивой прически и макияжа, а также, конечно же
@@ -236,25 +238,25 @@
 					<span></span>
 				</p>
 				<div class="section__content">
-					<div class="about__second">
+					<div class="about__second _anim-items _anim-no-repeat">
 						<div class="box ">
 							<p class="box__title">Работаем<br>более</p>
-							<p class="box__value">7</p>
+							<p id="box1" class="box__value">7</p>
 							<p class="box__text">лет</p>
 						</div>
 						<div class="box ">
 							<p class="box__title">Нам доверяют<br>более</p>
-							<p class="box__value">300</p>
+							<p id="box2" class="box__value">300</p>
 							<p class="box__text">клиентов</p>
 						</div>
 						<div class="box ">
 							<p class="box__title">Мы выполнили<br>более</p>
-							<p class="box__value">10000</p>
+							<p id="box3" class="box__value">10000</p>
 							<p class="box__text">заказов</p>
 						</div>
 						<div class="box ">
 							<p class="box__title">Воплотили в жизнь<br>более</p>
-							<p class="box__value">700</p>
+							<p id="box4" class="box__value">700</p>
 							<p class="box__text">дизайнов</p>
 						</div>
 					</div>
@@ -265,7 +267,7 @@
 					<span></span>
 				</p>
 				<div class="section__content">
-					<div class="about__third">
+					<div class="about__third _anim-items _anim-no-repeat">
 						<div class="box">
 							<p class="box__title">Мастерство персонала</p>
 							<p class="box__text">Мы владеем всеми техниками маникюра и моделирования ногтей, а также выполняем
@@ -297,7 +299,7 @@
 					<span></span>
 				</p>
 				<div class="section__content">
-					<div class="services">
+					<div class="services _anim-items _anim-no-repeat">
 						<div class="services__item">
 							<div class="services__img">
 								<img src="img/manicure.jpg" alt="">
@@ -329,7 +331,7 @@
 						</div>
 					</div>
 
-					<a href="#" class="button-link services__link">Смотреть прайс</a>
+					<a href="services.html" class="button-link services__link">Смотреть прайс</a>
 
 				</div>
 			</div>
@@ -365,7 +367,7 @@
 			</div>
 		</section>
 		<!-- gallery -->
-		<section class="section">
+		<section class="section main-gallery">
 			<div class="wrapper">
 				<p class="section__title">Наши работы</p>
 				<p class="section__subtitle">
@@ -375,7 +377,7 @@
 				</p>
 				<div class="section__content">
 
-					<div class="gallery">
+					<div class="gallery _anim-items _anim-no-repeat">
 						<a class="gallery__item" href="img/gallery/001.jpg" data-lightbox="gallery" data-title>
 							<img class="gallery__img" src="img/gallery/001.jpg" alt="">
 						</a>
@@ -394,24 +396,6 @@
 						<a class="gallery__item" href="img/gallery/006.jpg" data-lightbox="gallery" data-title>
 							<img class="gallery__img" src="img/gallery/006.jpg" alt="">
 						</a>
-						<!-- <a class="gallery__item" href="img/gallery/007.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/007.jpg" alt="">
-						</a>
-						<a class="gallery__item" href="img/gallery/008.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/008.jpg" alt="">
-						</a>
-						<a class="gallery__item" href="img/gallery/009.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/009.jpg" alt="">
-						</a>
-						<a class="gallery__item" href="img/gallery/010.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/010.jpg" alt="">
-						</a>
-						<a class="gallery__item" href="img/gallery/011.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/011.jpg" alt="">
-						</a>
-						<a class="gallery__item" href="img/gallery/012.jpg" data-lightbox="gallery" data-title>
-							<img class="gallery__img" src="img/gallery/012.jpg" alt="">
-						</a> -->
 					</div>
 
 					<a href="gallery.html" class="button-link services__link">Смотреть больше</a>
@@ -421,7 +405,7 @@
 		</section>
 
 		<!-- reviews -->
-		<section class="section">
+		<section id="reviews" class="section">
 			<div class="wrapper">
 				<p class="section__title">Отзывы</p>
 				<p class="section__subtitle">
