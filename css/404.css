@@ -1,0 +1,53 @@
+input,
+textarea,
+button {
+	outline-style: none;
+	border: none;
+	font-family: var(--basic-font);
+}
+main{
+	min-width: 320px;
+}
+.wrap404{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: var(--bg-dark);
+	display: flex;
+	z-index: -1;
+}
+.wrap404 .logo {
+    height: 100%;
+	margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	padding: 20px 0;
+	/*box-shadow: 0 0 5px 5px var(--shadow-light), inset 0 0 5px 0px var(--shadow-light);*/
+	animation: neon-light 3s linear alternate infinite;
+}
+.wrap404 .logo__name,
+.wrap404 .logomin__name {
+    font-size: 34px;
+}
+.content404{
+	margin: auto;
+}
+.message{
+	margin: 10px;
+	text-align: center;
+	color: var(--font-lightest);
+	font-size: 20px;
+}
+.message a{
+	color: var(--font-light);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 425px) {
+}

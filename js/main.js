@@ -7,70 +7,79 @@ lightbox.option({
 });
 /*-------------------lightbox---------------------------*/
 
+let animItems;
+document.addEventListener("DOMContentLoaded", function (e) {
+	animItems = document.querySelectorAll('._anim-items');
+	if (animItems.length > 0) {
+		window.addEventListener('scroll', animOnScroll);
+		setTimeout(() => {
+			animOnScroll();
+		}, 1500);
+	};
 
-let animItems = document.querySelectorAll('._anim-items');
+});
 
-if (animItems.length > 0) {
-	window.addEventListener('scroll', animOnScroll);
 
-	function animOnScroll() {
-		for (let i = 0; i < animItems.length; i++) {
-			const animItem = animItems[i];
-			const animItemHeight = animItem.offsetHeight;
-			const animItemOffset = offset(animItem).top;
-			const animStart = 4;
+function animOnScroll() {
+	
+	for (let i = 0; i < animItems.length; i++) {
+		let animItem = animItems[i];
+		let animItemHeight = animItem.offsetHeight;
+		let animItemOffset = offset(animItem).top;
+		const animStart = 2;
+		
+		
+		let animItemPoint = window.innerHeight - animItemHeight / animStart;
+		
+		if (animItemHeight > window.innerHeight) {
+			animItemPoint = window.innerHeight - window.innerHeight / animStart;
+		}
 
-			let animItemPoint = window.innerHeight - animItemHeight / animStart;
-			if (animItemHeight > window.innerHeight) {
-				animItemPoint = window.innerHeight - window.innerHeight / animStart;
-			}
-
-			if ((pageOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+		if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+			if (animItem.classList.contains('about__second') && !animItem.classList.contains('_active')){
 				animItem.classList.add('_active');
+				animCounter(document.querySelector('#box1'), 10, 2000);
+				animCounter(document.querySelector('#box2'), 300, 2000);
+				animCounter(document.querySelector('#box3'), 10000, 3000);
+				animCounter(document.querySelector('#box4'), 700, 3500);
 			} else {
-				if (!animItem.classList.contains('anim-no-active')) {
-					animItem.classList.remove('_active');
-				}
-
+				animItem.classList.add('_active');	
+			}				
+		} else {			
+			if (!animItem.classList.contains('_anim-no-repeat')) {
+				animItem.classList.remove('_active');
 			}
+
 		}
 	}
+}
 
-	function offset(el) {
-		const rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		return {
-			top: rect.top + scrollTop,
-			left: rect.left + scrollLeft
-		}
+function offset(el) {
+	const rect = el.getBoundingClientRect(),
+		scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	return {
+		top: rect.top + scrollTop,
+		left: rect.left + scrollLeft
 	}
-	setTimeout(() => {
-		animOnScroll();
-	}, 1500);
-
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function animCounter(elem, maxValue = 0, milliseconds){
+	if (!elem || elem.innerText == undefined) return;
+	let iterPerSec = 10;
+	let value = 0;
+	let step = Math.ceil((maxValue / ((milliseconds / 1000) * 10)));
+	let delay = 100;
+	
+	let interval = setInterval(function (){
+		elem.innerText = value += step;
+		if (value >= maxValue) {
+			elem.innerText = maxValue;
+			clearInterval(interval);
+		}
+	}, delay);		
+};
 
 
 

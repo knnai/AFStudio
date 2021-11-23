@@ -267,7 +267,7 @@
 	height: 30px;
 	background-color: var(--font-lightest);
 	box-shadow: 0 0 5px 5px var(--shadow-lightest);
-	transform: scale(0);
+	transform: scale(0.5);
 	transition: transform 0.3s linear;
 	z-index: 3;
 }
@@ -394,8 +394,6 @@ a.ui-button:active,
 	line-height: 1;
 	animation: scale0-12-1 0.3s linear backwards;
 }
-
-
 
 /*-------------datepicker-----------*/
 
@@ -525,6 +523,9 @@ a.ui-button:active,
 	.hours__item {
 		height: 50px;
 	}
+	.design__zoom {
+		transform: scale(1);
+	}
 }
 
 @media screen and (max-width: 425px) {
@@ -546,5 +547,10 @@ a.ui-button:active,
 	.ui-datepicker td span,
 	.ui-datepicker td a {
 		padding: 10px 5px;
+	}
+
+	.ui-state-active::after,
+	.hours__selected::after {
+		font-size: 26px;
 	}
 }

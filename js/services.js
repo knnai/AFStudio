@@ -82,6 +82,8 @@ let prices = [
 ];
 
 let order = {};
+const designDef = 'design-default.jpg';
+const galleryPath = 'img/gallery/';
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -106,7 +108,7 @@ function resetOrder(order) {
 	order.services = {};
 	order.design = {};
 	order.design.id = '';
-	order.design.value = 'img/design-default.jpg';
+	order.design.value = designDef;
 	order.totalSum = 0;
 };
 
@@ -184,7 +186,7 @@ function addImgDesign() {
 		let curIndex = ("00" + i).slice(-3);
 		let newElem = document.createElement('div');
 		newElem.classList.add('design');
-		newElem.innerHTML = "<input id='design" + curIndex + "' class='design__input' type='checkbox' value='img/gallery/" + curIndex + ".jpg'></input>" +
+		newElem.innerHTML = "<input id='design" + curIndex + "' class='design__input' type='checkbox' value='" + curIndex + ".jpg'></input>" +
 			"<label class='design__label' for='design" + curIndex + "' title='Выбрать'></label>" +
 			"<div class='design__selected'><span>&#10004;</span></div>" +
 			"<a class='design__zoom' href='img/gallery/" + curIndex + ".jpg' data-lightbox='" + curIndex + "' data-title=''>" +
@@ -251,7 +253,7 @@ function changeOrder(e) {
 			//console.dir(elem.value);
 		} else {
 			order.design.id = '';
-			order.design.value = 'img/design-default.jpg';
+			order.design.value = designDef;
 		}
 	}
 	changeOrderForm();
@@ -280,9 +282,8 @@ function changeOrderForm() {
 	};
 	if (services.value != '') services.classList.remove('_error');
 
-
-	design.value = order.design.id;
-	prviewImg.src = order.design.value;
+	design.value = order.design.value;
+	prviewImg.src = galleryPath + order.design.value;
 
 	totalSumSpan.innerText = order.totalSum + 'грн.';
 	totalSum.style = (order.totalSum == 0) ? 'display: none' : 'display: block';
@@ -367,6 +368,7 @@ $(function () {
 
 	$('#frmServiceSubmit').click(function (e) {
 		e.preventDefault();
+
 		let dateValue = $('#frmServiceDate').val();
 		let timeValue = $('#frmServiceTime').val();
 		let servicesValue = $('#frmServiceServices').val();
