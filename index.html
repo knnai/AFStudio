@@ -13,12 +13,11 @@
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
-	<link rel="stylesheet" href="css/variables_dark.css">
+	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
+	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
 	<link rel="stylesheet" href="css/main-anim.css">
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/forms.css">
-	<!-------------------- jQuery ----------------------->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
 	<!-------------------- Title ----------------------->
 	<title>Студия Анастасии Фроловой - Главная</title>
 </head>
@@ -26,17 +25,19 @@
 <body>
 
 	<div id="preloader">
-		<div class="preloader__container">
-			<div class="preloader__round">
-				<div class="preloader__inner">
+		<div class="preloader">
+			<div class="preloader__container">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
 				</div>
-			</div>
-			<div class="preloader__round">
-				<div class="preloader__inner">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
 				</div>
-			</div>
-			<div class="preloader__round">
-				<div class="preloader__inner">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -71,25 +72,34 @@
 							<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 						</div>
 					</div>
+					
+					<div class="info__theme">
+						<div class="theme">						
+							<input id="themeInput" class="theme__checkbox" type="checkbox">
+							<label for="themeInput" class="theme__label" ></label>
+						</div>
+					</div>					
 
 					<div class="social">
 						<p class="info__title">Мы в соцсетях:</p>
 						<a class="info__soclink" target="_blank"
 							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-								<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
+								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+								<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
 								<circle cx="110" cy="50" r="5" fill="white" />
 							</svg>
+							
 						</a>
 						<a class="info__soclink" href="#">
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
+								<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 								<path
 									d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
 									fill="white" />
-							</svg>
+							</svg>						
 						</a>
 					</div>
 
@@ -107,6 +117,8 @@
 						<span class="logomin__studio">Nail Studio</span>
 					</span>
 				</a>
+				
+				<label for="themeInput" class="theme__label" ></label>
 
 				<input type="checkbox" id="check-burger">
 				<label class="burger" for="check-burger">
@@ -116,12 +128,12 @@
 				</label>
 
 				<ul class="menu">
-					<li class="menu__item"><a class="menu__link menu__active" href="index.html">Главная</a></li>
-					<li class="menu__item"><a class="menu__link" href="about.html">О нас</a></li>
-					<li class="menu__item"><a class="menu__link" href="services.html">Услуги</a></li>
-					<li class="menu__item"><a class="menu__link" href="gallery.html">Портфолио</a></li>
-					<li class="menu__item"><a class="menu__link" href="index.html#reviews">Отзывы</a></li>
-					<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
+					<li class="menu__item"><a class="menu__link menu__active" href="index.html"><span>Главная</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="about.html"><span>О нас</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="services.html"><span>Услуги</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="gallery.html"><span>Портфолио</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="index.html#reviews"><span>Отзывы</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="#contacts"><span>Контакты</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -129,7 +141,7 @@
 
 	<main>
 		<!--first-->
-		<section class="section first-section">
+		<section class="section section-first">
 			<div class="wrapper">
 				<div class="section__content">
 
@@ -145,7 +157,7 @@
 							<div class="slide__inner">
 								<div class="slide__left">
 									<h1 class="slide__text">Студия маникюра и педикюра</h1>
-									<img class="slide__decor" src="img/decor.png" alt="">
+									<img class="slide__decor" src="img/dark-decor.png" alt="">
 									<h2 class="slide__text">Анастасии Фроловой</h2>
 								</div>
 								<div class="slide__right">
@@ -161,7 +173,7 @@
 							<div class="slide__inner">
 								<div class="slide__left">
 									<p class="slide__text">Что такое маникюр?</p>
-									<img class="slide__decor" src="img/decor.png" alt="">
+									<img class="slide__decor" src="img/dark-decor.png" alt="">
 									<p class="slide__text">Несомненно, искусство!</p>
 								</div>
 								<div class="slide__right">
@@ -177,7 +189,7 @@
 							<div class="slide__inner">
 								<div class="slide__left">
 									<p class="slide__text">Хотите измениться ?</p>
-									<img class="slide__decor" src="img/decor.png" alt="">
+									<img class="slide__decor" src="img/dark-decor.png" alt="">
 									<p class="slide__text">Сделайте это сейчас!</p>
 								</div>
 								<div class="slide__right">
@@ -232,12 +244,13 @@
 					</div>
 					<div class="_clear"></div>
 				</div>
-				<p class="section__subtitle">
-					<span></span>
-					<span>Мы в цифрах</span>
-					<span></span>
-				</p>
+
 				<div class="section__content">
+					<p class="section__subtitle">
+						<span></span>
+						<span>Мы в цифрах</span>
+						<span></span>
+					</p>
 					<div class="about__second _anim-items _anim-no-repeat">
 						<div class="box ">
 							<p class="box__title">Работаем<br>более</p>
@@ -261,12 +274,13 @@
 						</div>
 					</div>
 				</div>
-				<p class="section__subtitle">
-					<span></span>
-					<span>Наша студия это:</span>
-					<span></span>
-				</p>
+
 				<div class="section__content">
+					<p class="section__subtitle">
+						<span></span>
+						<span>Наша студия это:</span>
+						<span></span>
+					</p>
 					<div class="about__third _anim-items _anim-no-repeat">
 						<div class="box">
 							<p class="box__title">Мастерство персонала</p>
@@ -275,8 +289,9 @@
 						</div>
 						<div class="box">
 							<p class="box__title">Качественная стерилизация</p>
-							<p class="box__text">Процедура обработки инструментов происходит в 3 этапа: дезинфекция,
-								предстерилизационная очистка и стерилизация. Крафтовый пакет с инструментами вскрываем при Вас.</p>
+							<p class="box__text">Процедура обработки инструментов происходит в 4 этапа: дезинфекция,
+								предстерилизационная очистка, упаковывание и стерилизация. Крафтовый пакет с инструментами вскрываем при
+								Вас.</p>
 						</div>
 						<div class="box">
 							<p class="box__title">Разнообразие дизайнов</p>
@@ -337,35 +352,146 @@
 			</div>
 		</section>
 
-		<section class="section materials-section">
+		<!-- <section class="section materials-section"> -->
+		<!-- <div class="wrapper"> -->
+		<!-- <p class="section__title">Наши материалы</p> -->
+		<!-- <p class="section__subtitle"> -->
+		<!-- <span></span> -->
+		<!-- <span>Для профессионалов</span> -->
+		<!-- <span></span> -->
+		<!-- </p> -->
+		<!-- <div class="section__content"> -->
+
+		<!-- <div class="materials"> -->
+		<!-- <div class="materials__item"> -->
+		<!-- <div><img src="img/materials/materials001.jpg" alt="Наши материалы"></div> -->
+		<!-- </div> -->
+		<!-- <div class="materials__item"> -->
+		<!-- <div><img src="img/materials/materials002.jpg" alt="Наши материалы"></div> -->
+		<!-- </div> -->
+		<!-- <div class="materials__item"> -->
+		<!-- <div><img src="img/materials/materials003.jpg" alt="Наши материалы"></div> -->
+		<!-- </div> -->
+		<!-- <div class="materials__item"> -->
+		<!-- <div><img src="img/materials/materials004.jpg" alt="Наши материалы"></div> -->
+		<!-- </div> -->
+		<!-- </div> -->
+
+
+		<!-- </div> -->
+		<!-- </div> -->
+		<!-- </section> -->
+
+		<section class="section action-section">
 			<div class="wrapper">
-				<p class="section__title">Наши материалы</p>
+				<p class="section__title">Акция</p>
 				<p class="section__subtitle">
 					<span></span>
-					<span>Для профессионалов</span>
+					<span>Только для Вас</span>
 					<span></span>
 				</p>
 				<div class="section__content">
 
-					<div class="materials">
-						<div class="materials__item">
-							<div><img src="img/materials/materials001.jpg" alt="Наши материалы"></div>
+					<div class="action _anim-items _anim-no-repeat">
+						<div class="action__description">
+							<p class="action__title">
+								<span>Специальное</span>
+								<span> предложение!!!</span>
+							</p>
+							<p class="action__text">Отправьте свой дизайн до <span>31.12.2021</span></p>
+							<p class="action__text">и получите скидку <span>10%</span></p>
+							<p class="action__text">при <span>первом</span> посещении в 2022 году</p>
+							<p class="action__text timer-title"><span>До завершения осталось:<span></p>
+							<div id="actionTimer" class="timer">
+								<div class="timer__days">00<p>ДНЕЙ</p>
+								</div>
+								<div class="timer__hours">00<p>ЧАСОВ</p>
+								</div>
+								<div class="timer__divider">:</div>
+								<div class="timer__minutes">00<p>МИНУТ</p>
+								</div>
+								<div class="timer__divider">:</div>
+								<div class="timer__seconds">00<p>СЕКУНД</p>
+								</div>
+							</div>
+
+
 						</div>
-						<div class="materials__item">
-							<div><img src="img/materials/materials002.jpg" alt="Наши материалы"></div>
-						</div>
-						<div class="materials__item">
-							<div><img src="img/materials/materials003.jpg" alt="Наши материалы"></div>
-						</div>
-						<div class="materials__item">
-							<div><img src="img/materials/materials004.jpg" alt="Наши материалы"></div>
+						<div class="action__form">
+
+							<div class="form-sended">
+								<div class="preloader">
+									<div class="preloader__container">
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<form action="telegram.php" class="form" id="frmDesign" method="POST">
+								<div class="form__item">
+									<h1 class="form__title">Отправить дизайн</h1>
+									<input type="text" class="form__input" name="formName" value="Участие в акции">
+								</div>
+								<div class="form__item">
+									<label class="form__label" for="frmDesignName">Ваше имя*:</label>
+									<input type="text" id="frmDesignName" class="form__input _req" name="name" placeholder="Ваше имя">
+									<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
+								</div>
+
+								<div class="form__item">
+									<label class="form__label" for="frmDesignTel">Ваш телефон*:</label>
+									<input type="tel" id="frmDesignTel" class="form__input _req" name="tel" placeholder="(___) ___-____"
+										value-unmasked>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+
+								<div class="form__item">
+									<p class="form__label">Прикрепить фото*:</p>
+									<div class="file">
+										<div class="file__item">
+											<input accept=".jpg, .png, .gif" type="file" id="frmDesignFile" class="file__input _req"
+												name="userDesign">
+											<label class="button file__button" for="frmDesignFile">Выбрать</label>
+											<p id="msgError" class="input-error">Прикрепите фото дизайна</p>
+										</div>
+										<div id="frmDesignPreview" class="file__preview"></div>
+									</div>
+								</div>
+
+								<div class="form__item">
+									<input type="checkbox" id="frmDesignAgreement" class="form__input checkbox-agreement _req"
+										name="agreement" checked>
+									<label class="form__label checkbox-label" for="frmDesignAgreement">
+										<p>Я согласен на <a href="#">обработку персональных данных</a>*
+										</p>
+									</label>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+
+								<button type="submit" class="button form__button">Отправить</button>
+							</form>
 						</div>
 					</div>
-
 
 				</div>
 			</div>
 		</section>
+
+
+
+
+
 		<!-- gallery -->
 		<section class="section main-gallery">
 			<div class="wrapper">
@@ -538,47 +664,88 @@
 								<p class="info__title">Мы в соцсетях:</p>
 								<a class="info__soclink" target="_blank"
 									href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-										<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
+										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
 										<circle cx="110" cy="50" r="5" fill="white" />
 									</svg>
+									
 								</a>
 								<a class="info__soclink" href="#">
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
+										<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 										<path
 											d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
 											fill="white" />
-									</svg>
+									</svg>						
 								</a>
 							</div>
+
 
 
 						</div>
 
 						<!-- <form action="telegram.php" class="form" id="footerForm" method="POST"> -->
 						<!-- <form action="mail.php" class="form" id="form" method="POST"> -->
-						<form action="" class="form" id="footerForm" method="POST">
-							<div class="form__item">
-								<h1 class="form__title">Остались вопросы?</h1>
+						<div class="contacts__form">
+
+							<div class="form-sended">
+								<div class="preloader">
+									<div class="preloader__container">
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="form__item">
-								<input type="text" id="formName" class="form__input _req" name="name" placeholder="Ваше имя*">
-							</div>
-							<div class="form__item">
-								<input type="tel" id="formTel" class="form__input _req " name="tel" placeholder="Ваш телефон*">
-							</div>
-							<div class="form__item">
-								<textarea name="question" id="formQuestion" class="form__question _req"
-									placeholder="Ваш вопрос*"></textarea>
-							</div>
-							<p class="form__error" hidden>Выделенные красным цветом поля заполнены некорректно</p>
-							<button type="submit" class="button form__button">Отправить</button>
-						</form>
 
 
+							<form action="telegram.php" class="form" id="frmQuestion" method="POST">
+								<div class="form__item">
+									<h1 class="form__title">Остались вопросы?</h1>
+									<input type="text" class="form__input" name="formName" value="Вопрос пользователя">
+								</div>
+								<div class="form__item">
+									<input type="text" id="frmQuestionName" class="form__input _req" name="name" placeholder="Ваше имя*">
+									<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
+								</div>
+
+								<div class="form__item">
+									<input type="tel" id="frmQuestionTel" class="form__input _req" name="tel" placeholder="(___) ___-____"
+										value-unmasked>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+								<div class="form__item">
+									<textarea name="question" id="frmQuestionText" class="form__question _req"
+										placeholder="Ваш вопрос*"></textarea>
+									<p class="input-error">Введите текст вопроса</p>
+								</div>
+
+								<div class="form__item">
+									<input type="checkbox" id="frmQuestionAgreement" class="form__input checkbox-agreement _req"
+										name="agreement" checked>
+									<label class="form__label checkbox-label" for="frmQuestionAgreement">
+										<p>Я согласен на <a href="#">обработку персональных данных</a>*
+										</p>
+									</label>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+
+
+								<button type="submit" class="button form__button">Отправить</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -588,10 +755,13 @@
 	</footer>
 
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/phone-mask.js"></script>
 
-
+	<script src="js/theme.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

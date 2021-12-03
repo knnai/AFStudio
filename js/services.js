@@ -94,14 +94,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	document.querySelector('#selectService').addEventListener('click', changeOrder);
 	document.querySelector('#selectDesign').addEventListener('click', changeOrder);
 
-	/*--------------create content----------------*/
+	/*--------------создание элементов---------------*/
 	createBlockPrices(prices);
-	addImgDesign();
 	generateBookedHours(true);
-	/*--------------create content----------------*/
+	/*--------------создание элементов---------------*/
 	resetOrder(order);
 });
-
+/*--------------- сброс заказа ------------------*/
 function resetOrder(order) {
 	order.date = '';
 	order.time = '';
@@ -111,9 +110,9 @@ function resetOrder(order) {
 	order.design.value = designDef;
 	order.totalSum = 0;
 };
+/*--------------- сброс заказа ------------------*/
 
-
-/*----------------------------navigation tabs----------------------------------*/
+/*----------------навигация по вкладкам----------*/
 function selectTab(e) {
 	let elem = e.target;
 	//console.dir(elem.parentElement);
@@ -137,14 +136,14 @@ function selectTab(e) {
 	//console.dir(elem.dataset);	
 	document.querySelector('#' + elem.dataset.id).classList.add('tabs-active');
 	window.scrollTo({
-		top: 0,
+		top: 100,
 		behavior: "smooth",
 	});
 };
-/*----------------------------navigation tabs----------------------------------*/
+/*----------------навигация по вкладкам----------*/
 
 
-/*----------------------------#selectService-----------------------------------*/
+/*--------------- выбор услуги ------------------*/
 function createBlockPrices(arr) {
 	let parent = document.querySelector('#selectService .tabs__content');
 	let firstGroupLength = Math.ceil(arr.length / 2);
@@ -152,6 +151,10 @@ function createBlockPrices(arr) {
 	parent.append(createListPrices(arr, 0, firstGroupLength - 1));
 	parent.append(createListPrices(arr, firstGroupLength, secondGroupLength - 1));
 };
+/*--------------- выбор услуги ------------------*/
+
+
+/*--------------- создание списка услуг ---------*/
 function createListPrices(arr, startIndex, length) {
 	let result = document.createElement('ul');
 	result.classList.add('prices');
@@ -173,9 +176,9 @@ function createListPrices(arr, startIndex, length) {
 	}
 	return result;
 };
-/*----------------------------#selectService-----------------------------------*/
+/*--------------- создание списка услуг ---------*/
 
-/*----------------------------#btnShowMore.onClick-----------------------------*/
+/*------ создание элементов выбора дизайна ------*/
 function addImgDesign() {
 	let parent = document.querySelector('#selectDesign .tabs__content');
 	let designesList = parent.querySelectorAll('.design');
@@ -195,11 +198,9 @@ function addImgDesign() {
 		parent.append(newElem);
 	}
 };
-/*----------------------------#btnShowMore.onClick-----------------------------*/
+/*------ создание элементов выбора дизайна ------*/
 
-/*------------------------------EVENTS----------------------------------------*/
-
-/*----------------------datepicker.onSelect-----------------------------------*/
+/*----------- datepicker.onSelect ---------------*/
 function generateBookedHours(all = false) {
 	let listHours = document.querySelectorAll('.hours__item');
 	for (let elem of listHours) {
@@ -212,9 +213,9 @@ function generateBookedHours(all = false) {
 		};
 	}
 };
-/*----------------------datepicker.onSelect-----------------------------------*/
+/*----------- datepicker.onSelect ---------------*/
 
-/*-------------------------.hours.onClick-------------------------------------*/
+/*---------------.hours.onClick------------------*/
 function selectHours(e) {
 	if (e.target.tagName != 'LI') return;
 	let elem = e.target;
@@ -226,10 +227,9 @@ function selectHours(e) {
 	changeOrderForm();
 
 };
-/*-------------------------.hours.onClick-------------------------------------*/
+/*----------------.hours.onClick-----------------*/
 
-
-
+/*------------ обновление заказа ----------------*/
 function changeOrder(e) {
 	if (e.target.tagName == 'INPUT' && e.target.classList.contains('price__input')) {
 		let elem = e.target;
@@ -258,8 +258,11 @@ function changeOrder(e) {
 	}
 	changeOrderForm();
 	//console.dir(order);
-
 };
+/*------------ обновление заказа ----------------*/
+
+
+/*------------ обновление формы заказа ----------*/
 function changeOrderForm() {
 
 	let date = document.querySelector('#frmServiceDate');
@@ -267,8 +270,9 @@ function changeOrderForm() {
 	let services = document.querySelector('#frmServiceServices');
 	let design = document.querySelector('#frmServiceDesign');
 	let prviewImg = document.querySelector('.preview img');
-	let totalSum = document.querySelector('.total-sum');
-	let totalSumSpan = document.querySelector('.total-sum span');
+	let totalSum = document.querySelector('#totalSum');
+	let totalSumP = document.querySelector('.total-sum');
+	let totalSumPSpan = document.querySelector('.total-sum span');
 
 	date.value = order.date;
 	if (order.date != '') date.classList.remove('_error');
@@ -282,47 +286,40 @@ function changeOrderForm() {
 	};
 	if (services.value != '') services.classList.remove('_error');
 
-	design.value = order.design.value;
+	design.value = (order.design.value == designDef) ? '' : order.design.value;
 	prviewImg.src = galleryPath + order.design.value;
+	//console.dir(design.value);
 
-	totalSumSpan.innerText = order.totalSum + 'грн.';
-	totalSum.style = (order.totalSum == 0) ? 'display: none' : 'display: block';
+	totalSum.value = order.totalSum;
+	totalSumPSpan.innerText = order.totalSum + 'грн.';
+	totalSumP.style = (order.totalSum == 0) ? 'display: none' : 'display: block';
 };
+/*------------ обновление формы заказа ----------*/
 
+/*------- сброс выбранных элементов вкладок -----*/
+function resetTabsServices() {
+	let checkedPrice = document.querySelectorAll('.price__input:checked');
+	for (let i = 0; i < checkedPrice.length; i++) {
+		checkedPrice[i].checked = false;
+	}
+	let design = document.querySelector('.design__input:checked');
+	if (design) design.checked = false;
 
+	let date = document.querySelector('.ui-state-default.ui-state-active');
+	if (date) date.classList.remove('ui-state-active');
 
+	let time = document.querySelector('.hours__item.hours__selected');
+	if (time) time.classList.remove('hours__selected');
+
+	resetOrder(order);
+	changeOrderForm();
+};
+/*------- сброс выбранных элементов вкладок -----*/
 
 
 
 $(function () {
-
-	$("#todayBooked").dialog({
-		autoOpen: false,//автооткрытие - нет
-		resizable: false,//изменять рамер - нет
-		height: "auto",
-		modal: true,
-		buttons: [
-			{
-				text: "Закрыть",
-				click: function () {
-					$(this).dialog("close");
-				}
-
-				// Uncommenting the following line would hide the text,
-				// resulting in the label being used as a tooltip
-				//showText: false
-			}
-		],
-		show: {//анимация при открытии
-			effect: "bounce",
-			duration: 1000
-		},
-		hide: {//анимация при закрытии
-			effect: "scale",
-			duration: 1000
-		}
-	});
-
+	/*---------------- datepicker -----------------*/
 	$("#datepicker").datepicker({
 		minDate: 0,
 		hideIfNoPrevNext: true,
@@ -335,11 +332,10 @@ $(function () {
 			order.time = '';
 			changeOrderForm();
 			let today = new Date();
-			today = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
+			today = ('0' + today.getDate()).slice(-2) + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
 			if (date == today) {
 				generateBookedHours(true);
 				changeOrderForm();
-				/*$("#todayBooked").dialog("open");*/
 				Swal.fire({
 					title: 'Нам очень жаль...!',
 					text: 'Но, на сегодня записи нет',
@@ -355,173 +351,19 @@ $(function () {
 			return (date.getDay() == 0) ? [false] : [true];
 		}
 	});
+	/*---------------- datepicker -----------------*/
 
-
-
-	$('#frmServiceTel').maskInput('(999) 999-9999');
-
+	/*---------------- имя --------------*/
 	$('#frmServiceName').keydown(function () {
 		this.value = this.value.replace(/[^а-яА-ЯёЁa-zA-Z]/i, "");
 	});
+	/*---------------- имя --------------*/
+
+	/*----------------номер телефона --------------*/
+	$('#frmServiceTel').maskInput('(999) 999-9999');
+	/*----------------номер телефона --------------*/
 
 
-
-	$('#frmServiceSubmit').click(function (e) {
-		e.preventDefault();
-
-		let dateValue = $('#frmServiceDate').val();
-		let timeValue = $('#frmServiceTime').val();
-		let servicesValue = $('#frmServiceServices').val();
-		let userNameValue = $('#frmServiceName').val();
-		let userTelValue = $('#frmServiceTel').val();
-
-		let errors = false;
-		if (dateValue.length == 0) {
-			$('#frmServiceDate').addClass('_error');
-			errors = true;
-		}
-		if (timeValue.length == 0) {
-			$('#frmServiceTime').addClass('_error');
-			errors = true;
-		}
-		if (servicesValue.length == 0) {
-			$('#frmServiceServices').addClass('_error');
-			errors = true;
-		}
-
-		if (userNameValue.length < 3) {
-			$('#frmServiceName').addClass('_error');
-			errors = true;
-		}
-		if (userTelValue.length < 3) {
-			$('#frmServiceTel').addClass('_error');
-			errors = true;
-		}
-		if (errors) return false;
-
-
-		/*
-				$('#frmService').submit();
-				Swal.fire({
-
-					confirmButtonText: 'ОК'
-				});
-		*/
-
-
-
-
-		var data = new FormData();
-		var formData = $('#frmService').serializeArray();
-		$.each(formData, function (key, input) {
-			data.append(input.name, input.value);
-		});
-
-		$.ajax({
-			url: $('#frmService').attr('action'),
-			type: 'POST',
-			data: data,
-			processData: false,
-			contentType: false,
-			cache: false,
-			beforeSend: function () {
-				$('label#frmServiceSubmit').prop('disabled', true);
-			},
-			success: function () {
-				$('label#frmServiceSubmit').prop('disabled', false);
-				Swal.fire({
-					title: 'Спасибо, что Вы с нами!',
-					text: 'Мы Вам перезвоним ближайшие 12 часов!',
-				})
-				$('#frmService').trigger('reset');
-				$('.price__input:checked').prop('checked', false);
-				$('.design__input:checked').prop('checked', false);
-				$('.ui-state-default.ui-state-active').removeClass('ui-state-active');
-				$('.hours__item.hours__selected').removeClass('hours__selected');
-				resetOrder(order);
-				changeOrderForm();
-				/*
-				$('.dwnload_file_name').css({
-						border: 'none',
-						visibility: 'hidden'
-				});
-				*/
-			},
-		});
-
-
-
-		/*
-		let name = $('#user_name_f1').val();
-		let phone = $('#user_phone_f1').val();
-		let download = $('#myfile').val();
-		let politic = $('#politic_conf').is(':checked');
-
-		var data = new FormData();
-		var formData = $('#project_form').serializeArray();
-		console.log(formData);
-		$.each(formData, function (key, input) {
-				data.append(input.name, input.value);
-				console.log(data.append);
-		});
-
-		var fileData = $('input[name="myfile"]')[0].files;
-		for (var i = 0; i < fileData.length; i++) {
-				data.append("myfile[]", fileData[i]);
-		}
-		
-		console.log(fileData);
-		
-
-		$('.error').css('visibility', 'hidden');
-
-		if (name.length < 3 && name.length != 0) {
-				$(".name_error").css('visibility', 'visible').text('Поле должно содержать больше 3-х символов');
-				$('#user_name_f1').val('');
-				return false;
-		} else if (name.length == 0) {
-				$(".name_error").css('visibility', 'visible').text('Поле обязательно для заполнения');
-				return false;
-		} else if (phone.length == 0) {
-				$(".phone_error").css('visibility', 'visible').text('Поле обязательно для заполнения');
-				return false;
-		} else if (!politic) {
-				$(".politic_error").css('visibility', 'visible').text('Ознакомтесь с условиями');
-				return false;
-		} else if (download === '') {
-				$(".dwnload_file_name").css('visibility', 'visible').text('Загрузите файл проекта');
-				return false;
-		} else {
-				$(".dwnload_file_name").css('visibility', 'visible');
-		}
-				
-		$.ajax({
-				url: $('#project_form').attr('action'),
-				type: 'POST',
-				data: data,
-				processData: false,
-				contentType: false,
-				cache: false,
-				beforeSend: function () {
-						$('#submit_btn').prop('disabled', true);
-				},
-				success: function () {
-						$('#submit_btn').prop('disabled', false);
-						Swal.fire({
-								icon: 'success',
-								title: 'УРА!',
-								text: 'Ваша заявка отправлена',
-						})
-						$('#project_form').trigger('reset');
-						$('.dwnload_file_name').css({
-								border: 'none',
-								visibility: 'hidden'
-						});
-				}
-		})
-		*/
-
-	})
 });
 
 

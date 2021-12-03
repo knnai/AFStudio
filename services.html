@@ -15,21 +15,37 @@
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
-	<link rel="stylesheet" href="css/variables_dark.css">
+	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
+	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
 	<link rel="stylesheet" href="css/main-anim.css">
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/forms.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/services.css">
-
-
 	<!-------------------- Title ----------------------->
 	<title>Студия Анастасии Фроловой - Услуги</title>
-
 
 </head>
 
 <body>
-
+	<div id="preloader">
+		<div class="preloader">
+			<div class="preloader__container">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<header>
 
 		<div class="header__top">
@@ -60,26 +76,35 @@
 						</div>
 					</div>
 
-					<div class="social">
-						<p class="info__title">Мы в соцсетях:</p>
-						<a class="info__soclink" target="_blank"
-							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
-							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-								<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
-								<circle cx="110" cy="50" r="5" fill="white" />
-							</svg>
-						</a>
-						<a class="info__soclink" href="#">
-							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
-								<path
-									d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
-									fill="white" />
-							</svg>
-						</a>
-					</div>
+					<div class="info__theme">
+						<div class="theme">						
+							<input id="themeInput" class="theme__checkbox" type="checkbox">
+							<label for="themeInput" class="theme__label" title="Светлая тема"></label>
+						</div>
+					</div>	
+
+							<div class="social">
+								<p class="info__title">Мы в соцсетях:</p>
+								<a class="info__soclink" target="_blank"
+									href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
+									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="110" cy="50" r="5" fill="white" />
+									</svg>
+									
+								</a>
+								<a class="info__soclink" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+										<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
+										<path
+											d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
+											fill="white" />
+									</svg>						
+								</a>
+							</div>
 
 				</div>
 			</div>
@@ -104,12 +129,12 @@
 				</label>
 
 				<ul class="menu">
-					<li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
-					<li class="menu__item"><a class="menu__link" href="about.html">О нас</a></li>
-					<li class="menu__item"><a class="menu__link menu__active" href="services.html">Услуги</a></li>
-					<li class="menu__item"><a class="menu__link" href="gallery.html">Портфолио</a></li>
-					<li class="menu__item"><a class="menu__link" href="index.html#reviews">Отзывы</a></li>
-					<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
+					<li class="menu__item"><a class="menu__link" href="index.html"><span>Главная</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="about.html"><span>О нас</span></a></li>
+					<li class="menu__item"><a class="menu__link menu__active" href="services.html"><span>Услуги</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="gallery.html"><span>Портфолио</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="index.html#reviews"><span>Отзывы</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="#contacts"><span>Контакты</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -126,7 +151,7 @@
 					<span></span>
 				</p>
 				<div class="section__content">
-					<p class="section__title">Четыре простых шага для записи</p>
+					<p class="four-steps">Четыре простых шага для записи</p>
 					<div class="tabs">
 						<!-- Заголовки -->
 						<div class="tabs__titles">
@@ -162,6 +187,49 @@
 								<span></span>
 							</p>
 							<div class="tabs__content">
+
+
+
+								<div class="design">
+									<input id="design001" class="design__input" type="checkbox" value="001.jpg">
+									<label class="design__label" for="design001" title="Выбрать">
+									</label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/001.jpg" data-lightbox="001" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/001.jpg" alt="">
+								</div>
+								<div class="design"><input id="design002" class="design__input" type="checkbox" value="002.jpg"><label
+										class="design__label" for="design002" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/002.jpg" data-lightbox="002" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/002.jpg" alt="">
+								</div>
+								<div class="design"><input id="design003" class="design__input" type="checkbox" value="003.jpg"><label
+										class="design__label" for="design003" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/003.jpg" data-lightbox="003" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/003.jpg" alt="">
+								</div>
+								<div class="design"><input id="design004" class="design__input" type="checkbox" value="004.jpg"><label
+										class="design__label" for="design004" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/004.jpg" data-lightbox="004" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/004.jpg" alt="">
+								</div>
+								<div class="design"><input id="design005" class="design__input" type="checkbox" value="005.jpg"><label
+										class="design__label" for="design005" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/005.jpg" data-lightbox="005" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/005.jpg" alt="">
+								</div>
+								<div class="design"><input id="design006" class="design__input" type="checkbox" value="006.jpg"><label
+										class="design__label" for="design006" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
+										href="img/gallery/006.jpg" data-lightbox="006" data-title=""><img src="img/fullscreen.svg" alt=""
+											title="Увеличить"></a><img class="design__img" src="img/gallery/006.jpg" alt="">
+								</div>
+
+
 
 							</div>
 							<div class="tabs__buttons">
@@ -209,6 +277,26 @@
 						</div>
 						<!-- Отправка заказа -->
 						<div id="sendOrder" class="tabs__item">
+
+							<div class="form-sended">
+								<div class="preloader">
+									<div class="preloader__container">
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<p class="section__subtitle">
 								<span></span>
 								<span>Отправьте заказ</span>
@@ -216,69 +304,88 @@
 							</p>
 							<div class="tabs__content">
 
-								<form action="php/telegram.php" class="form" id="frmService" method="POST">
-									<div class="form__content">
-										<div class="form__block">
+								<div class="services__form">
 
-											<div class="form__subblock">
-												<div class="form__item">
-													<label class="form__label" for="frmServiceDate">Дата:</label>
-													<input type="text" id="frmServiceDate" class="form__input" name="date"
-														placeholder="Дата записи" readonly="readonly">
-													<p class="input-error">Укажите дату (шаг 3)</p>
+									<form action="telegram.php" class="form" id="frmService" method="POST">
+										<div class="form__item">
+											<input type="text" class="form__input" name="formName" value="Заявка на посещение">
+										</div>
+
+										<div class="form__content">
+											<div class="form__block">
+
+												<div class="form__subblock">
+													<div class="form__item">
+														<label class="form__label" for="frmServiceDate">Дата:</label>
+														<input type="text" id="frmServiceDate" class="form__input _req" name="date"
+															placeholder="Дата записи" readonly="readonly">
+														<p class="input-error">Укажите дату (шаг 3)</p>
+													</div>
+													<div class="form__item">
+														<label class="form__label" for="frmServiceTime">Время:</label>
+														<input type="text" id="frmServiceTime" class="form__input _req" name="time"
+															placeholder="Время записи" readonly="readonly">
+														<p class="input-error">Укажите время (шаг 3)</p>
+													</div>
 												</div>
 												<div class="form__item">
-													<label class="form__label" for="frmServiceTime">Время:</label>
-													<input type="text" id="frmServiceTime" class="form__input" name="time"
-														placeholder="Время записи" readonly="readonly">
-													<p class="input-error">Укажите время (шаг 3)</p>
+													<label class="form__label" for="frmServiceServices">Услуги:</label>
+													<textarea name="services" id="frmServiceServices" class="form__input _req"
+														placeholder="Услуги" readonly="readonly"></textarea>
+													<p class="input-error">Выберите услуги (Шаг 1)</p>
 												</div>
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceServices">Услуги:</label>
-												<textarea name="services" id="frmServiceServices" class="form__input" placeholder="Услуги"
-													readonly="readonly"></textarea>
-												<p class="input-error">Выберите услуги (Шаг 1)</p>
-											</div>
 
-										</div>
-										<div class="form__block">
+											</div>
+											<div class="form__block">
 
-											<div class="form__item">
-												<label class="form__label" for="frmServiceDesign">Дизайн:</label>
-												<input type="text" name="design" id="frmServiceDesign" class="form__input" placeholder="">
-												<div class="preview">
-													<img src="img/gallery/design-default.jpg" alt="">
+												<div class="form__item">
+													<label class="form__label" for="frmServiceDesign">Дизайн:</label>
+													<input type="text" name="design" id="frmServiceDesign" class="form__input" placeholder="">
+													<div class="preview">
+														<img src="img/gallery/design-default.jpg" alt="">
+													</div>
 												</div>
-											</div>
 
+
+											</div>
+											<div class="form__block">
+
+												<div class="form__item">
+													<label class="form__label" for="frmServiceName">Ваше имя:</label>
+													<input type="text" id="frmServiceName" class="form__input _req" name="name"
+														placeholder="Ваше имя">
+													<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
+												</div>
+												<div class="form__item">
+													<label class="form__label" for="frmServiceTel">Ваш телефон:</label>
+													<input type="tel" id="frmServiceTel" class="form__input _req" name="tel"
+														placeholder="(___) ___-____" value-unmasked>
+													<p class="input-error">Это поле обязательное</p>
+												</div>
+												<div class="form__item">
+													<label class="form__label" for="frmServiceComment">Ваш комментарий:</label>
+													<textarea name="comment" id="frmServiceComment" class="form__input"
+														placeholder="Ваш комментарий"></textarea>
+												</div>
+
+												<div class="form__item">
+													<input type="checkbox" id="frmDesignAgreement" class="form__input checkbox-agreement _req"
+														name="agreement" checked>
+													<label class="form__label checkbox-label" for="frmDesignAgreement">
+														<p>Я согласен на <a href="#">обработку персональных данных</a>*
+														</p>
+													</label>
+													<p class="input-error">Это поле обязательное</p>
+												</div>
+
+											</div>
 
 										</div>
-										<div class="form__block">
 
-											<div class="form__item">
-												<label class="form__label" for="frmServiceName">Ваше имя:</label>
-												<input type="text" id="frmServiceName" class="form__input" name="name" placeholder="Ваше имя">
-												<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceTel">Ваш телефон:</label>
-												<input type="tel" id="frmServiceTel" class="form__input" name="tel" placeholder="(___) ___-____"
-													value-unmasked>
-												<p class="input-error">Это поле обязательное</p>
-											</div>
-											<div class="form__item">
-												<label class="form__label" for="frmServiceComment">Ваш комментарий:</label>
-												<textarea name="comment" id="frmServiceComment" class="form__input"
-													placeholder="Ваш комментарий"></textarea>
-											</div>
-
-										</div>
-
-									</div>
-									<input id="frmServiceSubmit" class="form__input" type="submit" value="">
-								</form>
-
+										<input id="totalSum" type="text" class="form__input" name="totalSum">
+										<input id="frmServiceSubmit" class="form__input" type="submit" value="">
+									</form>
+								</div>
 							</div>
 							<p class='total-sum'>Ориентировочная сумма заказа <span></span></p>
 							<div class="tabs__buttons">
@@ -349,51 +456,91 @@
 								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 							</div>
+							
 							<div class="social">
 								<p class="info__title">Мы в соцсетях:</p>
 								<a class="info__soclink" target="_blank"
 									href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-										<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
+										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
 										<circle cx="110" cy="50" r="5" fill="white" />
 									</svg>
+									
 								</a>
 								<a class="info__soclink" href="#">
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
+										<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 										<path
 											d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
 											fill="white" />
-									</svg>
+									</svg>						
 								</a>
 							</div>
 
 
 						</div>
 
-						<!-- <form action="telegram.php" class="form" id="footerForm" method="POST"> -->
-						<!-- <form action="mail.php" class="form" id="form" method="POST"> -->
-						<form action="" class="form" id="footerForm" method="POST">
-							<div class="form__item">
-								<h1 class="form__title">Остались вопросы?</h1>
+
+						<div class="contacts__form">
+
+							<div class="form-sended">
+								<div class="preloader">
+									<div class="preloader__container">
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="form__item">
-								<input type="text" id="formName" class="form__input _req" name="name" placeholder="Ваше имя*">
-							</div>
-							<div class="form__item">
-								<input type="tel" id="formTel" class="form__input _req " name="tel" placeholder="Ваш телефон*">
-							</div>
-							<div class="form__item">
-								<textarea name="question" id="formQuestion" class="form__question _req"
-									placeholder="Ваш вопрос*"></textarea>
-							</div>
-							<p class="form__error" hidden>Выделенные красным цветом поля заполнены некорректно</p>
-							<button type="submit" class="button form__button">Отправить</button>
-						</form>
 
 
+							<form action="telegram.php" class="form" id="frmQuestion" method="POST">
+								<div class="form__item">
+									<h1 class="form__title">Остались вопросы?</h1>
+									<input type="text" class="form__input" name="formName" value="Вопрос пользователя">
+								</div>
+								<div class="form__item">
+									<input type="text" id="frmQuestionName" class="form__input _req" name="name" placeholder="Ваше имя*">
+									<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
+								</div>
+
+								<div class="form__item">
+									<input type="tel" id="frmQuestionTel" class="form__input _req" name="tel" placeholder="(___) ___-____"
+										value-unmasked>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+								<div class="form__item">
+									<textarea name="question" id="frmQuestionText" class="form__question _req"
+										placeholder="Ваш вопрос*"></textarea>
+									<p class="input-error">Введите текст вопроса</p>
+								</div>
+
+								<div class="form__item">
+									<input type="checkbox" id="frmQuestionAgreement" class="form__input checkbox-agreement _req"
+										name="agreement" checked>
+									<label class="form__label checkbox-label" for="frmQuestionAgreement">
+										<p>Я согласен на <a href="#">обработку персональных данных</a>*
+										</p>
+									</label>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+
+
+								<button type="submit" class="button form__button">Отправить</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -402,13 +549,14 @@
 		</div>
 	</footer>
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="js/phone-mask.js"></script>
 
+	<script src="js/theme.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/services.js"></script>
 

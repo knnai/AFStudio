@@ -6,39 +6,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Mr+De+Haviland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Great+Vibes&family=Montserrat:wght@100&family=Mr+De+Haviland&family=Zen+Antique+Soft&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
 /*--декор--*/
 @import url("https://fonts.googleapis.com/css2?family=Mrs+Sheppards&display=swap");
 
 /*--переменные--*/
 /*--цвета--*/
 :root {
-	/*шрифт*/
-	--basic-font: "Montserrat", sans-serif;
-	--decor-font: "Cormorant Garamond", serif;
-	/*--decor-font: "Zen Antique Soft", serif;*/
-	--digit-font: "Mrs Sheppards", cursive;
+    /*шрифт*/
+    --basic-font: "Montserrat", sans-serif;
 
-	/*--цвета текста--*/
-	--font-dark: #1f261f;
-	--font-middle: #477652;
-	--font-light: #be6502;
-	--font-lightest: #ffffff;
+    --decor-font: "Pattaya", sans-serif;
+    /*--decor-font: 'Lobster', cursive;*/
+    /*--decor-font: "Cormorant Garamond", serif;*/
+    /*--decor-font: "Zen Antique Soft", serif;*/
+    --digit-font: "Mrs Sheppards", cursive;
 
-	/*--цвета фона--*/
-	--bg-dark: #ffe3db;
-	--bg-middle: #477652;
-	--bg-light: #be6502;
-	--bg-lightest: #ffffff;
+    --font-dark: black;
+    --font-middle: #477652;
+    --font-light: #7e3c00;
+    --font-lightest: black;
+	--font-slide: #7e3c00;
 
-	/*--цвета тени--*/
-	--shadow-dark: #1f261f;
-	--shadow-middle: #477652;
-	--shadow-light: #02be90;
-	--shadow-lightest: #ffffff;
+    --bg-dark: #fff6ed;
+    --bg-middle: #477652;
+    --bg-light: #ffc087;
+    --bg-lightest: #ffffff;
 
-	/*--цвета бордюра--*/
-	--border-dark: #1f261f;
-	--border-middle: #477652;
-	--border-light: #02be90;
-	--border-lightest: #ffffff;
+    --shadow-dark: #7e3c00;
+    --shadow-middle: #477652;
+    --shadow-light: #7e3c00;
+    --shadow-lightest: #ffffff;
+
+    --border-dark: black;
+    --border-middle: #477652;
+    --border-light: #7e3c00;
+    --border-lightest: #7e3c00;
+
+    /*--tab-active-bg-color: #113e33;*/
+    --tab-active-bg-color: #ffead7;
+
+    /*--фоны --*/
+    /*--bg-img-slide: url(../img/bg-first.jpg);*/
+	--bg-decor: url("../img/light-decor.png");
+    --bg-img-slide: url(../img/bg-first_light.jpg);
+    --bg-img-services: none;
 }

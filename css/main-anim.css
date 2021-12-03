@@ -1,4 +1,3 @@
-
 @keyframes neon-light {
 	0% {
 		box-shadow: 0 0 2px 0px var(--shadow-light);
@@ -7,8 +6,6 @@
 		box-shadow: 0 0 7px 5px var(--shadow-light);
 	}
 }
-
-
 
 @keyframes rotate {
 	0% {
@@ -28,5 +25,63 @@
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+@keyframes leftToRight0100 {
+	0% {
+		left: 0%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+@keyframes leftToRight033 {
+	0% {
+		opacity: 0;
+		left: 0%;
+	}
+	5%,
+	25% {
+		opacity: 1;
+	}
+	30%,
+	100% {
+		opacity: 0;
+		left: 100%;
+	}
+}
+
+@keyframes leftToRight3366 {
+	0%,
+	35% {
+		opacity: 0;
+		left: 0%;
+	}
+	40%,
+	60% {
+		opacity: 1;
+	}
+	65%,
+	100% {
+		opacity: 0;
+		left: 100%;
+	}
+}
+
+@keyframes leftToRight66100 {
+	0%,
+	70% {
+		opacity: 0;
+		left: 0%;
+	}
+	75%,
+	95% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		left: 100%;
 	}
 }

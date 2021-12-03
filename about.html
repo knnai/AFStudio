@@ -13,17 +13,36 @@
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
-	<link rel="stylesheet" href="css/variables_dark.css">
+	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
+	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
 	<link rel="stylesheet" href="css/main-anim.css">
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/forms.css">
-	<!-------------------- jQuery ----------------------->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/about.css">
+
 	<!-------------------- Title ----------------------->
 	<title>Студия Анастасии Фроловой - О нас</title>
 </head>
 
 <body>
+	<div id="preloader">
+		<div class="preloader">
+			<div class="preloader__container">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<header>
 
@@ -54,27 +73,36 @@
 							<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 						</div>
 					</div>
+					
+					<div class="info__theme">
+						<div class="theme">						
+							<input id="themeInput" class="theme__checkbox" type="checkbox">
+							<label for="themeInput" class="theme__label" title="Светлая тема"></label>
+						</div>
+					</div>					
 
-					<div class="social">
-						<p class="info__title">Мы в соцсетях:</p>
-						<a class="info__soclink" target="_blank"
-							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
-							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-								<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
-								<circle cx="110" cy="50" r="5" fill="white" />
-							</svg>
-						</a>
-						<a class="info__soclink" href="#">
-							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-								<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
-								<path
-									d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
-									fill="white" />
-							</svg>
-						</a>
-					</div>
+							<div class="social">
+								<p class="info__title">Мы в соцсетях:</p>
+								<a class="info__soclink" target="_blank"
+									href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
+									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="110" cy="50" r="5" fill="white" />
+									</svg>
+									
+								</a>
+								<a class="info__soclink" href="#">
+									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
+										<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
+										<path
+											d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
+											fill="white" />
+									</svg>						
+								</a>
+							</div>
 
 				</div>
 			</div>
@@ -99,12 +127,12 @@
 				</label>
 
 				<ul class="menu">
-					<li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
-					<li class="menu__item"><a class="menu__link menu__active" href="about.html">О нас</a></li>
-					<li class="menu__item"><a class="menu__link" href="services.html">Услуги</a></li>
-					<li class="menu__item"><a class="menu__link" href="gallery.html">Портфолио</a></li>
-					<li class="menu__item"><a class="menu__link" href="index.html#reviews">Отзывы</a></li>
-					<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
+					<li class="menu__item"><a class="menu__link" href="index.html"><span>Главная</span></a></li>
+					<li class="menu__item"><a class="menu__link menu__active" href="about.html"><span>О нас</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="services.html"><span>Услуги</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="gallery.html"><span>Портфолио</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="index.html#reviews"><span>Отзывы</span></a></li>
+					<li class="menu__item"><a class="menu__link" href="#contacts"><span>Контакты</span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -134,26 +162,455 @@
       </div> -->
 		</div>
 
-		<section class="section">
+		<!-- Секция о работе студии (work) -->
+		<section class="section section-work">
 			<div class="wrapper">
-				<p class="section__title">Заголовок секции</p>
+				<p class="section__title">О нас</p>
 				<p class="section__subtitle">
 					<span></span>
-					<span>Подзаголовок секции</span>
+					<span>Как мы работаем</span>
 					<span></span>
 				</p>
 				<div class="section__content">
 
-					<video width="100%" height="100%" autoplay="true" loop="true" preload="auto" muted="true">
-						<source src="video/main-screen.mp4" type="video/mp4">
-					</video> -->
+					<div class="work">
+
+						<div class="work__item _anim-items _anim-no-repeat">
+							<p class="work__title">Опытные мастера маникюра и педикюра</p>
+							<div class="work__decor"></div>
+							<div class="work__img">
+								<img src="img/about/w001.jpg" alt="">
+							</div>
+							<div class="work__descr">
+								<p class="work__text">В нашей студии работают только настоящие профессионалы своего дела. Услуги
+									оказывают дипломированные специалисты маникюра и педикюра. Профессиональное оборудование, стерильный
+									инструмент, одноразовые расходные материалы и конечно же гель-лак высочайшего качества дополнят
+									профессионализм наших мастеров и создадут идеальное сочетание для получения Вами услуг высочайшего
+									качества.</p>
+							</div>
+							<p class="_clear"></p>
+						</div>
 
 
+						<div class="work__item _anim-items _anim-no-repeat">
+							<p class="work__title">Огромный выбор лаков и материалов для дизайна</p>
+							<div class="work__decor"></div>
+							<div class="work__img">
+								<img src="img/about/w002.jpg" alt="">
+							</div>
+							<div class="work__descr">
+								<p class="work__text">Хорошо укомплектованная маникюрная студия предлагает огромное количество продуктов
+									для маникюра по сравнению с ограниченным выбором, который мы имеем дома. Наша студия предлагает
+									широкий диапазон цветов лака для ногтей, стразов и украшений.</p>
+								<p class="work__text">Если Вы приняли решение сделать маникюр у нас, Вы можете быть уверены в широте
+									ассортимента дополнительных услуг наравне с услугами базового ухода. Вы можете выбрать желаемый дизайн
+									ногтей: классический или что-то ультрасовременное и актуальное.</p>
+							</div>
+							<p class="_clear"></p>
+						</div>
 
+						<div class="work__item _anim-items _anim-no-repeat">
+							<p class="work__title">Медицинская стерилизация инструмента</p>
+							<div class="work__decor"></div>
+							<div class="work__img">
+								<img src="img/about/w003.jpg" alt="">
+							</div>
+							<div class="work__descr">
+								<p class="work__text">Мы очень серьезно относимся к стерилизации инструментов. Считаем, что
+									некачественная дезинфекция может быть опасна для вашего здоровья! Каждый мастер маникюра в в нашей
+									студии имеет не менее 3х комплектов инструментов. А это значит, что у него всегда будет для Вас
+									стерильный комплект, даже если запись клиентов очень плотная. При Вас мастер вскрывает одноразовую
+									стерильную упаковку с маркером стерильности, которая, предварительно, прошла обработку специальную
+									четырехэтапную стерилизацию.</p>
+							</div>
+							<p class="_clear"></p>
+						</div>
+
+						<div class="work__item _anim-items _anim-no-repeat">
+							<p class="work__title">Уютная домашняя обстановка</p>
+							<div class="work__decor"></div>
+							<div class="work__img">
+								<img src="img/about/w004.jpg" alt="">
+							</div>
+							<div class="work__descr">
+								<p class="work__text">Современный дизайн и уютная обстановка нашего салона подарят Вам незабываемые
+									впечатления. Вам не придется беспокоиться о Ваших сумочках — их ждут специальные места. К Вашим
+									услугам мягкие и удобные кресла, комфортабельные места для ожидания, а также зарядные устройства для
+									мобильных гаджетов, Wi-Fi,</p>
+							</div>
+							<p class="_clear"></p>
+						</div>
+
+
+					</div>
+
+					<!-- <video width="100%" height="100%" autoplay="true" loop="true" preload="auto" muted="true"> -->
+					<!-- <source src="video/main-screen.mp4" type="video/mp4"> -->
+					<!-- </video>  -->
 
 				</div>
 			</div>
 		</section>
+
+		<!-- Секция о стерилизации инструмента () -->
+		<section class="section section-steril">
+			<div class="wrapper">
+				<p class="section__title">Этапы стерилизации</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Надежно и безопасно</span>
+					<span></span>
+				</p>
+
+				<div class="section__content">
+					<div class="steril _anim-items _anim-no-repeat">
+						<p class="steril__intro">Мы строго следим за обработкой инструмента, поверхностей и рук специалиста. В нашей
+							студии используется 4-х ступенчатая система дезинфекции инструментов. Мы тщательно проводим все
+							обязательные этапы по соблюдению правил гигиены и должной обработке всех используемых инструментов после
+							каждой процедуры, чтобы предотвратить распространение инфекций. Все растворы и концентрации строго
+							соответствуют нормам и имеют все необходимые сертификаты.</p>
+						<p class="steril__priority"><strong>Ваше здоровье и безопасность у нас в <span>приоритете</span>!</strong>
+						</p>
+					</div>
+
+
+
+					<p class="section__subtitle">
+						<span></span>
+						<span>Четыре этапа</span>
+						<span></span>
+					</p>
+					<div class="stage _anim-items _anim-no-repeat">
+						<div id="stage1" class="stage__button press">
+							<p class="stage__btn-title">Этап №1</p>
+						</div>
+						<div class="stage__arrow anim__arrow animate033"></div>
+						<div class="stage__content stage-visible" data-id="stage1">
+							<p class="stage__num"><strong>Этап №1</strong></p>
+							<p class="stage__title"><strong>Дезинфекция</strong></p>
+							<div class="stage__img">
+								<img src="img/about/s001.jpg" alt="">
+							</div>
+							<div class="stage__descr">
+								<p class="stage__text">Инструменты дезинфицируются в 5% растворе Сурфаниос лимон фреш в течение 15
+									минут.
+								</p>
+								<p class="stage__text">Средство обезвреживает:</p>
+								<ul class="stage__text">
+									<li>вирусные гепатиты А, В и С;</li>
+									<li>ВИЧ-инфекции;</li>
+									<li>вирусы герпеса 1 типа;</li>
+									<li>вирусы гриппа;</li>
+									<li>грибы рода Candida;</li>
+									<li>бактерии туберкулеза, стафилококка, кишечной палочки.</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div id="stage2" class="stage__button">
+							<p class="stage__btn-title">Этап №2</p>
+						</div>
+						<div class="stage__arrow anim__arrow animate3366"></div>
+						<div class="stage__content" data-id="stage2">
+							<p class="stage__num">Этап №2</p>
+							<p class="stage__title">Очистка</p>
+							<div class="stage__img">
+								<img src="img/about/s002.jpg" alt="">
+							</div>
+							<div class="stage__descr">
+								<p class="stage__text">Предстерилизационную очистку проводят с целью удаления из изделий белковых,
+									жировых
+									и механических загрязнений, а также остатков дезинфицирующего раствора с помощью щетки под проточной
+									водой.</p>
+								<p class="stage__text">Не следует промывать инструмент сразу после процедур и смывать в канализацию кучу
+									вирусов. Именно поэтому, выше указанная последовательность важна!</p>
+							</div>
+						</div>
+
+						<div id="stage3" class="stage__button">
+							<p class="stage__btn-title">Этап №3</p>
+						</div>
+						<div class="stage__arrow anim__arrow animate66100"></div>
+						<div class="stage__content" data-id="stage3">
+							<p class="stage__num">Этап №3</p>
+							<p class="stage__title">Упаковывание</p>
+							<div class="stage__img">
+								<img src="img/about/s003.jpg" alt="">
+							</div>
+							<div class="stage__descr">
+								<p class="stage__text">После промывки инструменты сушатся и упаковываются в крафт-пакеты. Крафт-пакеты
+									используются для стерилизации, а также последующего сохранения стерильности инструментов до прихода
+									клиента.</p>
+								<p class="stage__text">Подходят для паровой и газовой стерилизации. Имеется индикатор, который указывает
+									на стерильность. Упаковывать инструмент помогает аппарат для герметичного предстерилизационного
+									упаковывания.</p>
+							</div>
+						</div>
+
+						<div id="stage4" class="stage__button">
+							<p class="stage__btn-title">Этап №4</p>
+						</div>
+						<div class="stage__content" data-id="stage4">
+							<p class="stage__num">Этап №4</p>
+							<p class="stage__title">Стерилизация</p>
+							<div class="stage__img">
+								<img src="img/about/s004.jpg" alt="">
+							</div>
+							<div class="stage__descr">
+								<p class="stage__text">Последний этап – стерилизация рабочего инструмента в автоклаве под паром 134°С. В
+									нашем случае, автоклав класса B, который является актуальным в сфере медицины и стоматологии. Подходит
+									для стерилизации медицинских инструментов любой формы и материала.</p>
+								<p class="stage__text">После стерилизации инструменты хранятся в ультрафиолетовом шкафу, они ждут
+									клиентов. Важно, не пропускать ни одного этапа и придерживаться их последовательности:</p>
+								<ul class="stage__text">
+									<li>дезинфекция в 5% растворе Сурфаниос лемон фреф;</li>
+									<li>предстерилизационная очистка под проточной водой;</li>
+									<li>стерилизация в автоклаве под паром 134°С;</li>
+									<li>хранение</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Секция о мастерах -->
+		<section class="section section-team">
+			<div class="wrapper">
+				<p class="section__title">Наша команда</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Профессионалов</span>
+					<span></span>
+				</p>
+				<div class="section__content">
+					<div class="masters">
+						<div class="master _anim-items _anim-no-repeat">
+							<div class="master__photo">
+								<img src="img/about/master01.jpg" alt="">
+							</div>
+							<div class="master__info">
+								<p class="master__name">Ольга</p>
+								<p class="master__experience">Опыт работы<br>более 7-и лет</p>
+								<p id="master001" class="button master-button">Смотреть работы</p>
+							</div>
+						</div>
+						<div class="portfolio" data-id='master001'>
+							<p class="portfolio__title">Работы <span>Ольги</span></p>
+							<a class="portfolio__item" href="img/gallery/001.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/001.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/002.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/002.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/003.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/003.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/004.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/004.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/005.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/005.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/006.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/006.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/007.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/007.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/008.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/008.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/009.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/009.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/010.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/010.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/011.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/011.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/012.jpg" data-lightbox="master001" data-title="">
+								<img class="portfolio__img" src="img/gallery/012.jpg" alt="">
+							</a>
+						</div>
+						<div class="master _anim-items _anim-no-repeat">
+							<div class="master__photo">
+								<img src="img/about/master02.jpg" alt="">
+							</div>
+							<div class="master__info">
+								<p class="master__name">Вероника</p>
+								<p class="master__experience">Опыт работы<br>более 5-и лет</p>
+								<p id="master002" class="button master-button">Смотреть работы</p>
+							</div>
+						</div>
+						<div class="portfolio" data-id='master002'>
+							<p class="portfolio__title">Работы <span>Вероники</span></p>
+							<a class="portfolio__item" href="img/gallery/013.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/013.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/014.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/014.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/015.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/015.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/016.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/016.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/017.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/017.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/018.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/018.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/019.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/019.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/020.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/020.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/021.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/021.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/023.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/023.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/024.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/024.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/022.jpg" data-lightbox="master02" data-title="">
+								<img class="portfolio__img" src="img/gallery/022.jpg" alt="">
+							</a>
+						</div>
+
+						<div class="master _anim-items _anim-no-repeat">
+							<div class="master__photo" data-id='master003'>
+								<img src="img/about/master03.jpg" alt="">
+							</div>
+							<div class="master__info">
+								<p class="master__name">Виктория</p>
+								<p class="master__experience">Опыт работы<br>более 5-и лет</p>
+								<p id="master003" class="button master-button">Смотреть работы</p>
+							</div>
+						</div>
+						<div class="portfolio" data-id='master003'>
+							<p class="portfolio__title">Работы <span>Виктории</span></p>
+							<a class="portfolio__item" href="img/gallery/025.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/025.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/026.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/026.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/027.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/027.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/037.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/037.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/029.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/029.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/030.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/030.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/031.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/031.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/032.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/032.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/033.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/033.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/034.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/034.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/035.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/035.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/036.jpg" data-lightbox="master003" data-title="">
+								<img class="portfolio__img" src="img/gallery/036.jpg" alt="">
+							</a>
+						</div>
+
+						<div class="master _anim-items _anim-no-repeat">
+							<div class="master__photo">
+								<img src="img/about/master04.jpg" alt="">
+							</div>
+							<div class="master__info">
+								<p class="master__name">Евгения</p>
+								<p class="master__experience">Опыт работы<br>более 3-х лет</p>
+								<p id="master004" class="button master-button">Смотреть работы</p>
+							</div>
+						</div>
+						<div class="portfolio" data-id='master004'>
+							<p class="portfolio__title">Работы <span>Евгении</span></p>
+							<a class="portfolio__item" href="img/gallery/038.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/038.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/039.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/039.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/040.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/040.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/041.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/041.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/042.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/042.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/043.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/043.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/044.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/044.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/045.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/045.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/046.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/046.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/047.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/047.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/048.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/048.jpg" alt="">
+							</a>
+							<a class="portfolio__item" href="img/gallery/028.jpg" data-lightbox="master004" data-title="">
+								<img class="portfolio__img" src="img/gallery/028.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Секция на Instagram -->
+		<section class="section">
+			<div class="wrapper">
+				<p class="section__title">Мы в Instagram</p>
+				<p class="section__subtitle">
+					<span></span>
+					<span>Присоединяйтесь</span>
+					<span></span>
+				</p>
+				<div class="section__content">
+				</div>
+		</section>
+
+
+
+
+
+
+
+
 
 
 		<!-- <section class="section">
@@ -168,9 +625,6 @@
 		</section> -->
 
 	</main>
-
-
-
 
 	<section></section>
 
@@ -212,47 +666,86 @@
 								<p class="info__title">Мы в соцсетях:</p>
 								<a class="info__soclink" target="_blank"
 									href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
+
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" stroke-width="10" />
-										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" stroke-width="10" />
-										<circle cx="80" cy="80" r="20" stroke="white" stroke-width="10" />
+										<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
+										<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
+										<circle cx="80" cy="80" r="20" stroke="white" fill="#02be90" stroke-width="10" />
 										<circle cx="110" cy="50" r="5" fill="white" />
 									</svg>
+									
 								</a>
 								<a class="info__soclink" href="#">
 									<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
-										<circle cx="80" cy="80" r="75" stroke="white" stroke-width="10" />
+										<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 										<path
 											d="M69.6289 121V70.0234H60.1953V57.6016H69.6289V52.2109C69.6289 45.1016 71.6602 39.5938 75.7227 35.6875C79.8242 31.7422 85.5469 29.7695 92.8906 29.7695C95.2344 29.7695 98.1055 30.1602 101.504 30.9414L101.328 44.0664C99.9219 43.7148 98.2031 43.5391 96.1719 43.5391C89.8047 43.5391 86.6211 46.5273 86.6211 52.5039V57.6016H99.2188V70.0234H86.6211V121H69.6289Z"
 											fill="white" />
-									</svg>
+									</svg>						
 								</a>
 							</div>
 
 
 						</div>
 
-						<!-- <form action="telegram.php" class="form" id="footerForm" method="POST"> -->
-						<!-- <form action="mail.php" class="form" id="form" method="POST"> -->
-						<form action="" class="form" id="footerForm" method="POST">
-							<div class="form__item">
-								<h1 class="form__title">Остались вопросы?</h1>
+
+						<div class="contacts__form">
+
+							<div class="form-sended">
+								<div class="preloader">
+									<div class="preloader__container">
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+										<div class="preloader__round">
+											<div class="preloader__inner">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="form__item">
-								<input type="text" id="formName" class="form__input _req" name="name" placeholder="Ваше имя*">
-							</div>
-							<div class="form__item">
-								<input type="tel" id="formTel" class="form__input _req " name="tel" placeholder="Ваш телефон*">
-							</div>
-							<div class="form__item">
-								<textarea name="question" id="formQuestion" class="form__question _req"
-									placeholder="Ваш вопрос*"></textarea>
-							</div>
-							<p class="form__error" hidden>Выделенные красным цветом поля заполнены некорректно</p>
-							<button type="submit" class="button form__button">Отправить</button>
-						</form>
 
 
+							<form action="telegram.php" class="form" id="frmQuestion" method="POST">
+								<div class="form__item">
+									<h1 class="form__title">Остались вопросы?</h1>
+									<input type="text" class="form__input" name="formName" value="Вопрос пользователя">
+								</div>
+								<div class="form__item">
+									<input type="text" id="frmQuestionName" class="form__input _req" name="name" placeholder="Ваше имя*">
+									<p class="input-error">Это поле обязательное (минимум 3 символа)</p>
+								</div>
+
+								<div class="form__item">
+									<input type="tel" id="frmQuestionTel" class="form__input _req" name="tel" placeholder="(___) ___-____"
+										value-unmasked>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+								<div class="form__item">
+									<textarea name="question" id="frmQuestionText" class="form__question _req"
+										placeholder="Ваш вопрос*"></textarea>
+									<p class="input-error">Введите текст вопроса</p>
+								</div>
+
+								<div class="form__item">
+									<input type="checkbox" id="frmQuestionAgreement" class="form__input checkbox-agreement _req"
+										name="agreement" checked>
+									<label class="form__label checkbox-label" for="frmQuestionAgreement">
+										<p>Я согласен на <a href="#">обработку персональных данных</a>*
+										</p>
+									</label>
+									<p class="input-error">Это поле обязательное</p>
+								</div>
+
+
+								<button type="submit" class="button form__button">Отправить</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -261,11 +754,13 @@
 		</div>
 	</footer>
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="js/phone-mask.js"></script>
 
-
+	<script src="js/theme.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
