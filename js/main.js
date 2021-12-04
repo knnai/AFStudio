@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	};
 	/*------------4 этапа стерилизации -----------*/
 
-
+	/*------------мастера - портфолио -----------*/
 	//мастера - портфолио
 	let masters = document.querySelector(".masters");
 	if (masters) masters.addEventListener('click', showPortfolio);
@@ -376,7 +376,48 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			};
 		};
 	};
+	/*------------мастера - портфолио -----------*/
 
+	/*----------маникюр со всего мира -----------*/
+	let pexels = document.querySelector('.pexels');
+	if (pexels) getPhotos();
+
+	function getPhotos() {
+		let arrSearch = ['manicure', 'nails', 'nail%20art'];
+		let index = Math.round((arrSearch.length - 1) * Math.random());
+		let strSearch = arrSearch[index];
+		let page = Math.round(10 * Math.random());
+		fetch("https://api.pexels.com/v1/search?query=" + strSearch + "&page=" + page + "&per_page=8", {
+			headers: {
+				Authorization: "563492ad6f9170000100000124bd569eeda6474ebaf134e49f00df55"
+			}
+		})
+			.then(resp => {
+				return resp.json()
+			})
+			.then(data => {
+				createPhotos(data.photos);
+			})
+	};
+
+	function createPhotos(images) {
+		console.dir(images);
+		if (images.length >= 8) {
+			pexels.innerHTML = "";
+			for (let i = 0; i < 8; i++) {
+				let newItem = document.createElement('a');
+				newItem.classList.add('pexels__item');
+				newItem.href = images[i].src.large;
+				newItem.setAttribute('data-lightbox', 'pexels');
+				newItem.setAttribute('data-title', images[i].photographer);
+				newItem.innerHTML = "<img class='pexels__img' src='" + images[i].src.large + "' alt=''>";
+				pexels.append(newItem);
+			};
+		};
+	};
+
+
+	/*----------маникюр со всего мира -----------*/
 
 
 	/*----------------страница ABOUT -------------*/
