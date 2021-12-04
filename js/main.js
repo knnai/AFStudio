@@ -407,10 +407,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			for (let i = 0; i < 8; i++) {
 				let newItem = document.createElement('a');
 				newItem.classList.add('pexels__item');
-				newItem.href = images[i].src.large;
+				newItem.href = images[i].src.medium;
 				newItem.setAttribute('data-lightbox', 'pexels');
 				newItem.setAttribute('data-title', images[i].photographer);
-				newItem.innerHTML = "<img class='pexels__img' src='" + images[i].src.large + "' alt=''>";
+				newItem.innerHTML = "<img class='pexels__img' src='" + images[i].src.medium + "' alt=''>";
 				pexels.append(newItem);
 			};
 		};
