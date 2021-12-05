@@ -23,16 +23,20 @@
     /*--decor-font: "Zen Antique Soft", serif;*/
     --digit-font: "Mrs Sheppards", cursive;
 
+    --burger: #7e3c00;
+
     --font-dark: black;
     --font-middle: #477652;
     --font-light: #7e3c00;
     --font-lightest: black;
-	--font-slide: #7e3c00;
+    --font-slide: #7e3c00;
 
     --bg-dark: #fff6ed;
     --bg-middle: #477652;
     --bg-light: #ffc087;
     --bg-lightest: #ffffff;
+
+    --bg-action-form: #fff0e0;
 
     --shadow-dark: #7e3c00;
     --shadow-middle: #477652;
@@ -41,7 +45,7 @@
 
     --border-dark: black;
     --border-middle: #477652;
-    --border-light: #7e3c00;
+    --border-light: #8d6e63; /*#7e3c00;*/
     --border-lightest: #7e3c00;
 
     /*--tab-active-bg-color: #113e33;*/
@@ -49,7 +53,7 @@
 
     /*--фоны --*/
     /*--bg-img-slide: url(../img/bg-first.jpg);*/
-	--bg-decor: url("../img/light-decor.png");
+    --bg-decor: url("../img/light-decor.png");
     --bg-img-slide: url(../img/bg-first_light.jpg);
     --bg-img-services: none;
 }

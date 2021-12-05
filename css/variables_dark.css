@@ -23,6 +23,8 @@
 	/*--decor-font: "Zen Antique Soft", serif;*/
 	--digit-font: "Mrs Sheppards", cursive;
 
+	--burger: #02be90;
+
 	/*--цвета текста--*/
 	--font-dark: black;
 	--font-middle: #477652;
@@ -35,6 +37,7 @@
 	--bg-middle: #477652;
 	--bg-light: #02be90;
 	--bg-lightest: #ffffff;
+	--bg-action-form: var(--bg-dark);
 
 	/*--цвета тени--*/
 	--shadow-dark: black;
@@ -55,5 +58,4 @@
 	--bg-decor: url("../img/dark-decor.png");
 	--bg-img-slide: url(../img/bg-first.jpg);
 	--bg-img-services: url(../img/bg-first.jpg);
-	
 }
