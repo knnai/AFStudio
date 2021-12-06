@@ -360,7 +360,7 @@
 }
 
 .ui-state-default:hover {
-	box-shadow: 0 0 10px 3px var(--shadow-light), inset 0 0 20px 3px var(--shadow-light);
+	box-shadow: 0 0 10px 2px var(--shadow-light), inset 0 0 10px 2px var(--shadow-light);
 }
 
 .ui-state-active,
@@ -373,7 +373,7 @@ a.ui-button:active,
 	background: none;
 	font-weight: normal;
 	color: var(--font-light);
-	box-shadow: 0px 0px 10px 5px var(--shadow-light);
+	box-shadow: 0px 0px 10px 2px var(--shadow-light);
 	position: relative;
 }
 
@@ -439,8 +439,8 @@ a.ui-button:active,
 }
 .hours__booked {
 	cursor: auto;
-	border: 1px solid grey;
-	color: grey;
+	border: 1px solid black;
+	color: black;
 	background: rgb(88 88 88 / 50%);
 	position: relative;
 }
@@ -448,15 +448,15 @@ a.ui-button:active,
 	content: "забронировано";
 	position: absolute;
 	display: block;
-	color: grey;
+	color: black;
 	bottom: 0px;
 }
 .hours__item.hours__selected {
-	box-shadow: 0 0 10px 3px var(--shadow-light), inset 0 0 20px 3px var(--shadow-light);
+	box-shadow: 0 0 10px 2px var(--shadow-light), inset 0 0 10px 2px var(--shadow-light);
 }
 .hours__item:not(.hours__booked):hover {
 	z-index: 1;
-	box-shadow: 0 0 10px 3px var(--shadow-light), inset 0 0 20px 3px var(--shadow-light);
+	box-shadow: 0 0 10px 2px var(--shadow-light), inset 0 0 10px 2px var(--shadow-light);
 }
 /*-------------time-----------*/
 

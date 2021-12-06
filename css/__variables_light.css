@@ -23,40 +23,40 @@
 	/*--decor-font: "Zen Antique Soft", serif;*/
 	--digit-font: "Mrs Sheppards", cursive;
 
-	--burger: #02be90;
-
-	/*--цвета текста--*/
+	/*
+	--цвета текста--
 	--font-dark: black;
-	--font-middle: #477652;
+	--font-middle: #477652;	
 	--font-light: #02be90;
 	--font-lightest: #ffffff;
-	--font-slide: #ffffff;
 
-	/*--цвета фона--*/
+	/*--цвета фона--
 	--bg-dark: black;
 	--bg-middle: #477652;
 	--bg-light: #02be90;
 	--bg-lightest: #ffffff;
-	--bg-action-form: var(--bg-dark);
-	--bg-panel: rgba(45, 45, 45, .7);
 
-	/*--цвета тени--*/
+	/*--цвета тени--
 	--shadow-dark: black;
 	--shadow-middle: #477652;
 	--shadow-light: #02be90;
 	--shadow-lightest: #ffffff;
 
-	/*--цвета бордюра--*/
+	/*--цвета бордюра--
 	--border-dark: black;
 	--border-middle: #477652;
 	--border-light: #02be90;
 	--border-lightest: #ffffff;
+	*/
+
+	--dark: #8d6e63;
+	--middle: #8d6e63;
+	--light: #8d6e63;
+	--lightest: #ffffff;
 
 	/*--tab-active-bg-color: #113e33;*/
 	--tab-active-bg-color: #022a20;
 
-	/*--фоны --*/
-	--bg-decor: url("../img/dark-decor.png");
+	/*--фон слайдов--*/
 	--bg-img-slide: url(../img/bg-first.jpg);
-	--bg-img-services: url(../img/bg-first.jpg);
 }

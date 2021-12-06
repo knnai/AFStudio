@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			frmDesignFile.value = '';
 			return;
 		};
-		if (file.size > 2 * 1024 * 1024) {
-			msgError.innerText = 'Размер должен быть до 2Мб';
+		if (file.size > 5 * 1024 * 1024) {
+			msgError.innerText = 'Размер должен быть до 5Мб';
 			frmDesignFile.classList.add('_error');
 			frmDesignFile.value = '';
 			return;
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		window.addEventListener('scroll', animOnScroll);
 		setTimeout(() => {
 			animOnScroll();
-		}, 500);
+		}, 100);
 	};
 	function animOnScroll() {
 		for (let i = 0; i < animItems.length; i++) {
@@ -220,6 +220,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	}
 	/*------------------- анимация при скролле ----------------------*/
 
+	/*---------------- прокрутка страницы вверх ---------------------*/
+	let btnToTop = document.querySelector('.panel__to-top');
+	if (btnToTop) btnToTop.addEventListener("click", scrollToTop);
+	function scrollToTop(){
+		window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+	};
+	/*---------------- прокрутка страницы вверх ---------------------*/
 
 	/*---------------------- анимация цифр --------------------------*/
 	function animCounter(elem, maxValue = 0, milliseconds) {
@@ -241,7 +251,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 	let actionTimer = document.querySelector('#actionTimer');
 	if (actionTimer) initTimer(actionTimer.id, new Date(2021, 11, 31, 24, 0, 0));
-
 	/*------------------- таймер -------------*/
 	function initTimer(idTimer, endTime = new Date()) {
 		let timer = document.querySelector("#" + idTimer);
@@ -379,8 +388,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/*------------мастера - портфолио -----------*/
 
 	/*----------маникюр со всего мира -----------*/
-	let pexels = document.querySelector('.pexels');
-	if (pexels) getPhotos();
+	let pexelItems = document.querySelectorAll('.pexels__item');
+	if (pexelItems) getPhotos();
 
 	function getPhotos() {
 		let arrSearch = ['manicure', 'nails', 'nail%20art'];
@@ -396,22 +405,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 				return resp.json()
 			})
 			.then(data => {
-				createPhotos(data.photos);
+				updatePhotos(data.photos);
 			})
 	};
 
-	function createPhotos(images) {
+	function updatePhotos(images) {
 		console.dir(images);
-		if (images.length >= 8) {
-			pexels.innerHTML = "";
+		if (images.length >= 8 && pexelItems.length >= 8) {
 			for (let i = 0; i < 8; i++) {
-				let newItem = document.createElement('a');
-				newItem.classList.add('pexels__item');
-				newItem.href = images[i].src.medium;
-				newItem.setAttribute('data-lightbox', 'pexels');
-				newItem.setAttribute('data-title', images[i].photographer);
-				newItem.innerHTML = "<img class='pexels__img' src='" + images[i].src.medium + "' alt=''>";
-				pexels.append(newItem);
+				pexelItems[i].href = images[i].src.large2x;
+				pexelItems[i].setAttribute('data-title', 'Фотограф: ' + images[i].photographer);
+				pexelItems[i].querySelector('img').src = images[i].src.medium;
 			};
 		};
 	};
@@ -483,12 +487,18 @@ $(function () {
 		if ($(this).innerWidth() > 425 && $(this).scrollTop() > 100) {
 			$('.header__bottom').addClass('_fixedmenu');
 			$('.menu').addClass('_noborder');
-			$('.section:first-child').addClass('first-margin-top');
+			$('.section:first-child').addClass('first-margin-top');			
 		} else {
 			$('.header__bottom').removeClass('_fixedmenu');
 			$('.menu').removeClass('_noborder');
-			$('.section:first-child').removeClass('first-margin-top');
+			$('.section:first-child').removeClass('first-margin-top');			
 		}
+		
+		if ($(this).scrollTop() > 100){
+			$('.panel').css('display', 'flex');	
+		} else {
+			$('.panel').css('display', 'none');
+		};
 	});
 	/*-------------фиксация главного меню при прокрутке------*/
 
