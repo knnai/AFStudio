@@ -1,4 +1,9 @@
 "use strict"
+
+const designDefaultDark = "img/gallery/design-default-dark.jpg";
+const designDefaultLight = "img/gallery/design-default-light.jpg";
+
+
 document.addEventListener("DOMContentLoaded", function (e) {
 
 	/*-------------------цветовая тема---------------------------*/
@@ -51,7 +56,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		//превью страницы сервисов
 		let previewImg = document.querySelector('#frmService .preview img');
 		if (previewImg) {
-			previewImg.src = (colorTheme == 'light') ? "img/gallery/design-default-light.jpg" : "img/gallery/design-default.jpg";
+			if (previewImg.src == designDefaultDark || previewImg.src == designDefaultLight){
+				previewImg.src = (colorTheme == 'light') ? designDefaultLight : designDefaultDark;
+			}
 		}
 	};
 

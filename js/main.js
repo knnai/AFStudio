@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 					};
 					Swal.fire({
 						title: 'Спасибо, что Вы с нами!',
-						text: 'Мы Вам перезвоним ближайшие 12 часов!',
+						text: 'Мы Вам перезвоним в течение суток!',
 					});
 				};
 			};
