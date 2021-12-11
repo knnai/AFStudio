@@ -82,8 +82,6 @@ let prices = [
 ];
 
 let order = {};
-const designDef = 'design-default.jpg';
-const galleryPath = 'img/gallery/';
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -270,7 +268,7 @@ function changeOrderForm() {
 	let time = document.querySelector('#frmServiceTime');
 	let services = document.querySelector('#frmServiceServices');
 	let design = document.querySelector('#frmServiceDesign');
-	let prviewImg = document.querySelector('.preview img');
+	let previewImg = document.querySelector('.preview img');
 	let totalSum = document.querySelector('#totalSum');
 	let totalSumP = document.querySelector('.total-sum');
 	let totalSumPSpan = document.querySelector('.total-sum span');
@@ -288,7 +286,7 @@ function changeOrderForm() {
 	if (services.value != '') services.classList.remove('_error');
 
 	design.value = (order.design.value == designDef) ? '' : order.design.value;
-	prviewImg.src = galleryPath + order.design.value;
+	previewImg.src = previewImg.alt = galleryPath + order.design.value;
 	//console.dir(design.value);
 
 	totalSum.value = order.totalSum;
@@ -307,7 +305,10 @@ function resetTabsServices() {
 	if (design) design.checked = false;
 
 	let date = document.querySelector('.ui-state-default.ui-state-active');
-	if (date) date.classList.remove('ui-state-active');
+	if (date) {
+		date.classList.remove('ui-state-active');
+		$("#datepicker").datepicker("setDate", new Date());
+	}
 
 	let time = document.querySelector('.hours__item.hours__selected');
 	if (time) time.classList.remove('hours__selected');

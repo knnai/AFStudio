@@ -1,8 +1,10 @@
 "use strict"
 
-const designDefaultDark = "img/gallery/design-default-dark.jpg";
-const designDefaultLight = "img/gallery/design-default-light.jpg";
+const galleryPath = 'img/gallery/';
+const designDefaultDark = "design-default-dark.jpg";
+const designDefaultLight = "design-default-light.jpg";
 
+let designDef = "";
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -56,8 +58,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		//превью страницы сервисов
 		let previewImg = document.querySelector('#frmService .preview img');
 		if (previewImg) {
-			if (previewImg.src == designDefaultDark || previewImg.src == designDefaultLight){
-				previewImg.src = (colorTheme == 'light') ? designDefaultLight : designDefaultDark;
+			console.dir(previewImg);
+			designDef = (colorTheme == 'light') ? designDefaultLight : designDefaultDark;
+			if (previewImg.alt == galleryPath + designDefaultDark || previewImg.alt == galleryPath + designDefaultLight || previewImg.alt == '') {
+				previewImg.src = previewImg.alt = galleryPath + designDef;
 			}
 		}
 	};

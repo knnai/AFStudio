@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/*-------------------lightbox---------------------------*/
 
 
-	/*-----------отправка форм(дизайна, вопроса)------------*/
+	/*-----------------отправка форм------------------------*/
 	//форма отправки дизайна
 	let frmDesign = document.querySelector("#frmDesign");
 	if (frmDesign) frmDesign.addEventListener('submit', formSend);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			};
 		};
 	};
-	/*-------------------отправка формы с дизайном-------------------*/
+	/*-----------------отправка форм------------------------*/
 
 	/*-----------------------валидация форм--------------------------*/
 	function formValidate(form) {
@@ -223,11 +223,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/*---------------- прокрутка страницы вверх ---------------------*/
 	let btnToTop = document.querySelector('.panel__to-top');
 	if (btnToTop) btnToTop.addEventListener("click", scrollToTop);
-	function scrollToTop(){
+	function scrollToTop() {
 		window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
+			top: 0,
+			behavior: "smooth",
+		});
 	};
 	/*---------------- прокрутка страницы вверх ---------------------*/
 
@@ -487,15 +487,15 @@ $(function () {
 		if ($(this).innerWidth() > 425 && $(this).scrollTop() > 100) {
 			$('.header__bottom').addClass('_fixedmenu');
 			$('.menu').addClass('_noborder');
-			$('.section:first-child').addClass('first-margin-top');			
+			$('.section:first-child').addClass('first-margin-top');
 		} else {
 			$('.header__bottom').removeClass('_fixedmenu');
 			$('.menu').removeClass('_noborder');
-			$('.section:first-child').removeClass('first-margin-top');			
+			$('.section:first-child').removeClass('first-margin-top');
 		}
-		
-		if ($(this).scrollTop() > 100){
-			$('.panel').css('display', 'flex');	
+
+		if ($(this).scrollTop() > 100) {
+			$('.panel').css('display', 'flex');
 		} else {
 			$('.panel').css('display', 'none');
 		};
