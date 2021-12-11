@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/lightbox.min.css">
 	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
 	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
+	<link rel="stylesheet" href="css/snow.css">
 	<link rel="stylesheet" href="css/main-anim.css">
 	<link rel="stylesheet" href="css/forms.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -42,6 +43,34 @@
 					<div class="preloader__inner">
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="snow" data-snow="snow">
+		<div class="snow__control">
+			<p class="snow__title">Снег:</p>
+
+			<div class="mode">
+				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
+				<label class="mode__label" for="snowOff">Нет</label>
+
+				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
+				<label class="mode__label" for="snowWeak">Слабый</label>
+
+				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
+				<label class="mode__label" for="snowAverage">Средний</label>
+
+				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
+				<label class="mode__label" for="snowBlizzard">Метель</label>
+			</div>
+
+			<p class="snow__title">Музыка:</p>
+			<div class="snow__audio">
+				<audio id="snowAudio" controls loop>
+					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
+					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
+				</audio>
 			</div>
 		</div>
 	</div>
@@ -344,6 +373,7 @@
 													<label class="form__label" for="frmServiceDesign">Дизайн:</label>
 													<input type="text" name="design" id="frmServiceDesign" class="form__input" placeholder="">
 													<div class="preview">
+														<!-- <img src="img/gallery/design-default-dark.jpg" alt="img/gallery/design-default-dark.jpg"> -->
 														<img src="" alt="">
 													</div>
 												</div>
@@ -554,12 +584,12 @@
 	</footer>
 
 	<div class="panel">
-		<div class="panel__btn">			
+		<div class="panel__btn">
 			<button class="panel__to-top">Вверх</button>
 		</div>
 		<div class="panel__btn">
 			<label for="themeInput" class="theme__label"></label>
-		</div>		
+		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -570,6 +600,7 @@
 	<script src="js/phone-mask.js"></script>
 
 	<script src="js/theme.js"></script>
+	<script src="js/snow.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/services.js"></script>
 

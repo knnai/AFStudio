@@ -11,6 +11,7 @@
 
 	<!-------------------- CSS ----------------------->
 	<link id="linkTheme" rel="stylesheet" href="css/variables_dark.css">
+	<link rel="stylesheet" href="css/snow.css">
 	<link rel="stylesheet" href="css/main-anim.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/404.css">
@@ -39,6 +40,35 @@
 		</div>
 	</div>
 -->
+
+	<div class="snow" data-snow="snow">
+		<div class="snow__control">
+			<p class="snow__title">Снег:</p>
+
+			<div class="mode">
+				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
+				<label class="mode__label" for="snowOff">Нет</label>
+
+				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
+				<label class="mode__label" for="snowWeak">Слабый</label>
+
+				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
+				<label class="mode__label" for="snowAverage">Средний</label>
+
+				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
+				<label class="mode__label" for="snowBlizzard">Метель</label>
+			</div>
+
+			<p class="snow__title">Музыка:</p>
+			<div class="snow__audio">
+				<audio id="snowAudio" controls loop>
+					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
+					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
+				</audio>
+			</div>
+		</div>
+	</div>
+
 	<header>
 
 		<div class="header__top">
@@ -155,6 +185,8 @@
 	</main>
 
 	<script src="js/theme.js"></script>
+	<script src="js/snow.js"></script>
+
 
 </body>
 
