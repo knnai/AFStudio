@@ -37,11 +37,11 @@ main {
 .message {
 	margin: 10px;
 	text-align: center;
-	color: var(--lightest);
+	color: var(--font-lightest);
 	font-size: 20px;
 }
 .message a {
-	color: var(--light);
+	color: var(--font-light);
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 20px;
