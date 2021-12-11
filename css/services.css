@@ -2,7 +2,7 @@
 	background: var(--bg-img-services) center/cover no-repeat;
 	background-attachment: fixed;
 }
-.four-steps{
+.four-steps {
 	text-align: center;
 	font-size: 18px;
 	font-weight: 700;
@@ -135,10 +135,11 @@
 }
 
 .price__title {
-	font-family: var(--decor-font);
+	/*font-family: var(--decor-font);*/
+	font-family: "Cormorant Garamond", serif;
 	font-size: 22px;
-	/*font-style: italic;
-	font-weight: bold;*/
+	font-style: italic;
+	font-weight: 700;
 	padding-left: 10px;
 }
 
