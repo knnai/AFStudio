@@ -53,11 +53,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			request.onload = function () {
 				if (request.status != 200) {
 					sended.style.display = 'none';
+					showModalWindow(modalWin, "error", "Ошибка!", "Повторите еще раз...", "ОК");
+					/*
 					Swal.fire({
 						title: 'Ошибка!',
 						text: "Повторите еще раз...",
 					})
-
+					*/
 				} else {
 					sended.style.display = 'none';
 					form.reset();
@@ -65,10 +67,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 					if (form.id == 'frmDesign') {
 						document.querySelector('#frmDesignPreview').innerHTML = '';
 					};
+					showModalWindow(modalWin, "success", "Спасибо, что Вы с нами!", "Мы Вам перезвоним в течение суток!", "ОК");
+					/*
 					Swal.fire({
 						title: 'Спасибо, что Вы с нами!',
 						text: 'Мы Вам перезвоним в течение суток!',
 					});
+					*/
 				};
 			};
 		};
@@ -79,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	function formValidate(form) {
 		let error = false;
 		let reqList = form.querySelectorAll('._req');
-		console.dir(reqList);
+		//console.dir(reqList);
 		for (let i = 0; i < reqList.length; i++) {
 			let input = reqList[i];
 			input.classList.remove('_error');
@@ -410,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	};
 
 	function updatePhotos(images) {
-		console.dir(images);
+		//console.dir(images);
 		if (images.length >= 8 && pexelItems.length >= 8) {
 			for (let i = 0; i < 8; i++) {
 				pexelItems[i].href = images[i].src.large2x;
@@ -454,20 +459,6 @@ $(function () {
 		pager: false,
 	});
 	/*-------------------слайдер - первый экран -------------*/
-
-	/*-------------------слайдер - материалы ----------------*/
-	$('.materials').bxSlider({
-		auto: true,
-		mode: 'vertical',
-		//ticker: true,
-		speed: 1000,
-		pause: 3000,
-		autoHover: true,
-		//easing: 'ease-in-out',
-		controls: false,
-		pager: false,
-	});
-	/*-------------------слайдер - материалы ----------------*/
 
 	/*-------------------слайдер - отзывы -------------------*/
 	$('.reviews').bxSlider({

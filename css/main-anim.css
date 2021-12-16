@@ -1,9 +1,9 @@
 @keyframes neon-light {
 	0% {
-		box-shadow: 0 0 2px 0px var(--shadow-light);
+		box-shadow: 0 0 2px 0px var(--shadow-light), inset 0 0 2px 0px var(--shadow-light);
 	}
 	100% {
-		box-shadow: 0 0 7px 5px var(--shadow-light);
+		box-shadow: 0 0 7px 2px var(--shadow-light), inset 0 0 7px 2px var(--shadow-light);		
 	}
 }
 

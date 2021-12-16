@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	
 	//console.dir(countWeak);
 
+	//инпут и метки для инпута
+	let snowInput = document.querySelector('#snowInput');
+	if (snowInput) snowInput.addEventListener('change', changeSnowInput);
+	let snowLabels = document.querySelectorAll('.snow__label');		
+
+
 	//инициализация
 	let myStorage = window.localStorage;
 	let snowMode = myStorage.getItem('snowMode');	
@@ -44,18 +50,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/*----------------setMode---------------------*/
 	function setMode(e) {
 		if (e.target.tagName != 'INPUT') return;
-		myStorage.setItem('snowMode', e.target.id);
-		initSnow(snowContainer, e.target.id);
+		snowMode = e.target.id;
+		myStorage.setItem('snowMode', snowMode);
+		initSnow(snowContainer, snowMode);
 	};
 	/*----------------setMode---------------------*/
 
 	/*----------------initSnow--------------------*/
 	function initSnow(snowContainer, snowMode) {
-		
+		//клик Нет при выключенном снеге
 		if (snowMode == SNOW_OFF && arrSnow.length == 0) return;		
 		
+		//останавливаем снег
 		clearInterval(intervalId);		
 		
+		//текущее количество снежинок
 		let curCountSnow = arrSnow.length;
 		
 		/*----------------ЦИКЛ--------------------*/
@@ -131,13 +140,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 		//запуск анимации
 		delay = 70;
-		if(snowMode == SNOW_BLIZZARD) delay = 30;
+		if(snowMode == SNOW_BLIZZARD) delay = 30;		
 		if(snowMode != SNOW_OFF){
+			//включаем вращение меток
+			for(let label of snowLabels){				
+				label.classList.add('snow-in');
+			}
+			//стартуем снег
 			intervalId = setInterval(function () {
 				for (let i = 0; i < arrSnow.length; i++) {
 					arrSnow[i].moveElem();
 				}
 			}, delay);
+		} else {
+			//вЫключаем вращение меток
+			for(let label of snowLabels){			
+				label.classList.remove('snow-in');
+			}
 		};		
 	};
 	/*----------------initSnow--------------------*/	
@@ -186,6 +205,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		}		
 	};
 	/*------------------Snow----------------------*/	
+	
+	
+	function changeSnowInput(e){		
+		for(let label of snowLabels){
+			if (this.checked){
+				label.classList.add('snow__input-checked');
+			}else{
+				if (snowMode == SNOW_OFF) label.classList.remove('snow__input-checked');	
+			}
+		}
+		console.dir(this.checked);	
+	};
+	
+	
+	
 	
 });
 

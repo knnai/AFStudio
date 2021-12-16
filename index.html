@@ -13,8 +13,8 @@
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
-	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
-	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
+	<link id="linkTheme" rel="stylesheet" href="css/variables_dark.css">
+	<link rel="stylesheet" href="css/modal-win.css">
 	<link rel="stylesheet" href="css/snow.css">
 	<link rel="stylesheet" href="css/main-anim.css">
 	<link rel="stylesheet" href="css/forms.css">
@@ -24,58 +24,14 @@
 </head>
 
 <body>
-
-	<div id="preloader">
-		<div class="preloader">
-			<div class="preloader__container">
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="snow" data-snow="snow">
-		<div class="snow__control">
-			<p class="snow__title">Снег:</p>
-
-			<div class="mode">
-				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
-				<label class="mode__label" for="snowOff">Нет</label>
-
-				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
-				<label class="mode__label" for="snowWeak">Слабый</label>
-
-				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
-				<label class="mode__label" for="snowAverage">Средний</label>
-
-				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
-				<label class="mode__label" for="snowBlizzard">Метель</label>
-			</div>
-
-			<p class="snow__title">Музыка:</p>
-			<div class="snow__audio">
-				<audio id="snowAudio" controls loop>
-					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
-					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
-				</audio>
-			</div>
-		</div>
-	</div>
+	<!-- Шапка -->
 	<header>
-
+		<!-- Шапка (верх) -->
 		<div class="header__top">
 			<div class="wrapper">
 				<div class="header__info">
+
+					<!-- Лого -->
 					<a class="logo" href="index.html">
 						<img class="logo__img" src="img/logo.png" alt="">
 						<span class="logo__text">
@@ -83,6 +39,8 @@
 							<span class="logo__studio">Nail Studio</span>
 						</span>
 					</a>
+
+					<!-- Инфо -->
 					<div class="info">
 						<div class="info__item">
 							<p class="info__title">Наш адрес:</p>
@@ -100,19 +58,28 @@
 							<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 						</div>
 					</div>
-
-					<div class="info__theme">
-						<div class="theme">
-							<input id="themeInput" class="theme__checkbox" type="checkbox">
-							<label for="themeInput" class="theme__label"></label>
+					
+					<div class="add-buttons">
+						<!-- Изменение темы -->
+						<div class="info__theme">
+							<div class="theme">
+								<input id="themeInput" class="theme__checkbox" type="checkbox">
+								<label for="themeInput" class="theme__label"></label>
+							</div>
+						</div>
+						
+						<!-- Кнопка снега -->
+						<div class="snow__button">
+							<label for="snowInput" class="snow__label"></label>			
 						</div>
 					</div>
-
+					
+					<!-- Соцсети -->
 					<div class="social">
 						<p class="info__title">Мы в соцсетях:</p>
 						<a class="info__soclink" target="_blank"
 							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
-
+							<!-- иконка инстаграмм	 -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
 								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
@@ -122,6 +89,7 @@
 
 						</a>
 						<a class="info__soclink" href="#">
+							<!-- иконка фейсбук -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 								<path
@@ -135,9 +103,10 @@
 			</div>
 		</div>
 
+		<!-- Шапка (низ) - меню -->
 		<nav class="header__bottom">
 			<div class="wrapper">
-
+				<!-- Лого (для маленьких экранов) -->
 				<a class="logomin" href="index.html">
 					<img class="logomin__img" src="img/logo.png" alt="">
 					<span class="logomin__text">
@@ -145,9 +114,22 @@
 						<span class="logomin__studio">Nail Studio</span>
 					</span>
 				</a>
+				
+				<div class="add-buttons">
+					<!-- Изменение темы -->
+					<div class="info__theme">
+						<div class="theme">							
+							<label for="themeInput" class="theme__label"></label>
+						</div>
+					</div>
+					
+					<!-- Кнопка снега -->
+					<div class="snow__button">
+						<label for="snowInput" class="snow__label"></label>			
+					</div>
+				</div>
 
-				<label for="themeInput" class="theme__label"></label>
-
+				<!-- Гамбургер -->
 				<input type="checkbox" id="check-burger">
 				<label class="burger" for="check-burger">
 					<span></span>
@@ -155,6 +137,7 @@
 					<span></span>
 				</label>
 
+				<!-- Меню -->
 				<ul class="menu">
 					<li class="menu__item"><a class="menu__link menu__active" href="index.html"><span>Главная</span></a></li>
 					<li class="menu__item"><a class="menu__link" href="about.html"><span>О нас</span></a></li>
@@ -165,10 +148,12 @@
 				</ul>
 			</div>
 		</nav>
+
 	</header>
 
+	<!-- Основной контент -->
 	<main>
-		<!--first-->
+		<!-- Первая секция -->
 		<section class="section section-first">
 			<div class="wrapper">
 				<div class="section__content">
@@ -179,7 +164,7 @@
 						<a class="button-link signup__button" href="services.html">Записаться онлайн</a>
 
 					</div>
-
+					<!-- Слайдер -->
 					<div class="slider">
 						<div class="slide">
 							<div class="slide__inner">
@@ -229,12 +214,12 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- Слайдер -->
 				</div>
 			</div>
 		</section>
 
-		<!--about-->
+		<!-- О нас -->
 		<section class="section">
 			<div class="wrapper">
 				<p class="section__title">О нас</p>
@@ -259,7 +244,6 @@
 							</div>
 						</div>
 
-						<!-- <div class="about__right _anim-items _anim-no-repeat"> -->
 						<p class="about__text ">Доверьте ваши ноготочки профессионалам!</p>
 						<p class="about__text ">Стильной и привлекательной женщину делает ухоженный вид и современный образ,
 							который состоит из правильно подобранного гардероба, красивой прически и макияжа, а также, конечно же
@@ -286,9 +270,7 @@
 							клиентов скидками, акциями и
 							подарками
 							при посещении салона.</p>
-						<!-- </div> -->
 					</div>
-
 					<div class="_clear"></div>
 				</div>
 
@@ -351,7 +333,7 @@
 			</div>
 		</section>
 
-		<!--services-->
+		<!-- Наши услуги -->
 		<section class="section">
 			<div class="wrapper">
 				<p class="section__title">Наши услуги</p>
@@ -399,36 +381,7 @@
 			</div>
 		</section>
 
-		<!-- <section class="section materials-section"> -->
-		<!-- <div class="wrapper"> -->
-		<!-- <p class="section__title">Наши материалы</p> -->
-		<!-- <p class="section__subtitle"> -->
-		<!-- <span></span> -->
-		<!-- <span>Для профессионалов</span> -->
-		<!-- <span></span> -->
-		<!-- </p> -->
-		<!-- <div class="section__content"> -->
-
-		<!-- <div class="materials"> -->
-		<!-- <div class="materials__item"> -->
-		<!-- <div><img src="img/materials/materials001.jpg" alt="Наши материалы"></div> -->
-		<!-- </div> -->
-		<!-- <div class="materials__item"> -->
-		<!-- <div><img src="img/materials/materials002.jpg" alt="Наши материалы"></div> -->
-		<!-- </div> -->
-		<!-- <div class="materials__item"> -->
-		<!-- <div><img src="img/materials/materials003.jpg" alt="Наши материалы"></div> -->
-		<!-- </div> -->
-		<!-- <div class="materials__item"> -->
-		<!-- <div><img src="img/materials/materials004.jpg" alt="Наши материалы"></div> -->
-		<!-- </div> -->
-		<!-- </div> -->
-
-
-		<!-- </div> -->
-		<!-- </div> -->
-		<!-- </section> -->
-
+		<!-- Акция -->
 		<section class="section action-section">
 			<div class="wrapper">
 				<p class="section__title">Акция</p>
@@ -449,6 +402,7 @@
 							<p class="action__text">и получите скидку <span>10%</span></p>
 							<p class="action__text">при <span>первом</span> посещении в 2022 году</p>
 							<p class="action__text timer-title"><span>До завершения осталось:<span></p>
+							<!-- Таймер -->
 							<div id="actionTimer" class="timer">
 								<div class="timer__days">00<p>ДНЕЙ</p>
 								</div>
@@ -461,11 +415,12 @@
 								<div class="timer__seconds">00<p>СЕКУНД</p>
 								</div>
 							</div>
-
-
+							<!-- Таймер -->
 						</div>
-						<div class="action__form">
 
+
+						<!-- Форма -->
+						<div class="action__form">
 							<div class="form-sended">
 								<div class="preloader">
 									<div class="preloader__container">
@@ -529,17 +484,14 @@
 								<button type="submit" class="button form__button">Отправить</button>
 							</form>
 						</div>
+						<!-- Форма -->
 					</div>
 
 				</div>
 			</div>
 		</section>
 
-
-
-
-
-		<!-- gallery -->
+		<!-- Наши работы -->
 		<section class="section main-gallery">
 			<div class="wrapper">
 				<p class="section__title">Наши работы</p>
@@ -577,7 +529,7 @@
 			</div>
 		</section>
 
-		<!-- reviews -->
+		<!-- Отзывы -->
 		<section id="reviews" class="section">
 			<div class="wrapper">
 				<p class="section__title">Отзывы</p>
@@ -668,11 +620,7 @@
 
 	</main>
 
-
-
-
-	<section></section>
-
+	<!-- Футер -->
 	<footer class="section" id="contacts">
 		<div class="wrapper">
 			<p class="section__title">Наши контакты</p>
@@ -682,15 +630,18 @@
 				<span></span>
 			</p>
 			<div class="section__content">
+
 				<div class="contacts">
+					<!-- Карта -->
 					<div class="contacts__map">
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.2410584278737!2d37.58986611566948!3d48.719985379274235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40df975426d08437%3A0xd27a5ccc547e01d2!2z0KHRgtGD0LTQuNGPINCQ0L3QsNGB0YLQsNGB0LjQuCDQpNGA0L7Qu9C-0LLQvtC5!5e0!3m2!1sru!2sua!4v1636661266312!5m2!1sru!2sua"
 							style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
 
+					<!-- Контакты -->
 					<div class="contacts__description">
-
+						<!-- Контакты -->
 						<div class="info">
 							<div class="info__item">
 								<p class="info__title">Наш адрес:</p>
@@ -731,13 +682,10 @@
 									</svg>
 								</a>
 							</div>
-
-
-
 						</div>
+						<!-- Контакты -->
 
-						<!-- <form action="telegram.php" class="form" id="footerForm" method="POST"> -->
-						<!-- <form action="mail.php" class="form" id="form" method="POST"> -->
+						<!-- Форма -->
 						<div class="contacts__form">
 
 							<div class="form-sended">
@@ -795,14 +743,92 @@
 								<button type="submit" class="button form__button">Отправить</button>
 							</form>
 						</div>
+						<!-- Форма -->
 					</div>
 				</div>
 			</div>
+
 			<p class="thanks">Спасибо, что Вы с нами!</p>
 			<p class="copy">©2021</p>
 		</div>
 	</footer>
 
+	<!-- Дополнительные элементы -->
+	<!-- Прелоадер -->
+	<div id="preloader">
+		<div class="preloader">
+			<div class="preloader__container">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Снег -->
+	<div class="snow" data-snow="snow">
+		<input type="checkbox" class="snow__input" id="snowInput">
+		<div class="snow__control">
+			<p class="snow__title">Снег:</p>
+
+			<div class="mode">
+				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
+				<label class="mode__label" for="snowOff">Нет</label>
+
+				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
+				<label class="mode__label" for="snowWeak">Слабый</label>
+
+				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
+				<label class="mode__label" for="snowAverage">Средний</label>
+
+				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
+				<label class="mode__label" for="snowBlizzard">Метель</label>
+			</div>
+			
+			<p class="snow__title">Музыка:</p>
+			<div class="snow__audio">
+				<audio id="snowAudio" controls loop>
+					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
+					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
+				</audio>
+			</div>
+			
+			<label for="snowInput" class="snow__hide">Скрыть</label>
+			
+		</div>
+	</div>
+
+	<!-- Модальное окно -->
+	<div class="modal">
+		<div class="modal__wrapper">
+			<div class="modal__window">
+				<div class="modal__item">
+					<img class="modal__icon icon-success" src="img/modal-win/success.svg">
+					<img class="modal__icon icon-error" src="img/modal-win/error.svg">
+				</div>
+				<div class="modal__item">
+					<p class="modal__title"></p>
+				</div>
+				<div class="modal__item">
+					<p class="modal__message"></p>
+				</div>
+				<div class="modal__item">
+					<div class="modal__button"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Кнопка Вверх, тема, снег -->
 	<div class="panel">
 		<div class="panel__btn">
 			<button class="panel__to-top">Вверх</button>
@@ -810,16 +836,20 @@
 		<div class="panel__btn">
 			<label for="themeInput" class="theme__label"></label>
 		</div>
+		<div class="panel__btn">			
+			<label for="snowInput" class="snow__label"></label>			
+		</div>
 	</div>
 
-
+	<!-- Скрипты -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 	<script src="js/phone-mask.js"></script>
 
 	<script src="js/theme.js"></script>
+	<script src="js/modal-win.js"></script>
 	<script src="js/snow.js"></script>
 	<script src="js/main.js"></script>
 

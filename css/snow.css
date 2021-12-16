@@ -1,21 +1,13 @@
-*,
-::before,
-::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
-	font-size: 14px;
-	font-family: var(--basic-font);
-}
-.snow {
+
+.snow {	
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 0%;
 	height: 0%;
 	/*overflow: hidden;	*/
-	display: none;
-	z-index: 90;
+	/*display: none;*/
+	z-index: 1;
 }
 .snow__item {
 	position: absolute;
@@ -38,37 +30,81 @@ body {
 	animation: snowRotate 7s alternate infinite linear;
 }
 
-@keyframes snowRotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+.snow__input{
+	display: none;	
 }
+
+.snow__button{
+	margin: 10px;
+}
+.snow__label{
+	display:block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background: url("../img/snow/002.png") center/cover no-repeat;
+	cursor: pointer;
+	transition: .3s ease;
+}
+
+.snow__label:hover,
+.snow__input-checked {      
+    background-color: #e2faff;    
+}
+.snow__input-checked {      
+	box-shadow: 0 0 10px 2px #e2faff;
+}
+.snow-in{
+	background-color: #e2faff;    
+	box-shadow: 0 0 10px 2px #e2faff;
+	animation: snowRotate 5s infinite linear;
+}	
+/*
+.snow__label {
+    border-radius: 50%;
+    border: 1px solid #1470b4;
+    transform: rotate(325deg);
+    background-color: #e2faff;
+    box-shadow: 0 0 10px 2px #e2faff;
+}
+*/
+
 
 .snow__control {
 	position: fixed;
-	width: 280px;
-	height: 170px;
-	top: 50%;
-	transform: translateY(-50%);
-	right: -280px;
-	/*left: 50%;*/
+	width: 300px;
+	height: 220px;
+	top: 75%;
+	left: 50%;	
 	padding: 10px;
 	color: var(--font-lightest);
 	background: var(--bg-dark);
-	border-top: 1px solid var(--border-light);
-	border-bottom: 1px solid var(--border-light);
-	transition: 0.5s linear;
-	z-index: 99;
+	border: 1px solid var(--border-light);		
+    border-radius: 5px;
+	box-shadow: 0 0 10px 2px var(--shadow-lightest);
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0);	
+	transition: all 0.5s ease;
+	
 }
+.snow__input:checked+.snow__control{
+	z-index: 99;
+	opacity: 1;	
+	top: 50%;    
+	transform: translate(-50%, -50%) scale(1);	
+}
+
+/*
+
 .snow__control:hover {
 	right: 0px;
 }
+
 .snow__control::before {
-	content: "Новогоднее настроение";
-	font-family: Arial, sans-serif;
+	content: "Настроение";
+	letter-spacing: 2px;
+	font-family: var (--basic-font);
 	font-size: 12px;
 	font-weight: 500;
 	position: absolute;
@@ -85,14 +121,8 @@ body {
 	background: var(--bg-dark);
 	cursor: pointer;
 }
-
-/* label[for='snowOnOff'],
-.snow__text:nth-child(3){
-	margin-top: 15px;
-} */
-
-.mode {
-	font-size: 12px;
+*/
+.mode {	
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -114,7 +144,8 @@ body {
 	display: none;
 }
 
-.mode__label {
+.mode__label,
+.snow__hide {
 	flex-basis: 25%;
 	margin: 0 5px;
 	text-align: center;
@@ -122,16 +153,23 @@ body {
 	padding: 5px;
 	border: 1px solid var(--border-light);
 	border-radius: 5px;
+	font-weight: 400;	
 	transition: 0.5s ease;
 	cursor: pointer;
 }
+.snow__hide {
+    margin: 15px auto 0;
+    width: 80px;    
+}
+
 
 .mode__input:checked + .mode__label {
 	border: 1px solid var(--border-lightest);
 	background: var(--bg-light);
 }
 
-.mode__label:hover {
+.mode__label:hover,
+.snow__hide:hover {
 	border: 1px solid var(--border-lightest);
 	background: var(--bg-light);
 }
@@ -142,3 +180,17 @@ body {
 		height: 15px;
 	}
 }
+
+
+@keyframes snowRotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+

@@ -38,7 +38,7 @@
 	--bg-light: #02be90;
 	--bg-lightest: #ffffff;
 	--bg-action-form: var(--bg-dark);
-	--bg-panel: rgba(45, 45, 45, .7);
+	--bg-panel: rgba(45, 45, 45, .85);
 
 	/*--цвета тени--*/
 	--shadow-dark: black;

@@ -5,19 +5,34 @@ button {
 	border: none;
 	font-family: var(--basic-font);
 }
-main {
+
+body {
+	height: 100vh;
+	background-color: var(--bg-dark);
+}
+
+.header__bottom {
 	min-width: 320px;
 }
-.wrap404 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: var(--bg-dark);
+
+main {
+	height: calc(100% - 150px);
 	display: flex;
-	z-index: -1;
+	justify-content: center;
+	align-items: center;
 }
+
+.wrap404 {
+	min-width: 320px;
+}
+.content404 {
+	margin: 20px auto 0;
+	width: 300px;
+}
+.code404 {
+	width: 100%;
+}
+
 .wrap404 .logo {
 	height: 100%;
 	margin: 20px 10px;
@@ -25,28 +40,84 @@ main {
 	justify-content: center;
 	align-items: center;
 	padding: 20px 0;
+	border-radius: 5px;
 	animation: neon-light 3s linear alternate infinite;
 }
 .wrap404 .logo__name,
 .wrap404 .logomin__name {
 	font-size: 34px;
 }
-.content404 {
-	margin: auto;
-}
+
 .message {
 	margin: 10px;
 	text-align: center;
 	color: var(--font-lightest);
 	font-size: 20px;
 }
+
 .message a {
 	color: var(--font-light);
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 18px;
+	transition: 0.3s ease-out;
+	cursor: pointer;
 }
+.message a:hover {
+	text-shadow: 0 0 5px #02be90;
+}
+
+svg {
+	font: 280px "Montserrat";
+}
+
+.text-copy {
+	fill: none;
+	stroke: white;
+	stroke-dasharray: 6% 29%;
+	stroke-width: 3px;
+	stroke-dashoffset: 0%;
+	animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+	stroke: var(--shadow-light);
+	animation-delay: -1s;
+}
+
+.text-copy:nth-child(2) {
+	stroke: var(--shadow-light);
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+	stroke: var(--shadow-light);
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+	stroke: var(--shadow-light);
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+	stroke: var(--shadow-light);
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+	100% {
+		stroke-dashoffset: -35%;
+	}
+}
+
 @media screen and (max-width: 768px) {
+	main {
+		height: calc(100% - 105px);
+	}
 }
 @media screen and (max-width: 425px) {
+	main {
+		height: calc(100% - 50px);
+	}
 }

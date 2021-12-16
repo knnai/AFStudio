@@ -20,60 +20,15 @@
 </head>
 
 <body>
-	<!--
-	<div id="preloader">
-		<div class="preloader">
-			<div class="preloader__container">
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
--->
 
-	<div class="snow" data-snow="snow">
-		<div class="snow__control">
-			<p class="snow__title">Снег:</p>
-
-			<div class="mode">
-				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
-				<label class="mode__label" for="snowOff">Нет</label>
-
-				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
-				<label class="mode__label" for="snowWeak">Слабый</label>
-
-				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
-				<label class="mode__label" for="snowAverage">Средний</label>
-
-				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
-				<label class="mode__label" for="snowBlizzard">Метель</label>
-			</div>
-
-			<p class="snow__title">Музыка:</p>
-			<div class="snow__audio">
-				<audio id="snowAudio" controls loop>
-					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
-					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
-				</audio>
-			</div>
-		</div>
-	</div>
-
+	<!-- Шапка -->
 	<header>
-
+		<!-- Шапка (верх) -->
 		<div class="header__top">
 			<div class="wrapper">
 				<div class="header__info">
+
+					<!-- Лого -->
 					<a class="logo" href="index.html">
 						<img class="logo__img" src="img/logo.png" alt="">
 						<span class="logo__text">
@@ -81,6 +36,8 @@
 							<span class="logo__studio">Nail Studio</span>
 						</span>
 					</a>
+
+					<!-- Инфо -->
 					<div class="info">
 						<div class="info__item">
 							<p class="info__title">Наш адрес:</p>
@@ -98,19 +55,28 @@
 							<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 						</div>
 					</div>
-
-					<div class="info__theme">
-						<div class="theme">
-							<input id="themeInput" class="theme__checkbox" type="checkbox">
-							<label for="themeInput" class="theme__label" title="Светлая тема"></label>
+					
+					<div class="add-buttons">
+						<!-- Изменение темы -->
+						<div class="info__theme">
+							<div class="theme">
+								<input id="themeInput" class="theme__checkbox" type="checkbox">
+								<label for="themeInput" class="theme__label"></label>
+							</div>
+						</div>
+						
+						<!-- Кнопка снега -->
+						<div class="snow__button">
+							<label for="snowInput" class="snow__label"></label>			
 						</div>
 					</div>
-
+					
+					<!-- Соцсети -->
 					<div class="social">
 						<p class="info__title">Мы в соцсетях:</p>
 						<a class="info__soclink" target="_blank"
 							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
-
+							<!-- иконка инстаграмм	 -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
 								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
@@ -120,6 +86,7 @@
 
 						</a>
 						<a class="info__soclink" href="#">
+							<!-- иконка фейсбук -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 								<path
@@ -133,9 +100,10 @@
 			</div>
 		</div>
 
+		<!-- Шапка (низ) - меню -->
 		<nav class="header__bottom">
 			<div class="wrapper">
-
+				<!-- Лого (для маленьких экранов) -->
 				<a class="logomin" href="index.html">
 					<img class="logomin__img" src="img/logo.png" alt="">
 					<span class="logomin__text">
@@ -143,9 +111,22 @@
 						<span class="logomin__studio">Nail Studio</span>
 					</span>
 				</a>
+				
+				<div class="add-buttons">
+					<!-- Изменение темы -->
+					<div class="info__theme">
+						<div class="theme">							
+							<label for="themeInput" class="theme__label"></label>
+						</div>
+					</div>
+					
+					<!-- Кнопка снега -->
+					<div class="snow__button">
+						<label for="snowInput" class="snow__label"></label>			
+					</div>
+				</div>
 
-				<label for="themeInput" class="theme__label"></label>
-
+				<!-- Гамбургер -->
 				<input type="checkbox" id="check-burger">
 				<label class="burger" for="check-burger">
 					<span></span>
@@ -153,6 +134,7 @@
 					<span></span>
 				</label>
 
+				<!-- Меню -->
 				<ul class="menu">
 					<li class="menu__item"><a class="menu__link" href="index.html"><span>Главная</span></a></li>
 					<li class="menu__item"><a class="menu__link" href="about.html"><span>О нас</span></a></li>
@@ -163,11 +145,29 @@
 				</ul>
 			</div>
 		</nav>
+
 	</header>
 
+	<!-- Основной контент -->
 	<main>
+	
 		<div class='wrap404'>
 			<div class='content404'>
+				<div class='code404'>	
+					<svg viewBox="0 0 960 300">
+						<symbol id="s-text">
+							<text text-anchor="middle" x="50%" y="80%">404</text>
+						</symbol>
+
+						<g class = "g-ants">
+							<use xlink:href="#s-text" class="text-copy"></use>
+							<use xlink:href="#s-text" class="text-copy"></use>
+							<use xlink:href="#s-text" class="text-copy"></use>
+							<use xlink:href="#s-text" class="text-copy"></use>
+							<use xlink:href="#s-text" class="text-copy"></use>
+						</g>
+					</svg>
+				</div>
 				<p class='message'>Нам очень жаль...,</p>
 				<p class='message'>но такой страницы у нас нет</p>
 				<a class="logo" href="index.html">
@@ -184,6 +184,40 @@
 
 	</main>
 
+	<!-- Снег -->
+	<div class="snow" data-snow="snow">
+		<input type="checkbox" class="snow__input" id="snowInput">
+		<div class="snow__control">
+			<p class="snow__title">Снег:</p>
+
+			<div class="mode">
+				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
+				<label class="mode__label" for="snowOff">Нет</label>
+
+				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
+				<label class="mode__label" for="snowWeak">Слабый</label>
+
+				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
+				<label class="mode__label" for="snowAverage">Средний</label>
+
+				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
+				<label class="mode__label" for="snowBlizzard">Метель</label>
+			</div>
+			
+			<p class="snow__title">Музыка:</p>
+			<div class="snow__audio">
+				<audio id="snowAudio" controls loop>
+					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
+					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
+				</audio>
+			</div>
+			
+			<label for="snowInput" class="snow__hide">Скрыть</label>
+			
+		</div>
+	</div>
+
+	<!-- Скрипты -->
 	<script src="js/theme.js"></script>
 	<script src="js/snow.js"></script>
 

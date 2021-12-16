@@ -341,6 +341,7 @@
 	height: 1.8em;
 	cursor: pointer;
 	background-color: var(--bg-lightest);
+	border: 1px solid var(--border-light);
 }
 
 .ui-datepicker td span,
@@ -390,6 +391,12 @@ a.ui-button:active,
 	font-weight: 700;
 	line-height: 1;
 	animation: scale0-12-1 0.3s linear backwards;
+}
+
+.ui-widget-header .ui-state-hover {
+	border: 1px solid var(--border-lightest);
+	background: none;
+	background: var(--bg-light);
 }
 
 /*-------------datepicker-----------*/

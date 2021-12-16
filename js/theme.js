@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		//превью страницы сервисов
 		let previewImg = document.querySelector('#frmService .preview img');
 		if (previewImg) {
-			console.dir(previewImg);
+			//console.dir(previewImg);
 			designDef = (colorTheme == 'light') ? designDefaultLight : designDefaultDark;
 			if (previewImg.alt == galleryPath + designDefaultDark || previewImg.alt == galleryPath + designDefaultLight || previewImg.alt == '') {
 				previewImg.src = previewImg.alt = galleryPath + designDef;

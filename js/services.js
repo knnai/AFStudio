@@ -221,6 +221,7 @@ function selectHours(e) {
 	if (elem.classList.contains('hours__booked')) return;
 	let prev = document.querySelector('.hours__selected');
 	if (prev) prev.classList.remove('hours__selected');
+	if (prev === elem) return;
 	elem.classList.add('hours__selected');
 	order.time = elem.innerText;
 	changeOrderForm();
@@ -338,11 +339,15 @@ $(function () {
 			if (date == today) {
 				generateBookedHours(true);
 				changeOrderForm();
+
+				showModalWindow(modalWin, "error", "Нам очень жаль...", "Но на сегодня записи нет", "Понятно");
+				/*
 				Swal.fire({
 					title: 'Нам очень жаль...!',
 					text: 'Но, на сегодня записи нет',
 					confirmButtonText: 'Понятно'
 				});
+				*/
 			} else {
 				generateBookedHours();
 				order.date = date;

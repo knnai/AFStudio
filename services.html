@@ -11,12 +11,12 @@
 	<!-------------------- Custom CSS ----------------------->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css"> -->
 
 	<!-------------------- CSS ----------------------->
 	<link rel="stylesheet" href="css/lightbox.min.css">
-	<!-- <link rel="stylesheet" href="css/variables_dark.css"> -->
-	<link id="linkTheme" rel="stylesheet" href="css/variables_light.css">
+	<link id="linkTheme" rel="stylesheet" href="css/variables_dark.css">
+	<link rel="stylesheet" href="css/modal-win.css">
 	<link rel="stylesheet" href="css/snow.css">
 	<link rel="stylesheet" href="css/main-anim.css">
 	<link rel="stylesheet" href="css/forms.css">
@@ -28,58 +28,15 @@
 </head>
 
 <body>
-	<div id="preloader">
-		<div class="preloader">
-			<div class="preloader__container">
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-				<div class="preloader__round">
-					<div class="preloader__inner">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="snow" data-snow="snow">
-		<div class="snow__control">
-			<p class="snow__title">Снег:</p>
-
-			<div class="mode">
-				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
-				<label class="mode__label" for="snowOff">Нет</label>
-
-				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
-				<label class="mode__label" for="snowWeak">Слабый</label>
-
-				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
-				<label class="mode__label" for="snowAverage">Средний</label>
-
-				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
-				<label class="mode__label" for="snowBlizzard">Метель</label>
-			</div>
-
-			<p class="snow__title">Музыка:</p>
-			<div class="snow__audio">
-				<audio id="snowAudio" controls loop>
-					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
-					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
-				</audio>
-			</div>
-		</div>
-	</div>
-
+	<!-- Шапка -->
 	<header>
-
+		<!-- Шапка (верх) -->
 		<div class="header__top">
 			<div class="wrapper">
 				<div class="header__info">
+
+					<!-- Лого -->
 					<a class="logo" href="index.html">
 						<img class="logo__img" src="img/logo.png" alt="">
 						<span class="logo__text">
@@ -87,6 +44,8 @@
 							<span class="logo__studio">Nail Studio</span>
 						</span>
 					</a>
+
+					<!-- Инфо -->
 					<div class="info">
 						<div class="info__item">
 							<p class="info__title">Наш адрес:</p>
@@ -104,19 +63,28 @@
 							<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 						</div>
 					</div>
-
-					<div class="info__theme">
-						<div class="theme">
-							<input id="themeInput" class="theme__checkbox" type="checkbox">
-							<label for="themeInput" class="theme__label" title="Светлая тема"></label>
+					
+					<div class="add-buttons">
+						<!-- Изменение темы -->
+						<div class="info__theme">
+							<div class="theme">
+								<input id="themeInput" class="theme__checkbox" type="checkbox">
+								<label for="themeInput" class="theme__label"></label>
+							</div>
+						</div>
+						
+						<!-- Кнопка снега -->
+						<div class="snow__button">
+							<label for="snowInput" class="snow__label"></label>			
 						</div>
 					</div>
-
+					
+					<!-- Соцсети -->
 					<div class="social">
 						<p class="info__title">Мы в соцсетях:</p>
 						<a class="info__soclink" target="_blank"
 							href="https://www.instagram.com/__anastasia_frolova__/?utm_source=ig_profile_share&igshid=1xafqkj4q4pae">
-
+							<!-- иконка инстаграмм	 -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<rect x="5" y="5" width="150" height="150" rx="75" stroke="white" fill="#02be90" stroke-width="10" />
 								<rect x="35" y="34" width="90" height="90" rx="15" stroke="white" fill="#02be90" stroke-width="10" />
@@ -126,6 +94,7 @@
 
 						</a>
 						<a class="info__soclink" href="#">
+							<!-- иконка фейсбук -->
 							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
 								<circle cx="80" cy="80" r="75" stroke="white" fill="#2AABEE" stroke-width="10" />
 								<path
@@ -139,9 +108,10 @@
 			</div>
 		</div>
 
+		<!-- Шапка (низ) - меню -->
 		<nav class="header__bottom">
 			<div class="wrapper">
-
+				<!-- Лого (для маленьких экранов) -->
 				<a class="logomin" href="index.html">
 					<img class="logomin__img" src="img/logo.png" alt="">
 					<span class="logomin__text">
@@ -149,9 +119,22 @@
 						<span class="logomin__studio">Nail Studio</span>
 					</span>
 				</a>
+				
+				<div class="add-buttons">
+					<!-- Изменение темы -->
+					<div class="info__theme">
+						<div class="theme">							
+							<label for="themeInput" class="theme__label"></label>
+						</div>
+					</div>
+					
+					<!-- Кнопка снега -->
+					<div class="snow__button">
+						<label for="snowInput" class="snow__label"></label>			
+					</div>
+				</div>
 
-				<label for="themeInput" class="theme__label"></label>
-
+				<!-- Гамбургер -->
 				<input type="checkbox" id="check-burger">
 				<label class="burger" for="check-burger">
 					<span></span>
@@ -159,6 +142,7 @@
 					<span></span>
 				</label>
 
+				<!-- Меню -->
 				<ul class="menu">
 					<li class="menu__item"><a class="menu__link" href="index.html"><span>Главная</span></a></li>
 					<li class="menu__item"><a class="menu__link" href="about.html"><span>О нас</span></a></li>
@@ -169,8 +153,10 @@
 				</ul>
 			</div>
 		</nav>
+
 	</header>
 
+	<!-- Основной контент -->
 	<main>
 
 		<section class="section section-services">
@@ -183,6 +169,7 @@
 				</p>
 				<div class="section__content">
 					<p class="four-steps">Четыре простых шага для записи</p>
+
 					<div class="tabs">
 						<!-- Заголовки -->
 						<div class="tabs__titles">
@@ -195,6 +182,7 @@
 							<div class="tabs__title" data-id="sendOrder">Шаг 4<span class="tabs__text"><br>Отправьте заказ</span>
 							</div>
 						</div>
+
 						<!-- Услуги -->
 						<div id="selectService" class="tabs__item tabs-active">
 							<p class="section__subtitle">
@@ -210,6 +198,7 @@
 								<div class="button  btn-next _nav" data-id='selectDesign'>Далее</div>
 							</div>
 						</div>
+
 						<!-- Дизайн -->
 						<div id="selectDesign" class="tabs__item">
 							<p class="section__subtitle">
@@ -219,56 +208,76 @@
 							</p>
 							<div class="tabs__content">
 
-
-
 								<div class="design">
 									<input id="design001" class="design__input" type="checkbox" value="001.jpg">
 									<label class="design__label" for="design001" title="Выбрать">
 									</label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/001.jpg" data-lightbox="001" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/001.jpg" alt="">
-								</div>
-								<div class="design"><input id="design002" class="design__input" type="checkbox" value="002.jpg"><label
-										class="design__label" for="design002" title="Выбрать"></label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/002.jpg" data-lightbox="002" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/002.jpg" alt="">
-								</div>
-								<div class="design"><input id="design003" class="design__input" type="checkbox" value="003.jpg"><label
-										class="design__label" for="design003" title="Выбрать"></label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/003.jpg" data-lightbox="003" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/003.jpg" alt="">
-								</div>
-								<div class="design"><input id="design004" class="design__input" type="checkbox" value="004.jpg"><label
-										class="design__label" for="design004" title="Выбрать"></label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/004.jpg" data-lightbox="004" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/004.jpg" alt="">
-								</div>
-								<div class="design"><input id="design005" class="design__input" type="checkbox" value="005.jpg"><label
-										class="design__label" for="design005" title="Выбрать"></label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/005.jpg" data-lightbox="005" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/005.jpg" alt="">
-								</div>
-								<div class="design"><input id="design006" class="design__input" type="checkbox" value="006.jpg"><label
-										class="design__label" for="design006" title="Выбрать"></label>
-									<div class="design__selected"><span>&#10004;</span></div><a class="design__zoom"
-										href="img/gallery/006.jpg" data-lightbox="006" data-title=""><img src="img/fullscreen.svg" alt=""
-											title="Увеличить"></a><img class="design__img" src="img/gallery/006.jpg" alt="">
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/001.jpg" data-lightbox="001" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/001.jpg" alt="">
 								</div>
 
+								<div class="design">
+									<input id="design002" class="design__input" type="checkbox" value="002.jpg">
+									<label class="design__label" for="design002" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/002.jpg" data-lightbox="002" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/002.jpg" alt="">
+								</div>
 
+								<div class="design">
+									<input id="design003" class="design__input" type="checkbox" value="003.jpg">
+									<label class="design__label" for="design003" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/003.jpg" data-lightbox="003" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/003.jpg" alt="">
+								</div>
+
+								<div class="design">
+									<input id="design004" class="design__input" type="checkbox" value="004.jpg">
+									<label class="design__label" for="design004" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/004.jpg" data-lightbox="004" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/004.jpg" alt="">
+								</div>
+
+								<div class="design">
+									<input id="design005" class="design__input" type="checkbox" value="005.jpg">
+									<label class="design__label" for="design005" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/005.jpg" data-lightbox="005" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/005.jpg" alt="">
+								</div>
+
+								<div class="design">
+									<input id="design006" class="design__input" type="checkbox" value="006.jpg">
+									<label class="design__label" for="design006" title="Выбрать"></label>
+									<div class="design__selected"><span>&#10004;</span></div>
+									<a class="design__zoom" href="img/gallery/006.jpg" data-lightbox="006" data-title="">
+										<img src="img/fullscreen.svg" alt="" title="Увеличить">
+									</a>
+									<img class="design__img" src="img/gallery/006.jpg" alt="">
+								</div>
 
 							</div>
+							<!-- Кнопки внизу -->
 							<div class="tabs__buttons">
 								<div class="button btn-prev _nav" data-id='selectService'>Назад</div>
 								<div id="btnShowMore" class="button btn-center">Показать еще...</div>
 								<div class="button  btn-next _nav" data-id='selectDateTime'>Далее</div>
 							</div>
 						</div>
+
 						<!-- Дата время -->
 						<div id="selectDateTime" class="tabs__item">
 							<p class="section__subtitle">
@@ -278,11 +287,13 @@
 							</p>
 							<div class="tabs__content">
 
+								<!-- Дата -->
 								<div class="date">
 									<p class="date__title">Дата</p>
 									<div id="datepicker"></div>
 								</div>
 
+								<!-- Время -->
 								<div class="time">
 									<p class="time__title">Время</p>
 									<ul class="hours">
@@ -300,12 +311,15 @@
 								</div>
 
 							</div>
+							<!-- Кнопки внизу -->
 							<div class="tabs__buttons">
 								<div class="button btn-prev _nav" data-id='selectDesign'>Назад</div>
 								<div></div>
 								<div class="button  btn-next _nav" data-id='sendOrder'>Далее</div>
 							</div>
 						</div>
+
+
 						<!-- Отправка заказа -->
 						<div id="sendOrder" class="tabs__item">
 
@@ -333,18 +347,19 @@
 								<span>Отправьте заказ</span>
 								<span></span>
 							</p>
+
 							<div class="tabs__content">
 
 								<div class="services__form">
-
+									<!-- Форма -->
 									<form action="telegram.php" class="form" id="frmService" method="POST">
 										<div class="form__item">
 											<input type="text" class="form__input" name="formName" value="Заявка на посещение">
 										</div>
 
 										<div class="form__content">
+											<!-- Левая часть (дата, время, услуги) -->
 											<div class="form__block">
-
 												<div class="form__subblock">
 													<div class="form__item">
 														<label class="form__label" for="frmServiceDate">Дата:</label>
@@ -365,23 +380,21 @@
 														placeholder="Услуги" readonly="readonly"></textarea>
 													<p class="input-error">Выберите услуги (Шаг 1)</p>
 												</div>
-
 											</div>
-											<div class="form__block">
 
+											<!-- Средняя часть (дизайн) -->
+											<div class="form__block">
 												<div class="form__item">
 													<label class="form__label" for="frmServiceDesign">Дизайн:</label>
 													<input type="text" name="design" id="frmServiceDesign" class="form__input" placeholder="">
 													<div class="preview">
-														<!-- <img src="img/gallery/design-default-dark.jpg" alt="img/gallery/design-default-dark.jpg"> -->
 														<img src="" alt="">
 													</div>
 												</div>
-
-
 											</div>
-											<div class="form__block">
 
+											<!-- Првая часть (имя, телефон, комментарий) -->
+											<div class="form__block">
 												<div class="form__item">
 													<label class="form__label" for="frmServiceName">Ваше имя:</label>
 													<input type="text" id="frmServiceName" class="form__input _req" name="name"
@@ -409,51 +422,32 @@
 													</label>
 													<p class="input-error">Это поле обязательное</p>
 												</div>
-
 											</div>
 
 										</div>
-
+										<!-- Инпуты для итого и отправить -->
 										<input id="totalSum" type="text" class="form__input" name="totalSum">
 										<input id="frmServiceSubmit" class="form__input" type="submit" value="">
 									</form>
 								</div>
 							</div>
+							<!-- Ориентировочная сумма -->
 							<p class='total-sum'>Ориентировочная сумма заказа <span></span></p>
+							<!-- Кнопки внизу -->
 							<div class="tabs__buttons">
 								<div class="button btn-prev" data-id='selectDateTime'>Назад</div>
 								<label for="frmServiceSubmit" class="button btn-center " data-id='selectDateTime'>Записаться</label>
 								<div></div>
 							</div>
 						</div>
-					</div>
+					</div> <!-- tabs -->
+
+				</div>
 		</section>
-
-
-		<!-- <div id="todayBooked" title="Нам очень жаль...">
-			<p>Но, на сегодня записи нет</p>
-		</div> -->
-
-
-
-		<!-- <section class="section">
-			<div class="wrapper">
-				<p class="section__title">Заголовок секции</p>
-				<p class="section__subtitle">
-					<span></span>
-					<span>Подзаголовок секции</span>
-				</p>
-				<div class="section__content"></div>
-			</div>
-		</section> -->
 
 	</main>
 
-
-
-
-	<section></section>
-
+	<!-- Футер -->
 	<footer class="section" id="contacts">
 		<div class="wrapper">
 			<p class="section__title">Наши контакты</p>
@@ -463,15 +457,18 @@
 				<span></span>
 			</p>
 			<div class="section__content">
+
 				<div class="contacts">
+					<!-- Карта -->
 					<div class="contacts__map">
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.2410584278737!2d37.58986611566948!3d48.719985379274235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40df975426d08437%3A0xd27a5ccc547e01d2!2z0KHRgtGD0LTQuNGPINCQ0L3QsNGB0YLQsNGB0LjQuCDQpNGA0L7Qu9C-0LLQvtC5!5e0!3m2!1sru!2sua!4v1636661266312!5m2!1sru!2sua"
 							style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
 
+					<!-- Контакты -->
 					<div class="contacts__description">
-
+						<!-- Контакты -->
 						<div class="info">
 							<div class="info__item">
 								<p class="info__title">Наш адрес:</p>
@@ -488,7 +485,6 @@
 								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 								<a class="info__text" href="tel:+380501234567">+38 (050) 123-45-67</a>
 							</div>
-
 							<div class="social">
 								<p class="info__title">Мы в соцсетях:</p>
 								<a class="info__soclink" target="_blank"
@@ -513,11 +509,10 @@
 									</svg>
 								</a>
 							</div>
-
-
 						</div>
+						<!-- Контакты -->
 
-
+						<!-- Форма -->
 						<div class="contacts__form">
 
 							<div class="form-sended">
@@ -575,14 +570,92 @@
 								<button type="submit" class="button form__button">Отправить</button>
 							</form>
 						</div>
+						<!-- Форма -->
 					</div>
 				</div>
 			</div>
+
 			<p class="thanks">Спасибо, что Вы с нами!</p>
 			<p class="copy">©2021</p>
 		</div>
 	</footer>
 
+	<!-- Дополнительные элементы -->
+	<!-- Прелоадер -->
+	<div id="preloader">
+		<div class="preloader">
+			<div class="preloader__container">
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+				<div class="preloader__round">
+					<div class="preloader__inner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Снег -->
+	<div class="snow" data-snow="snow">
+		<input type="checkbox" class="snow__input" id="snowInput">
+		<div class="snow__control">
+			<p class="snow__title">Снег:</p>
+
+			<div class="mode">
+				<input class="mode__input" id="snowOff" name="mode" type="radio" value="off" checked>
+				<label class="mode__label" for="snowOff">Нет</label>
+
+				<input class="mode__input" id="snowWeak" name="mode" type="radio" value="weak">
+				<label class="mode__label" for="snowWeak">Слабый</label>
+
+				<input class="mode__input" id="snowAverage" name="mode" type="radio" value="average">
+				<label class="mode__label" for="snowAverage">Средний</label>
+
+				<input class="mode__input" id="snowBlizzard" name="mode" type="radio" value="blizzard">
+				<label class="mode__label" for="snowBlizzard">Метель</label>
+			</div>
+			
+			<p class="snow__title">Музыка:</p>
+			<div class="snow__audio">
+				<audio id="snowAudio" controls loop>
+					<source src="audio/Jingle Bells.mp3" type="audio/mpeg">
+					<a href="audio/Jingle Bells.mp3">Скачать Jingle Bells.mp3</a>
+				</audio>
+			</div>
+			
+			<label for="snowInput" class="snow__hide">Скрыть</label>
+			
+		</div>
+	</div>
+
+	<!-- Модальное окно -->
+	<div class="modal">
+		<div class="modal__wrapper">
+			<div class="modal__window">
+				<div class="modal__item">
+					<img class="modal__icon icon-success" src="img/modal-win/success.svg">
+					<img class="modal__icon icon-error" src="img/modal-win/error.svg">
+				</div>
+				<div class="modal__item">
+					<p class="modal__title"></p>
+				</div>
+				<div class="modal__item">
+					<p class="modal__message"></p>
+				</div>
+				<div class="modal__item">
+					<div class="modal__button"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Кнопка Вверх, тема, снег -->
 	<div class="panel">
 		<div class="panel__btn">
 			<button class="panel__to-top">Вверх</button>
@@ -590,16 +663,21 @@
 		<div class="panel__btn">
 			<label for="themeInput" class="theme__label"></label>
 		</div>
+		<div class="panel__btn">			
+			<label for="snowInput" class="snow__label"></label>			
+		</div>
 	</div>
 
+	<!-- Скрипты -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/lightbox-plus-jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 	<script src="js/phone-mask.js"></script>
 
 	<script src="js/theme.js"></script>
+	<script src="js/modal-win.js"></script>
 	<script src="js/snow.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/services.js"></script>
