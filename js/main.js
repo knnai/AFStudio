@@ -254,9 +254,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	};
 	/*---------------------- анимация цифр ---------------------------*/
 
-	let actionTimer = document.querySelector('#actionTimer');
-	if (actionTimer) initTimer(actionTimer.id, new Date(2021, 11, 31, 24, 0, 0));
+
+
 	/*------------------- таймер -------------*/
+	let actionTimer = document.querySelector('#actionTimer');
+	//if (actionTimer) initTimer(actionTimer.id, new Date(2021, 11, 31, 24, 0, 0));
+	if (actionTimer) {
+		let now = new Date();
+		let actionEnd = new Date(2021, 11, 31, 24, 0, 0);
+		if (now >= actionEnd) {
+			document.querySelector('.action-section').hidden = true;
+		} else {
+			initTimer(actionTimer.id, actionEnd);
+		};
+	}
+
 	function initTimer(idTimer, endTime = new Date()) {
 		let timer = document.querySelector("#" + idTimer);
 		let days = timer.querySelector(".timer__days");

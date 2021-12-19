@@ -1,19 +1,13 @@
-
-.snow {	
+.snow {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 0%;
 	height: 0%;
-	/*overflow: hidden;	*/
-	/*display: none;*/
 	z-index: 1;
 }
 .snow__item {
 	position: absolute;
-	/*width: 15px;
-	height: 15px;*/
-	/*background-image: url("../img/snow/001.png");*/
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -30,99 +24,61 @@
 	animation: snowRotate 7s alternate infinite linear;
 }
 
-.snow__input{
-	display: none;	
+.snow__input {
+	display: none;
 }
 
-.snow__button{
+.snow__button {
 	margin: 10px;
 }
-.snow__label{
-	display:block;
+.snow__label {
+	display: block;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
 	margin: 0 auto;
 	background: url("../img/snow/002.png") center/cover no-repeat;
 	cursor: pointer;
-	transition: .3s ease;
+	transition: 0.3s ease;
 }
 
 .snow__label:hover,
-.snow__input-checked {      
-    background-color: #e2faff;    
+.snow__input-checked {
+	background-color: #e2faff;
 }
-.snow__input-checked {      
+.snow__input-checked {
 	box-shadow: 0 0 10px 2px #e2faff;
 }
-.snow-in{
-	background-color: #e2faff;    
+.snow-in {
+	background-color: #e2faff;
 	box-shadow: 0 0 10px 2px #e2faff;
 	animation: snowRotate 5s infinite linear;
-}	
-/*
-.snow__label {
-    border-radius: 50%;
-    border: 1px solid #1470b4;
-    transform: rotate(325deg);
-    background-color: #e2faff;
-    box-shadow: 0 0 10px 2px #e2faff;
 }
-*/
-
 
 .snow__control {
 	position: fixed;
 	width: 300px;
-	height: 220px;
+	height: 250px;
 	top: 75%;
-	left: 50%;	
+	left: 50%;
 	padding: 10px;
 	color: var(--font-lightest);
 	background: var(--bg-dark);
-	border: 1px solid var(--border-light);		
-    border-radius: 5px;
+	border: 1px solid var(--border-light);
+	border-radius: 5px;
 	box-shadow: 0 0 10px 2px var(--shadow-lightest);
 	opacity: 0;
-	transform: translate(-50%, -50%) scale(0);	
+	transform: translate(-50%, -50%) scale(0);
 	transition: all 0.5s ease;
-	
 }
-.snow__input:checked+.snow__control{
+.snow__input:checked + .snow__control {
 	z-index: 99;
-	opacity: 1;	
-	top: 50%;    
-	transform: translate(-50%, -50%) scale(1);	
+	opacity: 1;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1);
 }
 
-/*
-
-.snow__control:hover {
-	right: 0px;
-}
-
-.snow__control::before {
-	content: "Настроение";
-	letter-spacing: 2px;
-	font-family: var (--basic-font);
-	font-size: 12px;
-	font-weight: 500;
-	position: absolute;
-	width: 170px;
-	height: 30px;
-	top: -31px;
-	left: -170px;
-	transform-origin: right bottom;
-	transform: rotate(-90deg);
-	text-align: center;
-	padding: 7px;
-	border: 1px solid var(--border-light);
-	border-radius: 10px 10px 0 0;
-	background: var(--bg-dark);
-	cursor: pointer;
-}
-*/
-.mode {	
+.mode {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
@@ -130,10 +86,16 @@
 
 .snow__title {
 	padding-left: 5px;
-	margin-bottom: 5px;
+	margin: 5px 0;
 }
-.snow__title:nth-child(3) {
-	margin: 15px 0 5px;
+.snow__title:nth-child(1) {
+	text-align: center;
+	font-family: var(--decor-font);
+	font-size: 16px;
+}
+
+.snow__title:nth-child(1) span {
+	color: var(--font-light);
 }
 
 .snow__audio audio {
@@ -153,15 +115,14 @@
 	padding: 5px;
 	border: 1px solid var(--border-light);
 	border-radius: 5px;
-	font-weight: 400;	
+	font-weight: 400;
 	transition: 0.5s ease;
 	cursor: pointer;
 }
 .snow__hide {
-    margin: 15px auto 0;
-    width: 80px;    
+	margin: 15px auto 0;
+	width: 80px;
 }
-
 
 .mode__input:checked + .mode__label {
 	border: 1px solid var(--border-lightest);
@@ -181,7 +142,6 @@
 	}
 }
 
-
 @keyframes snowRotate {
 	0% {
 		transform: rotate(0deg);
@@ -190,7 +150,3 @@
 		transform: rotate(360deg);
 	}
 }
-
-
-
-
