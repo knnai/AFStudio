@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			};
 
 			let formData = new FormData(form);
-			if (form.id == 'frmDesign') formData.append('image', frmDesignFile.files[0]);
+			//if (form.id == 'frmDesign') formData.append('image', frmDesignFile.files[0]);
 
 			sended.style.display = 'block';
 			//отправка
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	//if (actionTimer) initTimer(actionTimer.id, new Date(2021, 11, 31, 24, 0, 0));
 	if (actionTimer) {
 		let now = new Date();
-		let actionEnd = new Date(2021, 11, 31, 24, 0, 0);
+		let actionEnd = new Date(2022, 0, 31, 24, 0, 0);
 		if (now >= actionEnd) {
 			document.querySelector('.action-section').hidden = true;
 		} else {
